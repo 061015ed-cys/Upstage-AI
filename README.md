@@ -1,6 +1,7 @@
 # LeadTime Guardian Agent
 
 2026-11-02 통합 검수: **[V6·Independent QA·데이터/Gold 통합 보고서](docs/integration_20261102/INTEGRATION_REPORT.md)**.
+2026-11-03 팀원 4 검수 및 제출 준비: **[인계 보고](docs/team4/FINAL_HANDOFF.md)**. 코드 CI와 전체 Release 판정은 구분합니다.
 전체 검증 환경은 `python -m pip install -r requirements-validation.txt`로 설치합니다.
 통합 실행은 `python -m qa.integration --help`를 참고하세요. GitHub 코드 검증과
 최신 Studio Native E2E·사람 Gold 승인은 별도 Gate입니다.
@@ -28,19 +29,19 @@ flowchart LR
 Python 3.11; Studio 권한 없이 **로컬 계산 예제**를 수행할 수 있음.
 
 ```bash
-git clone https://github.com/dohun3540-crypto/leadtime-guardian-agent.git
-cd leadtime-guardian-agent
+git clone https://github.com/061015ed-cys/Upstage-AI.git
+cd Upstage-AI
 python -m venv .venv
 # Windows PowerShell: .\.venv\Scripts\Activate.ps1
 # Linux/macOS: source .venv/bin/activate
-pip install -r requirements-dev.txt
+python -m pip install -r requirements-validation.txt
 python scripts/run_demo.py              # 기존 단일 고객 주문 테스트
 python scripts/run_portfolio_demo.py    # 신규 다수 주문/견적 테스트
 pytest -q
 ruff check .
 ```
 
-합성 PDF 재생성 (ReportLab 및 한국어 TTF 폰트 필요): `pip install reportlab && python scripts/generate_synthetic_dataset.py`. 생성기는 운영 시 `FONT` 경로를 설치 환경에 맞게 바꿀 수 있다. 생성된 PDF·견적은 **실제 기업 자료가 아니다**.
+합성 PDF 원본은 재생성하지 않고 보존합니다. C002~C020의 57개 PDF는 `data/cases/SYN-C002-C020_DRAFT_PDFs.tar.xz`에 들어 있으며, 검수용 복원 절차는 [재현 안내](docs/team4/SETUP_RUNBOOK.md)에 있습니다. 생성된 PDF·견적은 **실제 기업 자료가 아닙니다**.
 
 ## 프로젝트 자료
 | 위치 | 역할 |
@@ -55,8 +56,8 @@ ruff check .
 | `docs/SUBMISSION_CHECKLIST.md` | 미션 및 필수 제출물 검증 |
 | `configs/schemas/*.json` | Python 정규화 입력·출력 계약 (Studio export 아님) |
 | `src/leadtime_guardian/engine.py` | 다수 주문/입고/견적 계산 엔진 |
-| `data/cases/SYN-C###/*.pdf` | 20케이스 x 3개의 **합성** 문서 |
-| `data/gold/extraction_gold.json` | 문서별 정답 후보; 사람 원문 대조 필요 |
+| `data/cases/SYN-C001/*.pdf`, `data/cases/SYN-C002-C020_DRAFT_PDFs.tar.xz` | 20케이스 x 3개의 **합성** 문서; 57개는 압축 보관 |
+| `qa/gold_candidates/SYN-C001/candidate.v1.json` | AI 정답 후보; 사람 원문 대조 및 승인 전 |
 
 ## 계산 모델 가정
 제품별 단위는 EA, 화폐 KRW, 기준일 현재 재고는 미예약분, 고객 납기순으로 물량 배분, 부분 입고는 각각 입고행으로 나눔, 대체 구매안은 도착 기한 내 견적만. 계산은 결정론적이나 전역 최적 구매 알고리즘은 아직 아니다. 동일 견적을 여러 고객 주문에 나눌 때 운임 중복 계산 위험이 있으므로 주문별 추정 금액으로만 사용.
@@ -71,8 +72,8 @@ ruff check .
 C001 문서와 연결 검증: [C001 integration checkpoint](docs/C001_INTEGRATION.md).
 공식 API 실행 프로그램과 사전 점검: [Agents API runner](docs/AGENTS_API_RUNNER.md).
 선택 설치는 `pip install -r requirements-agents.txt`이며, API 키는 로컬 환경변수로만 관리한다.
-`python scripts/generate_c001.py`로 3개 합성 PDF를 생성하고,
-`python scripts/analyze_studio_export.py --help`로 실제 출력 파일 연결 방법을 확인한다.
+기존 C001 PDF 3개를 그대로 사용하고,
+`python scripts/analyze_studio_export.py --help`로 보관된 출력 파일 연결 방법을 확인한다.
 정답 후보·오프라인 계산과 실제 Studio 출력은 별도로 보관한다. 현재 이 연결 코드의
 로컬 계약 테스트는 실제 Studio 실행이나 PDF 근거 검증을 의미하지 않는다.
 공식 Studio는 Parse·Classify·Extract·Instruct·Validate·Merge·Match를 안내하며, 설정 JSON은 Studio export 기능으로 내보내야 한다. 이 프로젝트가 작성한 `configs/schemas`를 설정 export 파일로 제출하면 안 된다. Upstage 문서상 **Solar Pro 3는 2026-10-30 KST 완전 지원 종료 예정**, 새 모델은 Solar Pro 4 등 지원 대상 사용.

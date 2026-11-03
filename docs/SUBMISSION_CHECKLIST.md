@@ -8,7 +8,7 @@
 - [ ] Recorded demo with real normal and conflict-blocked workflow
 - [ ] Presentation PDF with only measured performance numbers
 - [ ] Team Mission 2 and personal Mission 1 separately submitted in LMS
-- [ ] Final LMS upload by 2026-11-10 17:00 KST (confirm exact spec in LMS)
+- [ ] Internal package freeze target: 2026-11-10 17:00 KST. Official final project deadline: 2026-11-11 13:00 KST per university notice; confirm portal fields in LMS.
 - [x] Initial GitHub repository and PR #11 documentation
 - [ ] Code review + CI pass on B+C3 PR changes
 - [ ] Optional demo URL and extra GitHub code
