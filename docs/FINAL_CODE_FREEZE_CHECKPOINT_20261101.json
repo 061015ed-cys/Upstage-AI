@@ -1,0 +1,103 @@
+{
+  "project": "LeadTime Guardian",
+  "round": 10,
+  "checkpoint_date_kst": "2026-11-01",
+  "repository": "dohun3540-crypto/leadtime-guardian-agent.copy",
+  "branch": "feat/qa-tenth-final-code-freeze-20261101",
+  "draft_pr": 11,
+  "pr_url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/11",
+  "base_pr": 10,
+  "base_sha": "74f8989a494481a71116f6ca3641d1bf01a3cdbe",
+  "code_tested_head": "006805802e563c80dbbda8c466dc2e305ba3f792",
+  "code_tested_workflow": {
+    "id": 41306728237,
+    "url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/actions/runs/41306728237",
+    "conclusion": "SUCCESS",
+    "independent_qa_pass": 411,
+    "whole_python_pass": 600,
+    "qa_included_in_whole": true,
+    "qa_ruff": "PASS",
+    "whole_ruff": "PASS",
+    "archived_c001": "PASS_LOCAL",
+    "local_checks_passed": true,
+    "overall_gate": "BLOCKED"
+  },
+  "final_documentation_head": "Lookup latest PR#11 head_sha AFTER this checkpoint commit. It cannot be embedded self-referentially.",
+  "final_workflow": "Fetch GitHub Actions run for latest PR#11 head_sha; verify SUCCESS and 411 QA/600 full tests (or actual final values) and both Ruff prior to claiming 100/100",
+  "code_freeze_gate": "PASS_LOCAL_CANDIDATE conditional on final HEAD CI SUCCESS and no new CRITICAL/HIGH",
+  "github_owned_readiness": {
+    "scoring": "10 GitHub-only checks x10 points",
+    "item1_scope_audit": "PASS",
+    "item2_stage_intake": "PASS_LOCAL",
+    "item3_python_v6": "PASS_LOCAL",
+    "item4_independent_qa": "PASS_LOCAL",
+    "item5_cross_agent_provenance": "PASS_LOCAL",
+    "item6_b0_e1": "PASS_LOCAL",
+    "item7_release_inventory": "PASS_LOCAL",
+    "item8_full_regression": "PASS_AT_CODE_SHA",
+    "item9_final_head_ci": "CHECK_LATEST_PR11_SHA_AFTER_THIS_COMMIT",
+    "item10_final_docs_handoff": "COMMITTED_PENDING_FINAL_CI",
+    "result": "100/100 ONLY IF final PR#11 HEAD SUCCESS"
+  },
+  "changes": [
+    "scripts/qa_release_evidence_check.py",
+    "tests/test_qa_ninth_release_evidence.py",
+    "docs/TENTH_FINAL_GITHUB_DEVELOPMENT_REPORT_20261101.md",
+    "docs/TENTH_FINAL_REGRESSION_REPORT_20261101.md",
+    "docs/GITHUB_100_PERCENT_COMPLETION_CHECKLIST_20261101.md",
+    "docs/FINAL_STUDIO_HANDOFF_20261101.txt",
+    "docs/TENTH_FINAL_RELEASE_GATE_MATRIX_20261101.md",
+    "docs/FINAL_CODE_FREEZE_CHECKPOINT_20261101.json"
+  ],
+  "confirmed_fix": "json/markdown output alias resolved equality fail closed; existing output never overwritten; if second output fails first newly created report rolled back; three new negative regressions",
+  "original_team2_pr12_head": "e9b9992b593a42d427ff1bbadeb9a9866ca593bd",
+  "team2_original_six_modules": [
+    "engine.py",
+    "studio_adapter.py",
+    "studio_integration.py",
+    "strict_json.py",
+    "provenance.py",
+    "agents_api.py"
+  ],
+  "original_safety_status": "Never overwrite or merge source Team2 PR, QA PR#4-#10, operational main, PDFs/XLSX/Native/Gold",
+  "actual_b0": {
+    "case_id": "C001",
+    "job_id": "job_NCik8shwrgM93PDnNNYukT",
+    "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+    "config_version": 1,
+    "xlsx_original_sha256": "ad338d318f48c566dce3bf92e6b46c2cff49cd429dba90a79ea2941703ff82eb",
+    "xlsx_sharedStrings_49_refs_resolving_empty": 22,
+    "literal_49_values": 0,
+    "single_job_source": "XLSX_REPORTED_ONLY",
+    "actual_normalize_native": "NOT_PROVIDED",
+    "original_extract_3": "NOT_PROVIDED",
+    "merge": "NOT_PROVIDED",
+    "qa_actual_input": "NOT_PROVIDED",
+    "qa_actual_report": "NOT_PROVIDED",
+    "original_pdf_bytes_and_upload_receipts": "NOT_VERIFIED",
+    "team2_live_sidecar": "NOT_PROVIDED",
+    "team3_human_reviewed_gold": "NOT_PROVIDED"
+  },
+  "e1": {
+    "actual_job": "NOT_PROVIDED",
+    "quality_improvement": "NOT_MEASURED"
+  },
+  "important_commands": {
+    "release_inventory": "python scripts/qa_release_evidence_check.py --manifest /private/evidence/release_evidence.json --json-report /private/results/inventory-unique.json --markdown-report /private/results/inventory-unique.md",
+    "stage": "python scripts/qa_stage_intake_check.py --manifest /private/evidence/stage_manifest.json",
+    "combined": "See docs/NINTH_RELEASE_VALIDATION_RUNBOOK_20261101.md for original --execution-kind NEW_LIVE_STUDIO native/QA/sidecar/receipt/agent/config inputs",
+    "compare": "python scripts/qa_b0_e1_compare_check.py --b0 B0_manifest.json --e1 E1_manifest.json --b0-normalize B0_normalize_original.json --e1-normalize E1_normalize_original.json"
+  },
+  "external_gates": {
+    "studio_document": "NOT_VERIFIED",
+    "normalize_qa_input": "NOT_VERIFIED",
+    "studio_provenance": "BLOCKED",
+    "team2_live_provenance": "BLOCKED",
+    "human_gold": "BLOCKED",
+    "cross_agent_live": "BLOCKED",
+    "b0_e1_quality": "NOT_MEASURED",
+    "actual_studio_e2e": "BLOCKED",
+    "overall_release": "BLOCKED"
+  },
+  "resume_first_action": "Read current PR#11 head SHA and verify GitHub CI SUCCESS; then request existing NCik Studio original Stage and QA Input/Report, original 3 PDFs/Upload Receipts, Team2 live Sidecar, Team3 Gold. Only after real evidence, run inventory→stage→combined→cross-agent/provenance→Gold/Release. Do not auto-start paid E1."
+}

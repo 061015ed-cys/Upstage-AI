@@ -1,0 +1,22 @@
+{
+  "provenance": "local generated PDF mechanical checks, NOT Studio output",
+  "human_gold_reviewed": false,
+  "studio_documents_executed": 0,
+  "checks": {
+    "purchase_order": {
+      "all_required_tokens_present": true,
+      "one_page": true,
+      "sha256_matches": true
+    },
+    "delivery_notice": {
+      "all_required_tokens_present": true,
+      "one_page": true,
+      "sha256_matches": true
+    },
+    "quotation": {
+      "all_required_tokens_present": true,
+      "one_page": true,
+      "sha256_matches": true
+    }
+  }
+}

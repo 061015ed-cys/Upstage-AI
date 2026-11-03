@@ -1,0 +1,43 @@
+LeadTime Guardian — 11차 GitHub → Studio 최소 교차 검토 결과
+2026-11-01 KST
+GitHub QA 동결 기준: copy PR #11 HEAD 585142e718b444cbbd3e43d3c2b5e42d68637450
+병렬 QA 수정 PR: copy PR #12 HEAD a1ceaf412a9c199f37b1ac0d41fb93d7e66e3d1d (오래된 브랜치 기준)
+안전한 선별 수정 Draft PR #13: https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/13
+전체 비교표: docs/ELEVENTH_PR12_TO_PR11_COMPATIBILITY_MATRIX_20261101.md
+
+[GitHub 실제 검토 결과]
+- 기존 PR#11은 JSON Wrapper, 원본 Strict JSON, expected_case_id, Document ID 및 중복 검사, QA Report 출처, 안전성 Gate를 이미 구현했습니다.
+- PR#12의 _same_json_value() 구현을 통째로 적용하면 오래된 함수 계약으로 인해 Wrapper, case_id, 반환 구조가 손실됩니다. PR#12를 통합/Cherry-pick하지 않았습니다.
+- 기존 PR#11의 JSON 직렬화 동등 비교에 Python tuple→list와 integer dict key→string key가 같게 표시될 수 있는 비정상 Python 입력 오판을 부정 테스트로 재현했습니다.
+- PR#13에서 _is_strict_json_tree를 추가해 실제 JSON에서 허용하지 않는 tuple, 비문자열 key, 비정상 자료형을 거부합니다. 기존 원본은 수정하지 않고, 자동 변환하거나 누락 필드를 메우지 않습니다.
+- 유효한 JSON의 key 순서는 비교에 영향이 없으며 배열 순서는 유지합니다. 0/false, 1/true, 100/100.0, null/빈 문자열 등은 계속 구별합니다.
+- 타입 일치 판정은 오직 두 로컬 객체가 같은 내용인지 확인하는 것이며, 실제 Studio가 그 값들을 송수신했다는 Cloud 인증이 아닙니다.
+
+[Studio JSON 계약 변경 여부]
+- 허용 Native Schema나 Studio Config의 형식이 바뀌는 변경은 **없습니다**.
+- 현재 문서화된 NormalizeDocuments content/output.documents, IndependentQA input/normalized_documents 및 strict JSON wrapper 계약은 유지됩니다.
+- 문서 document_id/type 및 C001 case binding 필수 조건 동일.
+- 중복 JSON key, 이중 JSON 래핑 및 난독화된/형식 외 JSON은 원래와 같이 차단합니다.
+- 잘못된 Python tuple/dict int key는 원래 JSON에 존재할 수 없는 형태이므로 Studio에서 새로운 형식으로 만들어 보내지 말고, Native JSON을 있는 그대로 전달하세요.
+- 실제 Upstage Native가 보유하는 필드 타입을 이 작업만으로 확정하지 마세요.
+
+[기존 B0 원본 확인 사항 — 추가 실행 금지]
+Case C001, 운영 B0 Job job_NCik8shwrgM93PDnNNYukT, Config cfg_X2xXakDtmDTHh2RoqVysvL v1.
+현 XLSX 단일 Job/Extract 3행 기록만으로 실제 Native 3문서나 QA INPUT/REPORT의 원본 바이트가 인증되지는 않습니다.
+3종 Extract 원본, MergeDocuments, NormalizeDocuments, IndependentQA 실제 INPUT 및 REPORT의 원본 Bytes·SHA256·Job/Step/Config/Case, PDF 3개 실제 바이트 SHA와 운영/QA 업로드 영수증/File ID 회수가 최우선입니다.
+운영 Job과 QA Sandbox Job은 원래 다를 수 있습니다. 반면 서로 다른 QA INPUT/REPORT Job을 동일 QA 실행으로 묶으면 안 됩니다.
+22개의 XLSX raw OOXML 값 49는 sharedStrings 인덱스로 EMPTY_STRING이며, 실제 문자열 또는 숫자 49가 생성됐다는 근거는 없습니다. 처음 EMPTY_STRING이 관측된 Stage는 원본 확보 전까지 UNKNOWN.
+Saved B0 v1 nullable 문법이 보존된 v4 draft와 같은지 아직 미검증입니다.
+실제 E1 Job/동일 PDF 원본 SHA/Human-reviewed Gold가 없으면 B0/E1 개선 주장은 NOT_MEASURED.
+현재 실제 Studio Live E2E 및 전체 Release는 BLOCKED이며 새로운 유료 Job 실행/Config 변경/QA 재실행은 요청하지 않습니다.
+
+[담당자별 후속 인계]
+Studio: 기존 B0 보존, 실제 Step JSON 원본 회수 및 누락/접근 거부 사유 보고.
+팀원2: 원본 Python V6와 Live Job sidecar, 정확한 Native 입력 SHA 및 계산 출력 제공.
+팀원3: PDF 3개 페이지별 Field 정답, 원본 SHA·reviewer·Gold 버전 및 검토 상태를 갖춘 Human-reviewed Gold 제공.
+Team1 QA: Raw evidence→Release Inventory→Stage Intake→Python V6→QA/Cross-Agent/Provenance→Gold(별도 검수)→E1 비교(실행되었을 때만)→Release 승인.
+
+[이번 검증 결과]
+PR#11 freeze baseline CI: 600 전체 Python / 411 QA PASS.
+11차 검증 코드 SHA 2b1c17c10701b3ed06db13708d42e2d0e375683d CI #41308460878: 617 전체 Python / 428 QA PASS; Ruff 모두 PASS; archived C001 및 local integration PASS_LOCAL; overall_status BLOCKED.
+최종 문서 HEAD와 CI는 PR#13 최신 SHA 조회 후 별도 기록합니다.

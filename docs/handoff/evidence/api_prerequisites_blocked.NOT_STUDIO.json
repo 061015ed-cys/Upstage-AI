@@ -1,0 +1,28 @@
+{
+  "mode": "offline_preflight",
+  "agent_id": "agt_bXRXFSAqFmBayPjZF7VgRQ",
+  "source_pdfs": [
+    {
+      "filename": "SYN-C001_purchase_order.pdf",
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "bytes": 24899
+    },
+    {
+      "filename": "SYN-C001_delivery_notice.pdf",
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "bytes": 26421
+    },
+    {
+      "filename": "SYN-C001_quotation.pdf",
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "bytes": 29272
+    }
+  ],
+  "api_key_available": false,
+  "sdk_available": false,
+  "workflow_access_verified": false,
+  "network_requests_made": 0,
+  "studio_cases_executed": 0,
+  "status": "BLOCKED",
+  "reason": "Configure UPSTAGE_API_KEY locally and install optional SDK. Do not put credentials in chat, Git, or command arguments."
+}

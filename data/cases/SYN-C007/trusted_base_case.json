@@ -1,0 +1,36 @@
+{
+  "case_id": "SYN-C007",
+  "snapshot_date": "2026-11-01",
+  "inventory": [
+    {
+      "product_id": "A",
+      "available_stock": 40
+    }
+  ],
+  "orders": [
+    {
+      "order_id": "O1",
+      "product_id": "A",
+      "due_date": "2026-11-05",
+      "quantity": 60
+    },
+    {
+      "order_id": "O2",
+      "product_id": "A",
+      "due_date": "2026-11-09",
+      "quantity": 70
+    }
+  ],
+  "inbound": [
+    {
+      "receipt_id": "R1",
+      "po_id": "PO1",
+      "product_id": "A",
+      "original_eta": "2026-11-03",
+      "eta": "2026-11-03",
+      "quantity": 100
+    }
+  ],
+  "quotes": [],
+  "documents": []
+}

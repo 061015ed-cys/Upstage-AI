@@ -1,0 +1,53 @@
+{
+  "schema_version": "leadtime-studio-batch-observation/v1",
+  "provenance_level": "USER_REPORTED_STUDIO_AI_SUMMARY",
+  "observation_description": "User-supplied Studio AI B0-C001 execution report, not original Native/Step/QA output or independently verified provider receipt",
+  "case_id": "C001",
+  "experiment_alias": "B0",
+  "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+  "config_version": 1,
+  "batch_run_count": 3,
+  "jobs": [
+    {
+      "job_id": "job_DUdK8NzKasoTvDxGEW9XRY",
+      "filename": "SYN-C001_purchase_order.pdf",
+      "document_type": "purchase_order",
+      "execution_status": "COMPLETED",
+      "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+      "config_version": 1,
+      "extract_step_result_id": "fad87c2a-fa74-5c5a-a46a-3e2915b43b42",
+      "qa_step_result_id": "57ffc635-c8af-52ff-85c8-f93f234e3ff1"
+    },
+    {
+      "job_id": "job_5LX7RWd8SfSUADEfq5MCDL",
+      "filename": "SYN-C001_delivery_notice.pdf",
+      "document_type": "delivery_notice",
+      "execution_status": "COMPLETED",
+      "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+      "config_version": 1,
+      "extract_step_result_id": "b9a7b34b-83d4-56af-b7fa-93a45f9a3c95",
+      "qa_step_result_id": "14fe32a4-1515-50b1-a914-e4f21fae2f53"
+    },
+    {
+      "job_id": "job_9osC3yrPWtTt2oDjJuSdde",
+      "filename": "SYN-C001_quotation.pdf",
+      "document_type": "quotation",
+      "execution_status": "COMPLETED",
+      "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+      "config_version": 1,
+      "extract_step_result_id": "560ccf52-c77e-571b-86a3-c39e8a2f21f7",
+      "normalize_step_result_id": "260a3f43-7f9f-51cd-9ccf-09639bd7ca57",
+      "qa_step_result_id": "93ac6e07-9b98-569c-9360-6c81c58f04e9"
+    }
+  ],
+  "reported_batch_status": "ALL_3_COMPLETED",
+  "reported_single_case_baseline_valid": false,
+  "qa_report_body_available": false,
+  "normalized_content_available": false,
+  "selectedSplitResultMatched": false,
+  "source_pdf_sha256_available": false,
+  "source_file_upload_receipts_available": false,
+  "grouping_comparison_eligible": false,
+  "e1_execution_status": "NOT_RUN",
+  "comparison_status": "NOT_MEASURED"
+}

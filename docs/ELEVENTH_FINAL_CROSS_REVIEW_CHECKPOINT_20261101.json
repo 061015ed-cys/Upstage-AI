@@ -1,0 +1,72 @@
+{
+  "project": "LeadTime Guardian",
+  "round": 11,
+  "date": "2026-11-01",
+  "qa_repo": "dohun3540-crypto/leadtime-guardian-agent.copy",
+  "freeze_pr": 11,
+  "freeze_head": "585142e718b444cbbd3e43d3c2b5e42d68637450",
+  "parallel_pr": 12,
+  "parallel_head": "a1ceaf412a9c199f37b1ac0d41fb93d7e66e3d1d",
+  "parallel_base": "feat/qa-team2-v6-combined-20261101",
+  "git_compare": {
+    "status": "diverged",
+    "parallel_ahead": 1,
+    "parallel_behind": 134
+  },
+  "selective_pr": 13,
+  "selective_branch": "feat/qa-cross-review-pr12-integration-20261101",
+  "selective_base": "feat/qa-tenth-final-code-freeze-20261101",
+  "pre_fix_red": {
+    "sha": "f93c71316856603694da448653efad894db7537b",
+    "run_id": 41308355997,
+    "verified_failures": 4,
+    "reason": "False LOCAL_CONTENT_MATCH from tuple-vs-list and integer-key-vs-string-key JSON serialization"
+  },
+  "code_green": {
+    "sha": "2b1c17c10701b3ed06db13708d42e2d0e375683d",
+    "run_id": 41308460878,
+    "conclusion": "SUCCESS",
+    "full_python_pass": 617,
+    "qa_pass": 428,
+    "ruff_qa": "PASS",
+    "ruff_full": "PASS",
+    "archived_c001": "PASS_LOCAL",
+    "local_checks_passed": true,
+    "release": "BLOCKED"
+  },
+  "latest_head": "Read PR #13 HEAD after this checkpoint file is committed; self-referential SHA is not embedded",
+  "final_ci": "Confirm workflow run whose commit SHA exactly equals latest PR #13 HEAD; final answer must cite it",
+  "changed_source_files": [
+    "src/leadtime_guardian/qa/input_delivery.py",
+    "tests/test_qa_cross_review_pr12_types.py"
+  ],
+  "changed_docs": [
+    "docs/ELEVENTH_PR12_TO_PR11_COMPATIBILITY_MATRIX_20261101.md",
+    "docs/ELEVENTH_FINAL_REGRESSION_REPORT_20261101.md",
+    "docs/GITHUB_TO_STUDIO_CROSS_REVIEW_RESULT_20261101.txt",
+    "docs/ELEVENTH_FINAL_CROSS_REVIEW_CHECKPOINT_20261101.json"
+  ],
+  "decision": "SELECTIVE_PATCH_CONFIRMED_DEFECT_NO_WHOLE_PR12_MERGE",
+  "patch": "Add _is_strict_json_tree prevalidation before existing canonical serialization, reject tuples, non-string keys, non-finite floats, non-JSON objects; preserve wrapper, expected_case_id, document IDs, QA report and output contract",
+  "preserved_prs": [
+    "copy#11",
+    "copy#12",
+    "operational#12"
+  ],
+  "studio": {
+    "case_id": "C001",
+    "job_id": "job_NCik8shwrgM93PDnNNYukT",
+    "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+    "config_version": 1,
+    "native_raw": "NOT_PROVIDED",
+    "qa_input": "NOT_PROVIDED",
+    "qa_report": "NOT_PROVIDED",
+    "pdf_upload_receipts": "NOT_PROVIDED",
+    "team2_live_sidecar": "NOT_PROVIDED",
+    "human_gold": "NOT_PROVIDED",
+    "e1_actual": "NOT_PROVIDED",
+    "actual_studio_e2e": "BLOCKED",
+    "overall_release": "BLOCKED"
+  },
+  "next_action": "Check final PR #13 SHA/Actions; request real existing NCik Stage and QA input/report, source PDF bytes/receipts, Team2 live sidecar and Team3 reviewed Gold without new Studio Job. Only then run real E2E."
+}

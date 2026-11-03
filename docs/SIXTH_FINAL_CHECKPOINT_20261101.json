@@ -1,0 +1,96 @@
+{
+  "project": "LeadTime Guardian",
+  "round": 6,
+  "date": "2026-11-01",
+  "task": "B0 actual XLSX OOXML shared-string index49 forensic and Studio E1 support",
+  "github": {
+    "repository": "dohun3540-crypto/leadtime-guardian-agent.copy",
+    "base_pr": 6,
+    "base_sha": "c9eaaee0854b3fa3211d4bf298e57583c48d39bd",
+    "new_draft_pr": 7,
+    "new_branch": "feat/qa-sixth-xlsx-sharedstring-20261101",
+    "new_pr_url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/7",
+    "code_tested_sha": "02ab97545a0e6ae6ad23a88d37a45b180f49e1a6",
+    "code_ci_id": 41296883769,
+    "code_ci_conclusion": "SUCCESS",
+    "new_docs_final_head": "FETCH_LATEST_FOR_FINAL_CI"
+  },
+  "ci_at_code_sha": {
+    "independent_qa_tests_pass": 357,
+    "all_python_tests_pass": 546,
+    "qa_included_in_all": true,
+    "qa_ruff": "PASS",
+    "all_ruff": "PASS",
+    "archive_replay": "PASS_LOCAL",
+    "local_gate": "BLOCKED"
+  },
+  "actual_original_xlsx": {
+    "filename": "job-list-agt_HdtU-2026-11-01T09-21-32 (1)(1).xlsx",
+    "bytes": 8016,
+    "sha256": "ad338d318f48c566dce3bf92e6b46c2cff49cd429dba90a79ea2941703ff82eb",
+    "sha_matches_prior_user_claim": true,
+    "worksheet": "Job List",
+    "range": "A1:AF4",
+    "job_id": "job_NCik8shwrgM93PDnNNYukT",
+    "raw_reference_format": "OOXML t=s v=49, zero-based shared-string index",
+    "sharedStrings_index_49": "",
+    "index49_reference_count": 22,
+    "resolved_empty_string_count": 22,
+    "literal_string_49_count": 0,
+    "literal_number_49_count": 0,
+    "formula_cached_49_count": 0,
+    "rows_affected": {
+      "purchase_order": 10,
+      "delivery_notice": 9,
+      "quotation": 3
+    },
+    "confirmed_root_cause": "raw shared string index 49 incorrectly interpreted as literal cell string 49 by at least one importer",
+    "unknown_root_cause": "which Studio Stage first produced empty strings and why",
+    "original_workbook_uploaded_to_github": false,
+    "original_workbook_modified": false
+  },
+  "studio_evidence": {
+    "new_b0": "SINGLE_JOB_REPORTED_XLSX",
+    "native_three_documents": "NOT_VERIFIED",
+    "extract_raw": "NOT_PROVIDED",
+    "merge_raw": "NOT_PROVIDED",
+    "normalize_raw": "NOT_PROVIDED",
+    "independentqa_input": "NOT_PROVIDED",
+    "independentqa_report": "NOT_PROVIDED",
+    "pdf_upload_sha": "NOT_PROVIDED",
+    "human_gold": "NOT_PROVIDED",
+    "e1_actual_job": null
+  },
+  "changed_files": [
+    "scripts/qa_excel_49_audit.py",
+    "tests/test_qa_excel_sharedstring_index49.py",
+    "docs/SIXTH_B0_XLSX_FORENSIC_20261101.md",
+    "docs/STUDIO_XLSX_49_DELTA_REQUEST_SIXTH_20261101.txt",
+    "docs/SIXTH_FINAL_GATES_20261101.md",
+    "docs/SIXTH_FINAL_CHECKPOINT_20261101.json"
+  ],
+  "gates": {
+    "QA_CODE_GATE": "PASS_AT_CODE_SHA",
+    "XLSX_49_ANALYSIS_GATE": "PASS_LOCAL_OOXML",
+    "EXTRACT_SCHEMA_GATE": "FAIL_STATIC_DRAFT_CONTRACT",
+    "B0_SINGLE_JOB_GATE": "SINGLE_JOB_REPORTED_XLSX",
+    "NORMALIZE_QA_INPUT_GATE": "NOT_VERIFIED",
+    "B0_E1_COMPARISON_GATE": "BLOCKED",
+    "STUDIO_DOCUMENT_GATE": "NOT_VERIFIED",
+    "STUDIO_PROVENANCE_GATE": "BLOCKED",
+    "PYTHON_SAFETY_GATE": "PASS_LOCAL",
+    "CROSS_AGENT_GATE": "BLOCKED",
+    "HUMAN_GOLD_GATE": "BLOCKED",
+    "ACTUAL_STUDIO_E2E_GATE": "BLOCKED",
+    "OVERALL_RELEASE_GATE": "BLOCKED"
+  },
+  "next_steps": [
+    "Recheck exact PR #7 latest HEAD and GitHub CI after documentation commit.",
+    "Do not repeat past erroneous literal 49 claim; 22 shared index49 references resolve to empty string.",
+    "Studio AI export original NCik Extract+Merge+Normalize+IndependentQA actual input/report, same actual Job/Config IDs.",
+    "Compare 22 fields across each actual Studio Stage for missing vs null vs empty string, keep cause UNKNOWN absent actual raw.",
+    "Verify PDF SHA/upload receipts, saved Config schema support and Human-reviewed Gold.",
+    "Do not execute E1 without user approval; compare only if original PDF bytes and Run/Config/Step evidence match.",
+    "Never merge or force push original PRs or change Studio config, user PDF/XLSX or Gold."
+  ]
+}

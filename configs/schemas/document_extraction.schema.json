@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NormalizedDocumentExtractionV1_1",
+  "type": "object",
+  "required": [
+    "document_id",
+    "document_type",
+    "items",
+    "warnings"
+  ],
+  "properties": {
+    "document_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_type": {
+      "enum": [
+        "purchase_order",
+        "delivery_notice",
+        "quotation",
+        "other"
+      ]
+    },
+    "po_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "supplier_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "original_delivery": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "revised_delivery": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "product_id"
+        ],
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "receipt_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "quantity": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "quote": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source_field": {
+            "type": "string"
+          },
+          "source_value": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

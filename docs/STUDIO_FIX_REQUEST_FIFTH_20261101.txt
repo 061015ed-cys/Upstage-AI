@@ -1,0 +1,66 @@
+[LeadTime Guardian 팀원 1 → Studio 개발 관리 GPT | 2026-11-01 | 5차 GitHub 검증 인계]
+
+최상위 원칙: 기존 병렬 협업 구조를 유지하세요. ChatGPT GitHub에서는 실제 QA 코드 개발을 수행했고, Studio 노드/Config 수정과 원본 Export는 Studio 담당자가 소유합니다. B0 C001 단일 Job으로 보고된 job_NCik8shwrgM93PDnNNYukT를 먼저 회수하세요. 이전 B0 세 개 분리 Job을 합쳐서 단일 신규 Job처럼 제출하지 마세요. 추가 유료 실행/자동 재시도는 승인 없이 수행하지 마세요.
+
+CURRENT_GITHUB_HEAD: fifth QA Draft PR#6
+https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/6
+GitHub 코드 검증 HEAD a8b2096d665675daa3e63b5c2db7ae7acbdd3fd9
+GitHub Actions #41295389475 SUCCESS: QA 353 / 전체 Python 542 PASS, Ruff PASS; Actual Studio E2E와 최종 Release는 BLOCKED.
+
+[가장 먼저 회수할 신규 B0]
+CASE C001
+JOB job_NCik8shwrgM93PDnNNYukT
+CONFIG cfg_X2xXakDtmDTHh2RoqVysvL / reported v1
+입력: SYN-C001_purchase_order.pdf, SYN-C001_delivery_notice.pdf, SYN-C001_quotation.pdf
+상태는 SINGLE_JOB_REPORTED. 신규 Native 안에서 정확히 3개 문서가 한 Job으로 Merge/Normalize 되었는지, 실제 QA input 및 report가 있는지, 각 PDF의 원본 File ID/SHA를 아직 확인하지 않았습니다.
+
+우선 수행:
+1) 해당 기존 Job의 결과 패널 / 지원되는 Export 기능에서 Job 메타데이터, 원본 Native/NormalizeDocuments, 실제 IndependentQA Step INPUT 원본, QA Report 원본을 별도 파일로 보존하세요. UI의 다운로드 결과가 없어 단순히 캡처만 가능한 경우는 BODY_NOT_EXPORTED로 명시하세요. 똑같이 실패한 selectedSplitResultMatched:false 방식의 동일 조회를 반복하지 마세요.
+2) 원본 3개 PDF를 파일명, 바이트 SHA-256, 업로드 file_id, 문서별 Extract/Normalize document_id로 매핑하세요. ID/원본 SHA가 없으면 실제 동일 PDF 검증은 BLOCKED입니다. Saved Config와 user-supplied draft를 명확히 구분하세요.
+3) 기존 NCik Job을 다시 실행할 필요는 없습니다. E1은 비교 기준선의 완전성이 확인되기 전까지 재실행 요청하지 마세요.
+
+[ISSUE-01 EXTRACT_NULL_SCHEMA — 적용 대상: 4개 Extract 노드]
+실제 이전 보존 설정 configs/studio_native/config_v4.export.json(kind=studio.workflow-config-draft) 정적 검토:
+- po_id/supplier_id/original_delivery/revised_delivery: 설명에는 값 없으면 null이라고 하나 JSON type이 string.
+- items.receipt_id: 상위 items 설명에서 null unless printed, 내부 타입 string (중첩 타입 계약 확인 필요).
+- quote: Extract type=array, 설명에는 비견적서는 null. 최종 Normalize schema에서는 object|null이므로 2개 노드의 계약을 동일하다고 보지 마세요.
+- quote.capacity: integer이나 설명에 Null if absent; unit_price/shipping_cost와 날짜·ID 역시 개별 검증 필요.
+확인된 원인: 보존 v4 draft의 설명과 선언 타입 사이 정적 충돌.
+미확인: 신규 NCik 실제 Saved v1에도 동일한 충돌이 존재하는지, Studio Extract UI가 type=["string","null"] 또는 anyOf를 실제 지원하는지, 특정 값이 잘못 출력됐는지.
+최소 수정 지시: 현재 Saved B0 v1을 변경하지 말고 Export/Clone으로 기준선을 보존합니다. Studio 설정 편집기에서 지원하는 nullable JSON Schema 문법을 먼저 확인하고, 지원이 확인된 경우에만 별도 E1 Config 후보에서 관련 필드의 타입과 설명을 맞춥니다. 지원 불가하면 위험한 임의 기본값 0, "null", 49 등을 넣지 말고 누락/추출 불명확을 warnings와 human-review 차단으로 보존하세요. Quote Extract array→Normalize object|null의 변환은 관측된 구조를 기준으로만 수정하세요. 적용 전후 Config diff, 검증 대상 필드와 에러 메시지를 기록합니다.
+테스트값: missing, JSON null, "", 문자열 "null", 숫자 0, 문자열 "0", 음수, 날짜 "2026-02-30", 정상 ISO 날짜, quote null/[]/다중 행.
+PASS: 지원되는 실제 Schema + 원본 값/타입/누락/0 보존 + no guessed value + 안전 차단. FAIL: JSON type 불허, 누락이 정수 0이나 49로 치환, provenance/문서 ID 유실.
+
+[ISSUE-02 XLSX_49 — 대상: 기존 XLSX Export, 그 앞 Extract/Merge/Normalize]
+보고된 셀 일부: 발주서 R2,T2,Y2; 통보서 R3,Y3; 견적서 S4,T4,V4. 총 22개라는 과거 보고는 원본 현재 XLSX와 대조되어야 합니다.
+GitHub는 NUMBER_49 / STRING_49 / FORMULA_CACHED_49를 구분하고 row1 header candidate, 위쪽 header 후보, 같은 행 근처 셀을 출력하지만 공식 헤더·JSON 필드 mapping은 미확인 처리합니다.
+조치: 실제 원본 XLSX export를 손대지 않고 다운로드하여 모든 22개 문제 셀, 시트명, 원시 셀 타입, 수식/캐시값 및 주변 셀을 보존하세요. 같은 실행에서 가능한 Extract→MergeDocuments→NormalizeDocuments 원본 Stage JSON을 각각 따로 다운로드해 같은 경로의 "49" 최초 출현 단계만 근거로 기록하세요.
+PASS: 원본 byte SHA + 셀좌표/타입/Step별 동일 필드 근거. 자료 미수신이면 CAUSAL_ORIGIN=UNKNOWN. 49가 반복된다는 이유만으로 LLM 환각 또는 XLSX Export 버그라고 확정하거나 원본 수치를 일괄 null로 바꾸면 FAIL.
+
+[ISSUE-03 NORMALIZE→INDEPENDENTQA INPUT — 대상: NormalizeDocuments 다음 QA Node Input]
+현재 확정된 원인: 없음. NORMALIZED_OUTPUT_NOT_PROVIDED는 이전 QA의 모델 보고일 뿐, 실제 전달 실패의 증거가 아닙니다.
+검사기: scripts/qa_input_delivery_check.py (PR#6).
+수신할 최소 원본: Normalize 완료된 원본 Step JSON, 실제 IndependentQA Step Input JSON, IndependentQA Report JSON, 동일 Case/Job/Config/Step ID.
+기대 계약(논리 구조 예시이며 실제 Studio wrapper를 강제하는 지시가 아님): Normalize {"documents":[{"document_id":"PO-DOC","document_type":"purchase_order"}, ...]} / QA input {"normalized_documents":[same three document objects]}. Studio UI에서 content string, input wrapper, output wrapper, serialized JSON 등으로 보존하는 형태는 원본 그대로 수집해야 합니다.
+조치: QA Node 입력 화면 또는 실제 Step Input Export에서 Normalize 출력이 어떤 JSON Path로 전달되는지 확인하고, 모델 프롬프트뿐 아니라 실제 바인딩된 필드가 있는지 검사합니다. 기존 source input과 QA input의 case_id/document_id/count/value/provenance를 비교하세요. 실제 경로가 발견되면 그 한 경로만 최소 수정합니다; 원본 B0 v1을 백업하고 E1 후보에서 검증하세요.
+PASS_LOCAL: 원본 두 파일의 문서 ID/갯수/내용이 정확히 같을 때 LOCAL_CONTENT_MATCH. 이는 Studio Cloud 전달 인증이 아닙니다.
+FAIL: QA_INPUT_MALFORMED, LOCAL_CONTENT_MISMATCH, 서로 다른 Case, 이중 문자열 래핑으로 입력 미인식. QA_INPUT_NOT_OBSERVED이면 전송 실패라고 단정하지 말고 BLOCKED.
+
+[ISSUE-04 B0/E1 비교 — 대상: 실험 Job/Config/Step 증거]
+신규 B0 NCik는 단일 Job이라고 보고됐지만 Native/QA Report/PDF 원본/업로드 receipt가 아직 없습니다. E1은 비교 가능한 실제 결과 없음.
+Github 비교 사전 검증기: scripts/qa_b0_e1_compare_check.py --b0 ACTUAL_B0_EVIDENCE_MANIFEST.json --e1 ACTUAL_E1_EVIDENCE_MANIFEST.json.
+검사: 동일 Case ID, 각각 단일 Job, 원본 PDF 3개의 실제 SHA 일치, Job/Config/Step ID, Extract/Merge/Normalize/IndependentQA 원본 파일과 SHA, 동일 실행 조건 및 변경점. 원본 PDF File ID는 두 Job에서 다를 수 있지만 SHA는 같아야 합니다. QA report 상태 개선만으로 추출 정확도 개선을 확정하지 마세요. Human-reviewed Gold가 없으면 필드별 정확도 NOT_MEASURED.
+최소 수정: B0의 실제 결과·원본 SHA를 먼저 회수하고 새 실험 후보의 저장 Config diff를 정리합니다. E1을 새로 수행할 필요성이 명확해진 경우에만 사용자 승인 후 진행합니다. 실험 자체가 수행되지 않은 상태에서 완료/개선 지표를 작성하면 FAIL.
+
+[Studio→GitHub 필수 인계 JSON/파일 목록]
+- 실제 Saved Config Export, Config ID/version; 하나의 Job에 해당하는 Agent/Job/Step IDs
+- B0 원본 Native full JSON, Extract 각 분기 raw, Merge raw, Normalize raw
+- IndependentQA 실제 INPUT raw JSON, IndependentQA REPORT raw JSON
+- PDF 3개 원본 바이트 또는 SHA-256 + File upload receipt
+- 문제가 있는 원본 XLSX 전체, 22개 셀 표시 목록/시트정보
+- 실제 QA verdict와 provenance, 실패하거나 미회수된 이유
+- 새로운 E1 Config diff 및 Job/Step 증거 (존재하는 경우에 한함)
+
+[GitHub에 전달할 완료 보고 형식]
+Issue ID | 설정 노드 | 실제 현상 | 관측된 JSON Path | 확인된 원인/불확실 | 최소 수정 diff | Saved Config ID/version | 신규/기존 Job ID | Step ID | 원본 Export 및 SHA | PASS/FAIL/NOT_VERIFIED.
+어떤 파일도 만들 수 없으면 정확하게 NOT_ACCESSIBLE이라고 기록하세요. 작업 후 GitHub 재검증기는 먼저 PR#6 최신 HEAD/CI를 조회한 뒤 원본 파일로 실행합니다. 팀원2 운영 Python/팀원3 Gold, 원본 PR#11/#12, 다른 QA PR, main, 유료 실행 및 대회 제출은 수정하지 마세요.

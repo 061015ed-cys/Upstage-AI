@@ -1,0 +1,29 @@
+{
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "document-classify",
+      "schema": {
+        "type": "string",
+        "oneOf": [
+          {
+            "const": "purchase_order",
+            "description": "Buyer-issued purchase order specifying PO, product, ordered quantity and original delivery schedule. A supplier delay notice or replacement price offer is not a purchase order."
+          },
+          {
+            "const": "delivery_notice",
+            "description": "Supplier notice explicitly changing delivery against an existing PO, with original and revised schedule when visible. Classify here even if it repeats purchase order quantities."
+          },
+          {
+            "const": "quotation",
+            "description": "Supplier offer for replacement supply with price, capacity and arrival date. A quote does not confirm an executed purchase."
+          },
+          {
+            "const": "other",
+            "description": "Any document outside the three definitions, including ambiguous or unrelated documents. Never force an unsupported class."
+          }
+        ]
+      }
+    }
+  }
+}

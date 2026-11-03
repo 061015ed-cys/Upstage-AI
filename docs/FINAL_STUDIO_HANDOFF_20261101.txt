@@ -1,0 +1,60 @@
+LeadTime Guardian — GitHub QA 10차 최종 동결 후보 이후 Studio 및 팀원 2·3 원본 인계문
+2026-11-01 | GitHub QA PR #11: https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/11
+
+이 문서는 9차 Studio 인계문을 대체하는 중복 작업 지시가 아니라, 실제 Studio 원본 미확보 문제를 해결하기 위한 마지막 목록입니다.
+GitHub 쪽 Python Safety V6 / Independent QA / Cross-Agent / Stage Intake / B0-E1 비교 코드를 Studio에서 새로 작성하지 마세요.
+
+[기준 보존]
+Case C001
+B0 운영 Job job_NCik8shwrgM93PDnNNYukT
+Saved Config cfg_X2xXakDtmDTHh2RoqVysvL version 1
+입력 파일명: SYN-C001_purchase_order.pdf, SYN-C001_delivery_notice.pdf, SYN-C001_quotation.pdf
+현재 확인 자료는 하나의 Job과 Extract 3건이 표시된 XLSX이며 실제 NormalizeDocuments Native 3문서, QA Input/Report, PDF File IDs와 업로드 Receipt는 아직 검증되지 않았음.
+XLSX 원본 SHA256 ad338d318f48c566dce3bf92e6b46c2cff49cd429dba90a79ea2941703ff82eb
+22개 raw OOXML 49 값은 sharedStrings[49]→EMPTY_STRING이며 숫자/문자 49의 실제 생성은 0. 특정 Studio Step이 빈 문자열을 생성했다는 근거는 현재 UNKNOWN.
+기존 B0와 Config는 변경/삭제/재실행하지 않음. 새 유료 Studio Job 및 E1은 사용자 승인 전 실행 금지.
+
+[Studio 담당 GPT — 회수해야 할 원본]
+1. 현재 B0 Job에서 원래 생성된 Extract purchase_order/delivery_notice/quotation 각 JSON 원본 Bytes와 Job ID·Step Run ID·Saved Config ID+Version·Case ID 및 원본 SHA256.
+2. 같은 실행의 MergeDocuments 원본 Step Output raw Bytes와 식별자/SHA.
+3. NormalizeDocuments 실제 3-document Native/Output 원본 JSON Bytes와 document_id/document_type 및 식별자/SHA. 발주번호·납기·견적·수량·단가·출처 필드 임의 보정 금지.
+4. IndependentQA 실제 Step INPUT 원본 Bytes와 QA Sandbox Job/Step/Config ID+Version, QA Report 원본 Bytes, qa_status/checked_document_ids/execution_provenance 및 원본 SHA. 운영 Job과 QA Job은 원래 다를 수 있으나 한 QA 입력/보고서 pair가 서로 다른 QA Job이면 차단.
+5. 원본 PDF 3종 바이트, 실제 sha256, 운영 Studio/QA Sandbox 각각의 provider Upload Receipt, file_id, filename 및 전달 메타데이터. 같은 파일명 자체는 원본 동일성 증거가 아님.
+6. saved B0 v1 Extract nullable schema와 실제 구독 중인 Studio UI의 허용 자료형 문법. 보존된 v4 draft schema와 같다고 가정하지 마세요.
+7. E1이 실제 존재하는 경우에만 E1 Job, Config Diff, 동일 원본 PDF SHA, 모든 stage, QA 결과를 회수. 신규 실행 자동 요청 금지.
+8. 22개 EMPTY_STRING 후보 필드는 실제 Extract→Merge→Normalize→QA INPUT 필드별 값·타입·source SHA로 비교. 최소 어느 인접 Step 사이에 최초 변경이 관측됐는지 명시; 원인 단정은 금지.
+9. 일부 원본 회수가 거부/404라면 UNAVAILABLE/NOT_PROVIDED와 조회 경로·에러 메시지를 기록하고 과거 Job·합성 JSON으로 대체하지 마세요.
+
+[팀원 2 윤현준 — 요청]
+- 운영 Python V6 핵심 엔진 원본 유지.
+- 실측 NCik Native→V6 계산 입력/출력, 원본 Native Bytes SHA, run timestamp, Job/Case/Config 및 Python Provenance Sidecar를 별도 전달.
+- 공급량·Receipt·Quote 검증 결과를 Gold 없이 정답으로 선언하지 마세요.
+- source file_id/receipt 바인딩 관련 관측된 mismatch는 QA 검증기에 전달.
+- 코드 변경이 필요하다면 재현·실제 원본 증거를 먼저 제공하고 독립 QA 저장소에서 운영 코드를 덮어쓰지 마세요.
+
+[팀원 3 김민주 — 요청]
+- 원본 3개 PDF의 byte SHA, 파일/페이지별 정답 필드, 원문 페이지 근거, document_id, reviewer, review timestamp, Gold 버전과 승인 상태가 명시된 Human-reviewed Gold 제출.
+- 실제 원본이나 사람이 검토한 근거가 없으면 NOT_REVIEWED/NOT_PROVIDED 유지.
+- C001 Gold와 E1 개선 주장 사이에 PDF 버전과 원본 SHA 차이가 있는지 확인.
+
+[GitHub QA 측 검증 — 원본 수신 뒤 Team1 구도훈 수행]
+1. 비공개 /private/evidence 폴더에 원본 보존, GitHub에 실제 PDF/Native/Gold 무단 업로드하지 않음.
+2. Release Evidence Manifest leadtime-release-evidence/v1에 실제 상대 경로와 필요하면 실제 SHA를 기록. 없는 자료는 누락 그대로 둠.
+3. python scripts/qa_release_evidence_check.py --manifest /private/evidence/release_evidence.json --json-report /private/results/inventory.json --markdown-report /private/results/inventory.md
+4. python scripts/qa_stage_intake_check.py --manifest /private/evidence/stage_manifest.json
+5. 기존 Runbook: docs/NINTH_RELEASE_VALIDATION_RUNBOOK_20261101.md에 있는 --execution-kind NEW_LIVE_STUDIO와 QA Native/Report/Provenance/Upload Receipts/QA Config 인자를 포함하여 python scripts/qa_combined_e2e_check.py 실행.
+6. E1 실측 존재 및 동일 PDF/Job/Step/Config 보증 시에만 python scripts/qa_b0_e1_compare_check.py 실행.
+7. Human-reviewed Gold 실제 대조 및 최종 승인 필요. GitHub 코드 CI 통과나 QA Step COMPLETED를 Release PASS로 승격하지 않음.
+8. 10차 보고서 출력은 배타 생성/롤백 보호. 이미 존재하는 inventory.json/md는 덮어쓰지 않으며 새 결과 파일명을 사용.
+
+[Studio 최종 회신 형식]
+ORIGINAL_RAW_RECEIPTS: 목록 [{stage, file_name, original_sha256, job_id, step_run_id, case_id, config_id, config_version, provider_file_id?}]
+MISSING_OR_DENIED: [{stage, reason, access_error}]
+PDF_ORIGINALS: [{type, sha256, file_id, upload_receipt, source}]
+QA_HANDOFF: actual_qa_input_sha, actual_qa_report_sha, qa_sandbox_job_id, qa_status, checked_document_ids
+TEAM2_SIDECAR: actual source/native SHA and V6 verified execution metadata
+TEAM3_GOLD: PDF SHA, page, reviewer, status, revision
+E1: existence/job/config diff and whether same PDF bytes verified
+FINAL_STATUS: PASS / FAIL / BLOCKED / NOT_VERIFIED / NOT_MEASURED, source of each claim, release_allowed=false until evidence verified.
+
+최종 GitHub QA CODE FREEZE PASS_LOCAL_CANDIDATE는 Studio 실측 LIVE E2E 완료 또는 대회 최종 제출 승인과 다릅니다.

@@ -1,0 +1,11 @@
+{
+  "case_id": "SYN-C001",
+  "po_id": "SYN-PO-1024",
+  "product_id": "SYN-PART-A17",
+  "original_delivery": "2026-11-03",
+  "revised_delivery": "2026-11-08",
+  "customer_deadline": "2026-11-05",
+  "available_stock": 40,
+  "required_quantity": 100,
+  "incoming_quantity": 100
+}

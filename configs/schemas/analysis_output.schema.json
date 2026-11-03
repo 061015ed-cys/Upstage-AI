@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LeadTimeRiskAnalysis",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "po_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "original_delivery": {
+      "type": "string",
+      "format": "date"
+    },
+    "revised_delivery": {
+      "type": "string",
+      "format": "date"
+    },
+    "customer_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "delay_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "available_by_deadline": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "shortage_quantity": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "recommended_action": {
+      "type": "string"
+    },
+    "needs_review": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "case_id",
+    "po_id",
+    "product_id",
+    "original_delivery",
+    "revised_delivery",
+    "customer_deadline",
+    "delay_days",
+    "available_by_deadline",
+    "shortage_quantity",
+    "risk_level",
+    "recommended_action",
+    "needs_review"
+  ],
+  "additionalProperties": false
+}

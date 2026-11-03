@@ -1,0 +1,10 @@
+{
+  "status": "NEEDS_REVIEW",
+  "execution_status": "BLOCKED",
+  "needs_review": true,
+  "review_flags": [
+    "EXPORT:unsupported/ambiguous native export; inspect actual response first"
+  ],
+  "evidence_verified_against_pdf": false,
+  "external_action_taken": false
+}

@@ -1,0 +1,44 @@
+LeadTime Guardian — 7차 GitHub → Studio 개발 관리 GPT 추가 지시 (기존 5차·6차 협업 안내 대체 아님)
+
+작업 근거: 7차 QA GitHub Draft PR #8
+https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/8
+코드 회귀 증거 #41298864174: 독립 QA 380 PASS, Python 전체 569 PASS, Ruff PASS, Actual Studio E2E / Release BLOCKED.
+
+[기존 B0 그대로 보존]
+CASE_ID C001
+STUDIO_JOB job_NCik8shwrgM93PDnNNYukT
+CONFIG cfg_X2xXakDtmDTHh2RoqVysvL, version 1
+PDF: SYN-C001_purchase_order.pdf, SYN-C001_delivery_notice.pdf, SYN-C001_quotation.pdf
+확보된 실제 원본: 6차 B0 Job List XLSX SHA ad338d318f48c566dce3bf92e6b46c2cff49cd429dba90a79ea2941703ff82eb.
+관측: 동일 Job ID로 3개의 Extract 행이 XLSX에 나타남. Native Normalize 내부의 3개 문서와 QA verdict는 아직 NOT_VERIFIED.
+중요 정정: 22개의 '49'는 실제 데이터가 아니라 sharedStrings[49]를 참조하는 빈 문자열 셀 22개. literal 49 값은 0개.
+
+[7차 새 기능과 Studio 측 최소 인계]
+GitHub 스크립트 scripts/qa_stage_intake_check.py --manifest <MANIFEST_PATH> 를 구현했습니다.
+실제 Studio가 기존 Job의 원본만 보존해 전달해 주면 다음을 검증할 수 있습니다.
+- Extract_purchase_order, Extract_delivery_notice, Extract_quotation 3개 분기의 **개별 원본 JSON** 및 각 SHA256, Job ID, Step Run ID, Config ID/Version, Case ID.
+- MergeDocuments 실제 원본 JSON 및 같은 실행 식별자/SHA.
+- NormalizeDocuments 실제 원본 JSON 및 같은 실행 식별자/SHA.
+- IndependentQA 실제 Step Input 원본 JSON(모델 메시지나 프롬프트 내용 자체가 아니라 실행 입력 원본), 원본 Report JSON, QA Job ID 및 Step ID, SHA.
+- 3개 PDF 원본 바이트·SHA 및 운영/QA 업로드 receipt (file_id, filename, job); Team2 sidecar 및 Human Gold는 다른 팀 담당.
+- 원본을 받을 수 없으면 정확히 NOT_PROVIDED, 미회수 이유, 화면/로그 관측값만 남기세요.
+
+검증 조건:
+1. Extract/Merge/Normalize 운영 Job ID는 같아야 합니다. QA Sandbox Job ID는 서로 달라도 됩니다. 그것만으로 충돌 처리하지 않습니다.
+2. Strict UTF-8 JSON, 중복 Key 차단, 원본 raw byte SHA와 실행 Case/Job/Config/Step IDs가 맞아야 합니다.
+3. 3개 문서 document_id 중복 없이 purchase_order/delivery_notice/quotation 1개씩 있어야 합니다.
+4. 원본 Stage가 비어 있으면 NOT_PROVIDED/BLOCKED. 다르거나 손상되면 FAIL. 로컬 일치만으로 실제 Studio 모델 전달 인증 금지.
+5. XLSX 22개 셀의 빈 문자열을 supplier_id / revised_delivery / quote.* / original_delivery / items.receipt_id 실제 JSON 단계별 missing, null, empty, "null", 0, "0", 값과 비교하세요. 최초 인접 관측 변화만 기록하고 근본 원인은 추측하지 마세요.
+6. 7차 통합 실행 옵션: scripts/qa_combined_e2e_check.py 의 기존 필수 인자 뒤에 --stage-intake-manifest <MANIFEST_PATH> 를 추가하면 Normalize 문서 내용과 운영 Native 실제 문서 값이 다를 때 FAIL 합니다. 이 옵션은 기존 V6/QA 코드의 안전 정책을 완화하지 않습니다.
+7. 현재 저장된 v4 Draft Extract null-vs-type 충돌과 실제 Saved B0 v1의 지원 타입을 혼동하지 마세요. 원본 설정을 보존하고 Studio 편집기가 허용하는 문법만 별도 E1 후보에서 시험하세요. 새 유료 Job 실행은 사용자 승인 전 하지 않습니다.
+8. E1에서 값이 변하면 GitHub scripts/qa_b0_e1_compare_check.py --b0 ... --e1 ... --b0-normalize ... --e1-normalize ... 를 이용할 수 있습니다. 동일 Case, 동일 원본 PDF의 실제 SHA, 각각 단일 Job/Config/Step 원본과 변경점 Diff를 확보한 뒤 비교합니다. 단순 "null→빈 문자열"은 CHANGED_UNVERIFIED이지 품질 개선이 아닙니다. Human-reviewed Gold 없는 추출 정확도는 NOT_MEASURED입니다.
+
+[Studio에서 신규 결과를 반환할 형식]
+- INPUT_EVIDENCE: actual raw Extract3/Merge/Normalize/QA Input/QA Report 파일별 원본 SHA/Step/Job/Config/Case/문서 ID, 현재 원본 수신 가능/불가능
+- FIELD_TRACE_EVIDENCE: 22개 XLSX 필드별 원본 각 단계 JSON Path/값/타입, 빈 문자열 최초 확인 Step와 원인 미확인 항목
+- NULL_SCHEMA_EVIDENCE: Saved B0 v1 타입/description·nullable 지원 여부, 실제 변경 전후 diff(변경한 경우에만)
+- B0_E1_READINESS: E1 실제 Run 유무, 원본 PDF SHA 비교, Python Safety와 QA Native 진단 상태, Gold 유무
+- STUDIO_CHANGE_REQUEST: 실제로 발견된 한 노드 문제만 최소 수정, 적용 전후 설정 백업, PASS/FAIL 회귀 기준
+- Do not invent a Raw Native Export, PDF hash, Studio step execution or quality score.
+
+실제 B0 기존 Job을 재실행하지 말고 현재 있는 출력과 설정의 원본 회수를 우선하세요. GitHub에 대한 결과 전달만으로도 다음 독립 통합 검증을 시작할 수 있습니다.

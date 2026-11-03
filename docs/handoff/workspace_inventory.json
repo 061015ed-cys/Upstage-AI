@@ -1,0 +1,2243 @@
+{
+  "snapshot_date_kst": "2026-10-30",
+  "scope": "workspace before handoff upload",
+  "development_commit": "19df3a6468074f9e2938c416812b2a59ba2df58f",
+  "file_count": 355,
+  "files": [
+    {
+      "path": "outputs/C001/AGENTS_API_RUNNER.md",
+      "bytes": 4537,
+      "sha256": "a9d1978e66bf83cfa49e7562bd1ebd6326ab2f7a9921fcba6007fbad08389c8c",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/AGENTS_API_RUNNER.md"
+    },
+    {
+      "path": "outputs/C001/api_preflight.NOT_STUDIO.json",
+      "bytes": 777,
+      "sha256": "5b89088e892b43bf03a0c447e9ceec477a455da873dfc73558e529075dd6c779",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/api_preflight.NOT_STUDIO.json"
+    },
+    {
+      "path": "outputs/C001/api_prerequisites_blocked.NOT_STUDIO.json",
+      "bytes": 936,
+      "sha256": "30e8a1a4a73d3fe343c3c6bf1cd8fded6be34bd8240199fc0ddeadff35c91f6d",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/api_prerequisites_blocked.NOT_STUDIO.json"
+    },
+    {
+      "path": "outputs/C001/delivery_notice_preview.png",
+      "bytes": 58338,
+      "sha256": "2cc34f320a95ef45b3df2463d0cac9a5b6a4565d987ffc0248294eef5eb3b005",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/delivery_notice_preview.png"
+    },
+    {
+      "path": "outputs/C001/expected_calculation.json",
+      "bytes": 246,
+      "sha256": "1d505c23a4c46b072e895976e1b5785720bb935732739759218c443781b8ca0b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/expected_calculation.json"
+    },
+    {
+      "path": "outputs/C001/extraction_gold.DRAFT.json",
+      "bytes": 1703,
+      "sha256": "14fba28aa9336cc25756ffc0eee775f0c4e2c17cb8e672ab9a28e96e9415de01",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/extraction_gold.DRAFT.json"
+    },
+    {
+      "path": "outputs/C001/integration_status.md",
+      "bytes": 5511,
+      "sha256": "6e9784b6472474e48725070bd04f8804ca50186ad1fa37db499b1d441c37c820",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/C001_INTEGRATION.md"
+    },
+    {
+      "path": "outputs/C001/local_calculation.NOT_STUDIO.json",
+      "bytes": 1428,
+      "sha256": "1cc38e46a6b6c4cd8efa92d22d9ef3bbf4e83c955ce94e33d9cd01ef74c2f237",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/local_calculation.NOT_STUDIO.json"
+    },
+    {
+      "path": "outputs/C001/manifest.json",
+      "bytes": 911,
+      "sha256": "73c3d62111d7a3c74f32923dd50baa9c65776281af90aa75240cd52afa8fd4de",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/manifest.json"
+    },
+    {
+      "path": "outputs/C001/pdf_asset_checks.NOT_STUDIO.json",
+      "bytes": 562,
+      "sha256": "b6da8183d1a727810e9088a9d73067e17383bc785466bc056f9189d4fd680b4c",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/pdf_asset_checks.NOT_STUDIO.json"
+    },
+    {
+      "path": "outputs/C001/purchase_order_preview.png",
+      "bytes": 50154,
+      "sha256": "0f1d8820c74235ea037ffa2ba5e4a51d766ca2c0287fd15a8ea239930152adc9",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/purchase_order_preview.png"
+    },
+    {
+      "path": "outputs/C001/quotation_preview.png",
+      "bytes": 73480,
+      "sha256": "87c245f0cde4111edd07e05b9c6b8df986f2eae5b1237d5e3c9dd9393fd0a0d2",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/quotation_preview.png"
+    },
+    {
+      "path": "outputs/C001/studio_prompt_spec.DESIGN_ONLY.json",
+      "bytes": 4378,
+      "sha256": "c68f803a836d79f64554b1c96777ddea7bb1de080daefb9672d61403a79c9f74",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "configs/studio_prompt_spec.v1.json"
+    },
+    {
+      "path": "outputs/C001/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "outputs/C001/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "outputs/C001/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "outputs/C001/trusted_base_case.json",
+      "bytes": 537,
+      "sha256": "f19495eac9e6c20e219ae869095007acf88255e1b325ec9d3d82c64aa5a271fe",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/trusted_base_case.json"
+    },
+    {
+      "path": "outputs/C001_실행준비_패키지.zip",
+      "bytes": 405861,
+      "sha256": "4039de9578000532988df116c98de1d26e440de4fa8766afeb7921065cf769ba",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "outputs/source/leadtime-guardian-c001-source.zip",
+      "bytes": 133302,
+      "sha256": "31b462f505a70a0c4b82825d504aa39fb359243ec0df6b3424886f099dbe9a52",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "outputs/studio-home-session.png",
+      "bytes": 55055,
+      "sha256": "12724e5f90561f77e4bd720327daa0476267df0d04071a45c0cb0cd8dbf403d5",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/studio-home-session.png"
+    },
+    {
+      "path": "outputs/studio-workflow-404-latest.png",
+      "bytes": 27830,
+      "sha256": "ea63317559de7f84b5db540a300939b5420d4a2c646e360bbfdf17ec72ea7549",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/studio-workflow-404.png"
+    },
+    {
+      "path": "outputs/studio-workflow-404.png",
+      "bytes": 27830,
+      "sha256": "ea63317559de7f84b5db540a300939b5420d4a2c646e360bbfdf17ec72ea7549",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/studio-workflow-404.png"
+    },
+    {
+      "path": "outputs/Studio_재접속_상태.md",
+      "bytes": 3747,
+      "sha256": "5eb7ad215f4ad459145ae736dc6959c9a71f40f6f92dc18791bbf2fbeb8a644c",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/browser_access_history.ko.md"
+    },
+    {
+      "path": "outputs/verification_summary.json",
+      "bytes": 1894,
+      "sha256": "ba6ffa0a252d3f63b4ae0419208771dd8fa700d9811a43ecee39c39638550b9f",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/verification_before_handoff.json"
+    },
+    {
+      "path": "outputs/작업결과_20261030.md",
+      "bytes": 8514,
+      "sha256": "2a92cfccd898dedaea46f68e4096c84ca614926b79f6f9239677678ee79da608",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/development_report.ko.md"
+    },
+    {
+      "path": "work/c001-notice-1.png",
+      "bytes": 58338,
+      "sha256": "2cc34f320a95ef45b3df2463d0cac9a5b6a4565d987ffc0248294eef5eb3b005",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/delivery_notice_preview.png"
+    },
+    {
+      "path": "work/c001-po-1.png",
+      "bytes": 50154,
+      "sha256": "0f1d8820c74235ea037ffa2ba5e4a51d766ca2c0287fd15a8ea239930152adc9",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/purchase_order_preview.png"
+    },
+    {
+      "path": "work/c001-quote-1.png",
+      "bytes": 73480,
+      "sha256": "87c245f0cde4111edd07e05b9c6b8df986f2eae5b1237d5e3c9dd9393fd0a0d2",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/quotation_preview.png"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/.editorconfig",
+      "bytes": 159,
+      "sha256": "fa3adec9bb36ec960f4a20734aa0fe67b9fe026305527d815bdfbdb98636675e",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/.env.example",
+      "bytes": 161,
+      "sha256": "59137c4abf3dc8f5203b98b4285e16cf42ee0fb00dd7324edfc557ffc92a6f36",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/.github/ISSUE_TEMPLATE/feature_request.md",
+      "bytes": 159,
+      "sha256": "ad074e135413401356b83e92aca1a3acf857c85247bfa22965625d7c7f854b3d",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/.github/pull_request_template.md",
+      "bytes": 124,
+      "sha256": "197a8839693e60b6434fac52087728e883a9c41d1fb2ff8958efa0e437a8e78c",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/.github/workflows/ci.yml",
+      "bytes": 377,
+      "sha256": "d26e3bb3ac6f95099773d6c68879614f988fdf81726d209cbeb8f9f4816d39da",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/.gitignore",
+      "bytes": 230,
+      "sha256": "e7c912ae422f66f39933d8a16cd3a2001e9f5ac319ad759ec53b2d89d114e830",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/configs/schemas/analysis_output.schema.json",
+      "bytes": 1366,
+      "sha256": "ddd060103ebded4ddbaed2ec3f51e6d3dfa3eac396ae8c4c4506be3b1a2a26d0",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/configs/schemas/document_extraction.schema.json",
+      "bytes": 2357,
+      "sha256": "209b485732672e1ae0c26ab16aebf8658c87cf4a3f570aa1c2423134f6c8a8e3",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/configs/studio_prompt_spec.v1.json",
+      "bytes": 4378,
+      "sha256": "c68f803a836d79f64554b1c96777ddea7bb1de080daefb9672d61403a79c9f74",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/expected_calculation.json",
+      "bytes": 246,
+      "sha256": "1d505c23a4c46b072e895976e1b5785720bb935732739759218c443781b8ca0b",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/extraction_gold.DRAFT.json",
+      "bytes": 1703,
+      "sha256": "14fba28aa9336cc25756ffc0eee775f0c4e2c17cb8e672ab9a28e96e9415de01",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/local_calculation.NOT_STUDIO.json",
+      "bytes": 1428,
+      "sha256": "1cc38e46a6b6c4cd8efa92d22d9ef3bbf4e83c955ce94e33d9cd01ef74c2f237",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/manifest.json",
+      "bytes": 911,
+      "sha256": "73c3d62111d7a3c74f32923dd50baa9c65776281af90aa75240cd52afa8fd4de",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/pdf_asset_checks.NOT_STUDIO.json",
+      "bytes": 562,
+      "sha256": "b6da8183d1a727810e9088a9d73067e17383bc785466bc056f9189d4fd680b4c",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/cases/SYN-C001/trusted_base_case.json",
+      "bytes": 537,
+      "sha256": "f19495eac9e6c20e219ae869095007acf88255e1b325ec9d3d82c64aa5a271fe",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/sample/demo_case.json",
+      "bytes": 288,
+      "sha256": "75551fe74cdb004cedefb59fda67fc536437cb3e038102c2219c08be89aa3ed0",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/data/sample/portfolio_case.json",
+      "bytes": 1289,
+      "sha256": "f40e46f47bd10ce5bf8cb64a989840e480b17a50e76714f902922efb3229f0d5",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/AGENT_WORKFLOW.md",
+      "bytes": 2359,
+      "sha256": "3578c43df60ecf5e75f913f063d5c568265ad0a79894e9432abeadf61aa43c46",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/AGENTS_API_RUNNER.md",
+      "bytes": 4537,
+      "sha256": "a9d1978e66bf83cfa49e7562bd1ebd6326ab2f7a9921fcba6007fbad08389c8c",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/ARCHITECTURE.md",
+      "bytes": 2511,
+      "sha256": "85dd6718d0771055f5c4b8e43bb8bba3ee7be1475ef5bb202d030950f9093b3e",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/C001_INTEGRATION.md",
+      "bytes": 5511,
+      "sha256": "6e9784b6472474e48725070bd04f8804ca50186ad1fa37db499b1d441c37c820",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/DATA_GUIDE.md",
+      "bytes": 1376,
+      "sha256": "c2eff0020e7fa5f6895d29d78fa6ee4a240c126368229cfbc3ca91daf9908bcf",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/DATA_SPECIFICATION.md",
+      "bytes": 2022,
+      "sha256": "3274a8f57ac937b91ba2b013848d0780813e2760a40c64cc8346407385c49906",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/api_preflight.NOT_STUDIO.json",
+      "bytes": 777,
+      "sha256": "5b89088e892b43bf03a0c447e9ceec477a455da873dfc73558e529075dd6c779",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/api_prerequisites_blocked.NOT_STUDIO.json",
+      "bytes": 936,
+      "sha256": "30e8a1a4a73d3fe343c3c6bf1cd8fded6be34bd8240199fc0ddeadff35c91f6d",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/browser_access_history.ko.md",
+      "bytes": 3747,
+      "sha256": "5eb7ad215f4ad459145ae736dc6959c9a71f40f6f92dc18791bbf2fbeb8a644c",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/delivery_notice_preview.png",
+      "bytes": 58338,
+      "sha256": "2cc34f320a95ef45b3df2463d0cac9a5b6a4565d987ffc0248294eef5eb3b005",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/development_report.ko.md",
+      "bytes": 8514,
+      "sha256": "2a92cfccd898dedaea46f68e4096c84ca614926b79f6f9239677678ee79da608",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/pdf-text/SYN-C001_delivery_notice.txt",
+      "bytes": 621,
+      "sha256": "7b074b26ff003e5f869733dadb4bf4a4e70a971b2cc9f5ca7f40bc51d3b5e81a",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/pdf-text/SYN-C001_purchase_order.txt",
+      "bytes": 522,
+      "sha256": "e5f6c280faf53e132f336195c466b1fd865c7e9650ad2fcf06a197d3d2a1ab36",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/pdf-text/SYN-C001_quotation.txt",
+      "bytes": 747,
+      "sha256": "55638112775eeca3aa4eaa508b04a0ba9eb17ca782895dcbd7b69035a3a3e3fa",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/purchase_order_preview.png",
+      "bytes": 50154,
+      "sha256": "0f1d8820c74235ea037ffa2ba5e4a51d766ca2c0287fd15a8ea239930152adc9",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/quotation_preview.png",
+      "bytes": 73480,
+      "sha256": "87c245f0cde4111edd07e05b9c6b8df986f2eae5b1237d5e3c9dd9393fd0a0d2",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/studio-home-session.png",
+      "bytes": 55055,
+      "sha256": "12724e5f90561f77e4bd720327daa0476267df0d04071a45c0cb0cd8dbf403d5",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/studio-workflow-404.png",
+      "bytes": 27830,
+      "sha256": "ea63317559de7f84b5db540a300939b5420d4a2c646e360bbfdf17ec72ea7549",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/evidence/verification_before_handoff.json",
+      "bytes": 1894,
+      "sha256": "ba6ffa0a252d3f63b4ae0419208771dd8fa700d9811a43ecee39c39638550b9f",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/pytest-local.txt",
+      "bytes": 101,
+      "sha256": "0211fd5f12fc6ef3f0a6c638e7548a32622dcb8c0ea92f3963b9b01454eac082",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/ruff-local.txt",
+      "bytes": 20,
+      "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/handoff/validation-local.json",
+      "bytes": 972,
+      "sha256": "7fdf1f93484c714923c3d8cf19f2be1b26ad3849cb0abcdd8d304e595f138c6c",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/IMPLEMENTATION_STATUS.md",
+      "bytes": 1372,
+      "sha256": "b37e1d650d925efedfe0346ced26413342fe51ca2c4c3d70d780715d740cf7ab",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/PROJECT_PLAN.md",
+      "bytes": 1475,
+      "sha256": "a8b918831ab54faa0c50e6e046eab4b7de0e65462f64422c216b526b72d16539",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/PROJECT_PROPOSAL.md",
+      "bytes": 2198,
+      "sha256": "82fe577ae0050255d65a609753d4b7ebca8aaedea6afb5f568c9fabdd059ee02",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/REQUIREMENTS.md",
+      "bytes": 1886,
+      "sha256": "bc23d1e5b4d570f3ddb8e85f9bb7ad7933488578da11c28827b373c3abaa71e4",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/STUDIO_HANDOFF.md",
+      "bytes": 1759,
+      "sha256": "71043f47bee22e3df56baaf0637c9f35ca8e664515704364dc4c790f6b9daab1",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/STUDIO_INTEGRATION.md",
+      "bytes": 715,
+      "sha256": "5155cb85ecd0211802d5da6820a7ec63991fac21f045b2ad20aa377fb6a34fd9",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/SUBMISSION_CHECKLIST.md",
+      "bytes": 1048,
+      "sha256": "f2cbefc724048756d780d227d1fb31731c4c47b28b55f380c3bc4f4af3569afa",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/TEAM_RULES.md",
+      "bytes": 1019,
+      "sha256": "d025e703cb15b1ecd6f3055d35f1bc7f753190cc9a80ec17e395eac00d6b64cb",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/docs/WORK_HANDOFF.md",
+      "bytes": 13125,
+      "sha256": "3e8fc3b9a43e6efdd625ae30192f11f68b052dc26ecc43bd85fc461712a673c2",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/pyproject.toml",
+      "bytes": 469,
+      "sha256": "60bb23ae1810c766224b9a4142e4e09bfe6a8dbd02789ed091ef2fc97a9f776a",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/README.md",
+      "bytes": 5519,
+      "sha256": "4a8919f7171b70a80a1e27590b0ff47d0061d9f051917b667a47ff59b94f99ae",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/requirements-agents.txt",
+      "bytes": 40,
+      "sha256": "56a71684e1c9f1ea20dd63d1059df9cdfd1520aa5fe863c3c07acba5f3cccc5a",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/requirements-dev.txt",
+      "bytes": 56,
+      "sha256": "58152e35c167606228e38f505191588fce75961fce0430daffdb8797f17d0d86",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/requirements-integration.txt",
+      "bytes": 40,
+      "sha256": "e67c36f1ea40b6f379f972211e4100797facd8854fbc960a2d1486b71bf95689",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/scripts/analyze_studio_export.py",
+      "bytes": 2691,
+      "sha256": "a700f78b66ea7e89de0d39e46ff9fc0b6e0b9a7d32821d6ae4ab91c42add2ba7",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/scripts/generate_c001.py",
+      "bytes": 7919,
+      "sha256": "4ce90c82adb8c1d6575cc1bc01192df7ef9fbc7a84a1ca52971c5960670cea8a",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/scripts/run_demo.py",
+      "bytes": 431,
+      "sha256": "e41c6fec9c0a65d9fd307fe541ce07e8599ce2dc927265b4c9ac86a425aced2b",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/scripts/run_portfolio_demo.py",
+      "bytes": 439,
+      "sha256": "8295addae7d665ecd0b4efc18c90687bd05c906b4299b6d0538ca373d6fdd81e",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/scripts/run_studio_agent.py",
+      "bytes": 2862,
+      "sha256": "116ff5c3f1971d07599fd836b72225607d246336a1176a271ceebdecab495170",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/src/leadtime_guardian/__init__.py",
+      "bytes": 40,
+      "sha256": "d8d7f97bd089bafb306e331197b7ab819a9d848b73d74f3a79ddfb0bf1fbe755",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/src/leadtime_guardian/agents_api.py",
+      "bytes": 6687,
+      "sha256": "3be34a5c38b1b00745c3b460909776a0c1b93b3ae647e217ab3070a3a418db13",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/src/leadtime_guardian/analysis.py",
+      "bytes": 2404,
+      "sha256": "66c9534604ca81396f04d33c0ddc0021777a47a58e7bb5b5983e396847c5682b",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/src/leadtime_guardian/engine.py",
+      "bytes": 12275,
+      "sha256": "0409c24c8cee2fa9e87a85d9a89dde4698fd2637c0cb696ca5c913c8f101057e",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/src/leadtime_guardian/studio_adapter.py",
+      "bytes": 1927,
+      "sha256": "11b86f437252ecc32192068e1c9906ae3e1b405cc37249f2f7a7ff6ae78e4877",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/src/leadtime_guardian/studio_integration.py",
+      "bytes": 8212,
+      "sha256": "299b4b4add3453d88d4ccbce2fa1797915b352b505cd15423616deee49788f9f",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/tests/test_agents_api.py",
+      "bytes": 6149,
+      "sha256": "cfff03412267008dc3874bd2d20757ea91f1b9071ba374ea1874c6d1880df457",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/tests/test_analysis.py",
+      "bytes": 1418,
+      "sha256": "efc86daa4cb8962ac10a4dbd3667b1d2a31a65280a8631aa17735e89d947ebe0",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/tests/test_engine.py",
+      "bytes": 4848,
+      "sha256": "dfe43cef3d5555d98c47d0cd07483f8fcf01b75f10d0f54c972dce096888dd6e",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/leadtime-guardian-agent/tests/test_studio_integration.py",
+      "bytes": 6433,
+      "sha256": "a9b0bb30ee13588b447de753ab49b7ad5c48638958578966f010cb66f825627c",
+      "preservation": "git_repository"
+    },
+    {
+      "path": "work/pdf-text/SYN-C001_delivery_notice.txt",
+      "bytes": 621,
+      "sha256": "7b074b26ff003e5f869733dadb4bf4a4e70a971b2cc9f5ca7f40bc51d3b5e81a",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/pdf-text/SYN-C001_delivery_notice.txt"
+    },
+    {
+      "path": "work/pdf-text/SYN-C001_purchase_order.txt",
+      "bytes": 522,
+      "sha256": "e5f6c280faf53e132f336195c466b1fd865c7e9650ad2fcf06a197d3d2a1ab36",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/pdf-text/SYN-C001_purchase_order.txt"
+    },
+    {
+      "path": "work/pdf-text/SYN-C001_quotation.txt",
+      "bytes": 747,
+      "sha256": "55638112775eeca3aa4eaa508b04a0ba9eb17ca782895dcbd7b69035a3a3e3fa",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "docs/handoff/evidence/pdf-text/SYN-C001_quotation.txt"
+    },
+    {
+      "path": "work/prepare_handoff_inventory.py",
+      "bytes": 4375,
+      "sha256": "7feb627f16f73971c6bb91480c183f54fd29955f941509bdfc0b71e6efb515f0",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_gold_json_is_never_accept0/gold.pdf",
+      "bytes": 17,
+      "sha256": "1bf2399115d2492c18e511f4522cd9e159c1817a82145c518209084cd9d27f0b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_malformed_export_archives0/base.json",
+      "bytes": 376,
+      "sha256": "edfb60a8719f1f212da9226708f14608cb3f755cf9e6f6c48e54ddc58688a3e7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_malformed_export_archives0/invalid.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_malformed_export_archives0/run/analysis.json",
+      "bytes": 288,
+      "sha256": "4caf060e98b7db04e6c32b6a45561ec93d8a951d7ccb218001a9aaefd05ce883",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_malformed_export_archives0/run/run_metadata.json",
+      "bytes": 376,
+      "sha256": "e4d499992f7236be165183255ef8c2df7d5aa48fc3a02a90bf2692994fd620af",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_malformed_export_archives0/run/studio_original.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "b25be4cd45df0f28079b708f2988af464aca788edcffb3976586371ace33180a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/run_metadata.json",
+      "bytes": 1676,
+      "sha256": "bb759d6a742489579cd5406490de8f86770239cfd6c400cadb9b04bab6b221c4",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/studio_final.json",
+      "bytes": 70,
+      "sha256": "b25be4cd45df0f28079b708f2988af464aca788edcffb3976586371ace33180a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/job-0000.json",
+      "bytes": 73,
+      "sha256": "4f735356784a6f32c8132cfef687f4f85124a24da42e4aff46e0cda56405d19a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/run_metadata.json",
+      "bytes": 1679,
+      "sha256": "63cd6fcdacef3a0ea65bebe81656b9251cf7302e92dcb223cdf10bff4836285b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/studio_final.json",
+      "bytes": 73,
+      "sha256": "4f735356784a6f32c8132cfef687f4f85124a24da42e4aff46e0cda56405d19a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi1/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/job-0000.json",
+      "bytes": 74,
+      "sha256": "5c87a57bae72af4622218c3723eb1b899305b19dc7545668568f7b05cf8eccb5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/run_metadata.json",
+      "bytes": 1680,
+      "sha256": "41e082451796257bbfafc79fbe38b69ce7bb5110d534d25ea12a90f0eb3f5efc",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/studio_final.json",
+      "bytes": 74,
+      "sha256": "5c87a57bae72af4622218c3723eb1b899305b19dc7545668568f7b05cf8eccb5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi2/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/job-0000.json",
+      "bytes": 74,
+      "sha256": "7b637e69de41cf2de0162396e328227d66ab19f06a400639800c2b44029825b3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/run_metadata.json",
+      "bytes": 1680,
+      "sha256": "c02e6bf43ef1bc4b3d3ff82690fed810cd3f816ebcd2997cca4b06350d746ea0",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/studio_final.json",
+      "bytes": 74,
+      "sha256": "7b637e69de41cf2de0162396e328227d66ab19f06a400639800c2b44029825b3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_noncompleted_job_is_archi3/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/job-0001.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/run_metadata.json",
+      "bytes": 1678,
+      "sha256": "45c978da3865199f95da3f7af9db0856fbf3985b7bd264fbf9bde96fbd954020",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_poll_deadline_preserves_j0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/job-0001.json",
+      "bytes": 75,
+      "sha256": "8804e9088dbb2be9142882484baf515738c1c5304325e48117b79d9c036ea48b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/job-0002.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/run_metadata.json",
+      "bytes": 1495,
+      "sha256": "de821b00d2075a817cdf78ae3e6073c4ae12dcb8d4fa2b186245785e1daead5e",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/studio_all_steps.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/studio_final.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_three_source_pdfs_are_one0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/run_metadata.json",
+      "bytes": 1665,
+      "sha256": "fb036582883dec0854816d7586672d74bea43040660dc0ec29520e63d38b280f",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_unknown_submission_outcom0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_upload_failure_cannot_sub0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-a/test_upload_failure_cannot_sub0/run/run_metadata.json",
+      "bytes": 1391,
+      "sha256": "a963a65a19d4f756ac14dc1c70c345b82a5424e65c0d20a69a675a1f4cfd0145",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_gold_json_is_never_accept0/gold.pdf",
+      "bytes": 17,
+      "sha256": "1bf2399115d2492c18e511f4522cd9e159c1817a82145c518209084cd9d27f0b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_malformed_export_archives0/base.json",
+      "bytes": 376,
+      "sha256": "edfb60a8719f1f212da9226708f14608cb3f755cf9e6f6c48e54ddc58688a3e7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_malformed_export_archives0/invalid.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_malformed_export_archives0/run/analysis.json",
+      "bytes": 288,
+      "sha256": "4caf060e98b7db04e6c32b6a45561ec93d8a951d7ccb218001a9aaefd05ce883",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_malformed_export_archives0/run/run_metadata.json",
+      "bytes": 376,
+      "sha256": "e148303fa8a24f572f948c600b574b861768aaf88d19e388cb8abeca110149d5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_malformed_export_archives0/run/studio_original.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "b25be4cd45df0f28079b708f2988af464aca788edcffb3976586371ace33180a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/run_metadata.json",
+      "bytes": 1676,
+      "sha256": "2bc08fb9f7f17906e6fd33af46c10a79b92acb082bb03962fb510f9f80984d69",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/studio_final.json",
+      "bytes": 70,
+      "sha256": "b25be4cd45df0f28079b708f2988af464aca788edcffb3976586371ace33180a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/job-0000.json",
+      "bytes": 73,
+      "sha256": "4f735356784a6f32c8132cfef687f4f85124a24da42e4aff46e0cda56405d19a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/run_metadata.json",
+      "bytes": 1679,
+      "sha256": "deaf4929369aaefd9ee1fba336edadb88b47ba2366750feba9b7a06f51a7abb6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/studio_final.json",
+      "bytes": 73,
+      "sha256": "4f735356784a6f32c8132cfef687f4f85124a24da42e4aff46e0cda56405d19a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi1/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/job-0000.json",
+      "bytes": 74,
+      "sha256": "5c87a57bae72af4622218c3723eb1b899305b19dc7545668568f7b05cf8eccb5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/run_metadata.json",
+      "bytes": 1680,
+      "sha256": "bda4c0185c895e59cb2822a8cb9ec98e401709f052480f36d46dfbbe010d0d7e",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/studio_final.json",
+      "bytes": 74,
+      "sha256": "5c87a57bae72af4622218c3723eb1b899305b19dc7545668568f7b05cf8eccb5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi2/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/job-0000.json",
+      "bytes": 74,
+      "sha256": "7b637e69de41cf2de0162396e328227d66ab19f06a400639800c2b44029825b3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/run_metadata.json",
+      "bytes": 1680,
+      "sha256": "f9f73983a8c56326c4f68ef2caee0b5713eec45734c1fca91e57c9974395dce2",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/studio_final.json",
+      "bytes": 74,
+      "sha256": "7b637e69de41cf2de0162396e328227d66ab19f06a400639800c2b44029825b3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_noncompleted_job_is_archi3/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/job-0001.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/run_metadata.json",
+      "bytes": 1678,
+      "sha256": "f8bca9ae1612b94ec38e3af1a751f01bf0717453c2a269ab1a44b81e3ac601a1",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_poll_deadline_preserves_j0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/job-0001.json",
+      "bytes": 75,
+      "sha256": "8804e9088dbb2be9142882484baf515738c1c5304325e48117b79d9c036ea48b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/job-0002.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/run_metadata.json",
+      "bytes": 1495,
+      "sha256": "dbb9f82d3fbb17a4efd06ccb7e62139828a3ac339a7fe41e661b28da75522cd3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/studio_all_steps.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/studio_final.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_three_source_pdfs_are_one0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/run_metadata.json",
+      "bytes": 1665,
+      "sha256": "b0ba73a959607581a645972359ae297fe3a097391ca24abc9371dc9bbae81647",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_unknown_submission_outcom0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_upload_failure_cannot_sub0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-api-20261030-b/test_upload_failure_cannot_sub0/run/run_metadata.json",
+      "bytes": 1394,
+      "sha256": "f3ad07f01f591d80c823b510b1bd87465594adda80de71f80dd895f95c082aef",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-a/test_malformed_export_archives0/base.json",
+      "bytes": 376,
+      "sha256": "edfb60a8719f1f212da9226708f14608cb3f755cf9e6f6c48e54ddc58688a3e7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-a/test_malformed_export_archives0/invalid.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-a/test_malformed_export_archives0/run/analysis.json",
+      "bytes": 288,
+      "sha256": "4caf060e98b7db04e6c32b6a45561ec93d8a951d7ccb218001a9aaefd05ce883",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-a/test_malformed_export_archives0/run/run_metadata.json",
+      "bytes": 376,
+      "sha256": "ce2fe7fc49bb803bfa5ad737a982291dc70756f3328c2bbd58239059172028a7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-a/test_malformed_export_archives0/run/studio_original.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-b/test_malformed_export_archives0/base.json",
+      "bytes": 376,
+      "sha256": "edfb60a8719f1f212da9226708f14608cb3f755cf9e6f6c48e54ddc58688a3e7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-b/test_malformed_export_archives0/invalid.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-b/test_malformed_export_archives0/run/analysis.json",
+      "bytes": 288,
+      "sha256": "4caf060e98b7db04e6c32b6a45561ec93d8a951d7ccb218001a9aaefd05ce883",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-b/test_malformed_export_archives0/run/run_metadata.json",
+      "bytes": 376,
+      "sha256": "85d01e85ec42b0f453ebc9df27f690981d4adb9839989b1ce79a406c3094cc48",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-b/test_malformed_export_archives0/run/studio_original.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-c/test_malformed_export_archives0/base.json",
+      "bytes": 376,
+      "sha256": "edfb60a8719f1f212da9226708f14608cb3f755cf9e6f6c48e54ddc58688a3e7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-c/test_malformed_export_archives0/invalid.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-c/test_malformed_export_archives0/run/analysis.json",
+      "bytes": 288,
+      "sha256": "4caf060e98b7db04e6c32b6a45561ec93d8a951d7ccb218001a9aaefd05ce883",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-c/test_malformed_export_archives0/run/run_metadata.json",
+      "bytes": 376,
+      "sha256": "9778c1570cb231d57c0dd83bc5c3d3128ed32e91ff479aa4835887dd32c9d4de",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-c001-20261030-c/test_malformed_export_archives0/run/studio_original.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_gold_json_is_never_accept0/gold.pdf",
+      "bytes": 17,
+      "sha256": "1bf2399115d2492c18e511f4522cd9e159c1817a82145c518209084cd9d27f0b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_malformed_export_archives0/base.json",
+      "bytes": 376,
+      "sha256": "edfb60a8719f1f212da9226708f14608cb3f755cf9e6f6c48e54ddc58688a3e7",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_malformed_export_archives0/invalid.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_malformed_export_archives0/run/analysis.json",
+      "bytes": 288,
+      "sha256": "4caf060e98b7db04e6c32b6a45561ec93d8a951d7ccb218001a9aaefd05ce883",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_malformed_export_archives0/run/run_metadata.json",
+      "bytes": 376,
+      "sha256": "fb49b6be20ea364c6ffcf6d648ea51b8e896a10f7c8931de94b72f3322414742",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_malformed_export_archives0/run/studio_original.json",
+      "bytes": 10,
+      "sha256": "d94369f560e33258400e3e856e3be50fc380a5e7aa493b7f974fd3eaf36fb555",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "b25be4cd45df0f28079b708f2988af464aca788edcffb3976586371ace33180a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/run_metadata.json",
+      "bytes": 1676,
+      "sha256": "6ed6a3f3ed4ea0fe1f9e24a156022636464800b63876ebba52f7a860d18ef753",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/studio_final.json",
+      "bytes": 70,
+      "sha256": "b25be4cd45df0f28079b708f2988af464aca788edcffb3976586371ace33180a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/job-0000.json",
+      "bytes": 73,
+      "sha256": "4f735356784a6f32c8132cfef687f4f85124a24da42e4aff46e0cda56405d19a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/run_metadata.json",
+      "bytes": 1679,
+      "sha256": "75d3ea233bda9458976676b63c33281894a987af6eece82ad0a2011febad22ba",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/studio_final.json",
+      "bytes": 73,
+      "sha256": "4f735356784a6f32c8132cfef687f4f85124a24da42e4aff46e0cda56405d19a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi1/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/job-0000.json",
+      "bytes": 74,
+      "sha256": "5c87a57bae72af4622218c3723eb1b899305b19dc7545668568f7b05cf8eccb5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/run_metadata.json",
+      "bytes": 1680,
+      "sha256": "cd6fef94518e61ff0cc4d664d2672c861320c6121d5e1af559ee0360e566e916",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/studio_final.json",
+      "bytes": 74,
+      "sha256": "5c87a57bae72af4622218c3723eb1b899305b19dc7545668568f7b05cf8eccb5",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi2/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/job-0000.json",
+      "bytes": 74,
+      "sha256": "7b637e69de41cf2de0162396e328227d66ab19f06a400639800c2b44029825b3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/run_metadata.json",
+      "bytes": 1680,
+      "sha256": "d67b510c0694bb9b67fd40ca64eb61ea787e6d79377ee4ca73bd8f8292f4393a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/studio_final.json",
+      "bytes": 74,
+      "sha256": "7b637e69de41cf2de0162396e328227d66ab19f06a400639800c2b44029825b3",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_noncompleted_job_is_archi3/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/job-0001.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/run_metadata.json",
+      "bytes": 1678,
+      "sha256": "1cebaf9faf7ecc5789d42191f2e28f7ce88fcfff84d232acdf83bee01145d307",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_poll_deadline_preserves_j0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/job-0000.json",
+      "bytes": 70,
+      "sha256": "4dc56c5d41abeb3b3939f992ce19f1b9fa6b5c156323e52eb7ad4c7d39d75063",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/job-0001.json",
+      "bytes": 75,
+      "sha256": "8804e9088dbb2be9142882484baf515738c1c5304325e48117b79d9c036ea48b",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/job-0002.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/run_metadata.json",
+      "bytes": 1495,
+      "sha256": "680f91f9f5a53241bb1d4c2684610c20f29f9af9f494130c47c953439619e87d",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/studio_all_steps.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/studio_final.json",
+      "bytes": 73,
+      "sha256": "054d3ebd01dddf2b5476de96a0254eb8419b45846202dcb443a1d47c1a2b62d6",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_three_source_pdfs_are_one0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/inputs/SYN-C001_purchase_order.pdf",
+      "bytes": 24899,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/inputs/SYN-C001_quotation.pdf",
+      "bytes": 29272,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_quotation.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/job_request.json",
+      "bytes": 417,
+      "sha256": "5972de7d5c47be25990c0fbefdc3375b8cb7967a932a997251b76d9db5db7080",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/run_metadata.json",
+      "bytes": 1665,
+      "sha256": "3cd92156c703020238f28fd325116bf13efa3f658be0d4a62f69ac7d7d1485ec",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/upload-01.json",
+      "bytes": 24,
+      "sha256": "d64ec6e779233b90fcb93b4a4dc4ec4afa5ca3f6cf3f792581514d906e08731c",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/upload-02.json",
+      "bytes": 24,
+      "sha256": "c6423f0012293941a76c37673db3010fdb11ab01651694407f243b830203f797",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_unknown_submission_outcom0/run/upload-03.json",
+      "bytes": 24,
+      "sha256": "fc468bbfbbed38f65f4f6fc9dbb66d753077a682244c45b9550bddd56a03dd4a",
+      "preservation": "local_checkpoint_only"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_upload_failure_cannot_sub0/run/inputs/SYN-C001_delivery_notice.pdf",
+      "bytes": 26421,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b",
+      "preservation": "duplicate_also_preserved_in_git",
+      "repository_copy": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf"
+    },
+    {
+      "path": "work/pytest-handoff-20261030-a/test_upload_failure_cannot_sub0/run/run_metadata.json",
+      "bytes": 1394,
+      "sha256": "20097f6ed213d979ddfeba776416e098f4139d84a0ee59890ba744f7aa9c564d",
+      "preservation": "local_checkpoint_only"
+    }
+  ],
+  "excluded_metadata_cache_or_sensitive_paths": [
+    "work/leadtime-guardian-agent/.git",
+    "work/leadtime-guardian-agent/.pytest_cache",
+    "work/leadtime-guardian-agent/.ruff_cache",
+    "work/leadtime-guardian-agent/src/leadtime_guardian/__pycache__",
+    "work/leadtime-guardian-agent/tests/__pycache__"
+  ],
+  "self_reference": "This inventory and final handoff archives/receipts are excluded from self-hashing.",
+  "secret_pattern_scan_findings": 0,
+  "evidence_review": "Copied screenshots show public logged-out home or 404 only; no credentials. Blank .env.example is retained."
+}

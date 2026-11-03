@@ -1,0 +1,40 @@
+[LeadTime Guardian / Team 1 / QA Sandbox COPY / NEXT_STUDIO_AI_PROMPT / 2026-11-01]
+
+목표: 이미 진행 중인 QA Sandbox 사본 점검을 보존하고, GitHub 독립 QA 검증기에 전달할 실제 원본 Native·IndependentQA 결과·Job/Step 증거를 확보한다. 설정 초안을 실제 라이브 성공으로 표기하지 않는다.
+
+[현재 고정된 참조 정보]
+- 원본 QA Agent(읽기 전용): agt_GhP9GywhbcDWquFqWTsmtq
+- 사본 Agent: agt_HdtUJPQPXir9rGKgPWSyZG
+- 사본 Config: cfg_X2xXakDtmDTHh2RoqVysvL, version 1
+- 사본 기존 완료 Job: job_9DmRWeQsSShHgWUugkELtk
+- 보관 설정 JSON kind=studio.workflow-config-draft. 실제 Native 실행 결과 아님.
+- Python QA GitHub: leadtime-guardian-agent.copy Draft PR #3. 원본 #11/#12 및 QA #2 변경 금지.
+
+[추가 유료 실행 없는 읽기 전용 회수]
+1. 실제 사본의 Agent ID, saved Config ID, version, Draft/Published 상태, 마지막 저장 시간, 노드 그래프(Parse/Classify/Extract/Merge/NormalizeDocuments/IndependentQA)를 화면 기준으로 재확인하라.
+2. 기존 Job job_9DmRWeQsSShHgWUugkELtk의 상태, 실행시각, 당시 Config, 케이스 입력파일, Step 목록과 각 Step 결과를 조회하라. 기존 완료 기록을 NEW_LIVE_STUDIO라 부르지 말라.
+3. 아래 원본을 다운로드/Export하고 바이트 수정/정답 보정/재생성하지 말 것:
+   A. Job final Native JSON 원본
+   B. IndependentQA 원본 QA report JSON
+   C. 가능한 Parse/Classify/Extract/Merge/NormalizeDocuments/IndependentQA Step JSON
+   D. 실제 saved Native Config export (초안과 구분)
+   E. Job/Config/Step 실행 메타데이터
+4. 각 파일의 이름/원본 바이트 SHA-256/Export 시각 및 C001 PDF3 실제 file_id, PDF 원본 SHA와 산출 출처를 기록하라. 미확인 SHA는 UNKNOWN.
+5. Excel job-list-agt_HdtU-2026-11-01T06-53-15.xlsx에서 관찰된 숫자 49의 의미를 실제 Native → Step JSON → Job UI에서 조회하고 근거를 적어라. 확인 불가능하면 Excel 관찰치/원인 UNKNOWN으로 남겨라.
+6. IndependentQA 원본의 실제 키·타입을 확인: case_id, qa_status, checked_document_ids, issues, evidence_status, recommended_action, workflow_version, execution_provenance, field_checks, requires_human_review. 없는 값은 UNKNOWN. leadtime-cross-agent/v1은 Studio Native 출력과 별도인 Python handoff manifest; 자동으로 같은 스키마라고 가정하지 말 것.
+7. 동일 QA 실행의 내부/외부 provenance 모순일 경우 EXECUTION_PROVENANCE_MISMATCH severity=WARNING, requires_human_review=true, 신규 성공 증거 사용 불가. 명시적으로 전달된 별도 과거 운영 예측 Job은 정상적인 별개 출처이며 ID 차이만으로 오류 처리 금지.
+8. C013은 PO1 / PO999 불일치 시 자동 연결 금지·위험 계산값 null. 미실행이면 NOT_RUN.
+
+[반환]
+COPY_AGENT_ID, SAVED_CONFIG_ID, CONFIG_VERSION, CONFIG_KIND, NODE_GRAPH,
+JOB_ID, CASE_ID, JOB_STATUS, START_END_TIMES, STEP_NAMES_AND_IDS, EXECUTION_KIND,
+INPUT_FILES [{name,file_id,pdf_sha256,hash_origin}],
+NATIVE_FINAL_original.json + sha256, INDEPENDENT_QA_REPORT_original.json + sha256,
+STEP_EXPORTS_original + sha256, STUDIO_FIELD_MAPPING,
+EXECUTION_PROVENANCE_MISMATCH + requires_human_review,
+EXCEL_49_VERIFICATION [source,actual_raw_value,interpretation],
+DOCUMENT_QA_STATUS, PYTHON_QA_STATUS (NOT_VERIFIED unless independently executed),
+BLOCKED_REASON, ACCESS_ERROR, NEXT_ACTION.
+
+[안전]
+원본 QA/운영 Studio, 엔진·Adapter, PDF·Gold 수정 금지. 유료 신규 Job, 자동 재시도, 삭제, 외부 제출 금지. 별도 실행 승인이 있다면 사본에서 새 C001/C013을 각각 별개 Job으로 실행하고 기존 Job과 명확히 분리하라. 원본을 제공할 수 없으면 재작성하지 말고 실제 UI 오류와 필요한 접근 권한을 반환하라.

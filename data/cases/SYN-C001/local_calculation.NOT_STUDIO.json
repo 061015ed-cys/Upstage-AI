@@ -1,0 +1,55 @@
+{
+  "provenance": "offline repository sample; NOT Studio extraction",
+  "analysis": {
+    "schema_version": "1.1.0",
+    "case_id": "SYN-C001",
+    "status": "OK",
+    "execution_status": "COMPLETED",
+    "needs_review": false,
+    "review_flags": [],
+    "delays": [
+      {
+        "receipt_id": "R1",
+        "po_id": "PO1",
+        "product_id": "A",
+        "delay_days": 5
+      }
+    ],
+    "impacted_orders": [
+      {
+        "order_id": "O1",
+        "product_id": "A",
+        "due_date": "2026-11-05",
+        "required_quantity": 100,
+        "allocated_quantity": 40,
+        "shortage_quantity": 60,
+        "baseline_shortage_quantity": 0,
+        "additional_shortage_quantity": 60,
+        "shortage_change": 60
+      }
+    ],
+    "supplier_options": [
+      {
+        "order_id": "O1",
+        "quote_id": "Q1",
+        "supplier_id": "S1",
+        "product_id": "A",
+        "quantity": 60,
+        "arrival_date": "2026-11-04",
+        "unit_price": "1000.00",
+        "supplier_risk": "LOW"
+      }
+    ],
+    "uncovered_quantity": 0,
+    "baseline_shortage_quantity": 0,
+    "changed_shortage_quantity": 60,
+    "additional_shortage_quantity": 60,
+    "estimated_quote_cost_krw": "60500.00",
+    "evidence_document_ids": [
+      "PO-DOC",
+      "NOTICE-DOC"
+    ],
+    "evidence_verified_against_pdf": false,
+    "external_action_taken": false
+  }
+}

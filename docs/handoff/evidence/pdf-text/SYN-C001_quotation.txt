@@ -1,0 +1,28 @@
+LEADTIME GUARDIAN | SYNTHETIC TEST DOCUMENT
+SUPPLIER QUOTE / 대체 공급업체 견적서
+Case ID / 케이스
+SYN-C001
+Document ID / 문서 ID
+QUOTE-DOC
+Quote ID / 견적번호
+Q1
+Supplier ID / 대체 공급업체
+S1
+Related PO / 참조 발주번호
+PO1
+Arrival date / 대체 입고일
+2026-11-04
+Unit price / 단가
+1000.00 KRW / EA
+Shipping cost / 운송비
+500 KRW (once per quote)
+Currency / 통화
+KRW
+Product / 품목
+Capacity / 공급 가능 수량
+Unit / 단위
+A
+60
+EA
+Replacement offer only. No purchase has been placed. / 대체 구매 검토용 견적이며 발주가 아닙니다.
+SYNTHETIC / 합성 자료: fictional procurement test data. Inventory and customer orders are separate trusted JSON inputs.

@@ -1,0 +1,9 @@
+{
+  "run_id": "job_gPmEYKzuJdBA6BmKhVnujs",
+  "config_version": "cfg_SZi6qfyZ6XFoNszpXQK5xQ",
+  "prompt_version": "c001-studio-v4",
+  "processed_at_utc": "2026-10-30T09:44:17.311517+00:00",
+  "export_sha256": "88387f8d6aee1421c9f628304c6b91811396b32da297d41b40e3d53c3d98dfea",
+  "studio_provenance": "user-supplied export; verify against native run history",
+  "evidence_verified_against_pdf": false
+}

@@ -1,0 +1,119 @@
+{
+  "project": "LeadTime Guardian",
+  "checkpoint_scope": "4th actual Studio B0 intake, QA Cross-Agent safe E2E handoff",
+  "timestamp_context": "2026-11-01 Asia/Seoul",
+  "head_sources": {
+    "qa_integrated_pr4": "9d032d883c49df03657931ea88e97a0bd713043f",
+    "qa_pr3": "f2aeb848eed0d72893073896898fcaa7154b52a1",
+    "team2_original_pr12": "e9b9992b593a42d427ff1bbadeb9a9866ca593bd",
+    "operations_pr11": "f196c694917f2d9e5f4ec228c752bd3f2a4eb882",
+    "qa_fourth_branch": "feat/qa-studio-intake-b0-20261101",
+    "qa_fourth_pr_number": 5,
+    "qa_fourth_pr_url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/5",
+    "actual_code_tested_sha": "e5d07bb9e86ef98e20821dcbd10abf57273af7eb",
+    "actual_code_ci_run": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/actions/runs/41292849737",
+    "final_docs_commit_ci": "CHECK_LATEST_HEAD_SEPARATELY"
+  },
+  "test_result_at_code_sha": {
+    "qa_pytest_pass": 330,
+    "full_python_pytest_pass": 519,
+    "full_includes_qa_subset": true,
+    "qa_ruff": "PASS",
+    "repo_ruff": "PASS",
+    "archived_c001": "PASS_LOCAL",
+    "local_gate": "BLOCKED",
+    "actual_studio_e2e": "BLOCKED"
+  },
+  "b0_user_reported_observation": {
+    "provenance": "USER_REPORTED_STUDIO_AI_SUMMARY_NOT_RAW_UPSTAGE_JSON",
+    "case_id": "C001",
+    "experiment_alias": "B0",
+    "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+    "config_version": 1,
+    "batch_run_count": 3,
+    "jobs": [
+      {
+        "filename": "SYN-C001_purchase_order.pdf",
+        "job_id": "job_DUdK8NzKasoTvDxGEW9XRY"
+      },
+      {
+        "filename": "SYN-C001_delivery_notice.pdf",
+        "job_id": "job_5LX7RWd8SfSUADEfq5MCDL"
+      },
+      {
+        "filename": "SYN-C001_quotation.pdf",
+        "job_id": "job_9osC3yrPWtTt2oDjJuSdde"
+      }
+    ],
+    "jobs_completed": 3,
+    "jobs_failed": 0,
+    "execution_grouping": "INVALID_SPLIT_JOBS",
+    "baseline_valid": false,
+    "qa_status": "UNKNOWN",
+    "qa_raw_available": false,
+    "normalized_raw_available": false,
+    "pdf_original_sha_available": false,
+    "experiment_e1": "NOT_RUN",
+    "ab_comparison": "NOT_MEASURED"
+  },
+  "code_changes": [
+    "src/leadtime_guardian/qa/studio_batch.py",
+    "scripts/qa_studio_batch_check.py",
+    "scripts/qa_combined_e2e_check.py",
+    "tests/test_qa_studio_batch.py",
+    "tests/test_qa_combined_e2e_cli.py",
+    "data/observations/B0_C001_20261101_USER_REPORTED_STUDIO_AI.json"
+  ],
+  "reports": [
+    "docs/FOURTH_STUDIO_REAL_INTAKE_20261101.md",
+    "docs/CURRENT_RELEASE_GATES_20261101.md",
+    "docs/NEXT_STUDIO_AI_PROMPT_RAW_ADAPTER_20261101.txt",
+    "docs/TEAM2_INTERFACE_REQUEST_20261101.md",
+    "docs/TEAM3_GOLD_REQUEST_20261101.md"
+  ],
+  "safety_boundaries": {
+    "b0_three_job_merge_forbidden": true,
+    "operating_native_pdf_receipt_file_id_and_name_binding": true,
+    "team2_sidecar_native_sha_and_job_id_binding": true,
+    "local_pdf_bytes_do_not_authenticate_studio_upload": true,
+    "qa_completely_separate_from_python": false,
+    "comment": "Python QA and Studio QA have independent status fields; source data cannot be assumed authenticated merely from a local synthetic receipt",
+    "actual_studio_job_authentication": false,
+    "external_actions_taken": false,
+    "release_or_merge_authorized": false
+  },
+  "gates": {
+    "QA_CODE_GATE": "PASS_AT_CODE_SHA",
+    "TEAM2_ENGINE_GATE": "PASS_LOCAL",
+    "COMBINED_SOURCE_COMPATIBILITY_GATE": "PASS",
+    "COMBINED_CODE_CI_GATE": "PASS_AT_CODE_SHA",
+    "OFFLINE_E2E_GATE": "PASS_LOCAL",
+    "STUDIO_DOCUMENT_GATE": "NOT_VERIFIED",
+    "STUDIO_PROVENANCE_GATE": "BLOCKED",
+    "PYTHON_SAFETY_GATE": "PASS_LOCAL",
+    "CROSS_AGENT_GATE": "BLOCKED",
+    "HUMAN_GOLD_GATE": "BLOCKED",
+    "ACTUAL_STUDIO_E2E_GATE": "BLOCKED",
+    "OVERALL_RELEASE_GATE": "BLOCKED"
+  },
+  "next_resume": [
+    "Before continuing recheck PR5 head and full CI at latest SHA; do not reuse recorded code tested SHA for later commits.",
+    "Do not rerun B0/E1 through same use_agent route that splits three selected files into three Jobs.",
+    "Have Studio AI construct one C001 case containing all three PDFs and confirm one Job's Merge/Normalize/QA 3 document set.",
+    "Obtain original operational and QA Native/report/QA input and saved Config/Job/Step metadata with original byte SHA and PDF upload receipts.",
+    "Check actual Team2 Python result and studio-provenance/1 sidecar, compare original PDF byte SHA across Studio Jobs and human-reviewed Gold.",
+    "Use batch classifier first then combined E2E CLI; expect release BLOCKED until human approval."
+  ],
+  "ownership": {
+    "team1": "QA tooling and integration candidate",
+    "team2": "operating Python engine, adapter, Studio V5 and provenance",
+    "team3": "Original PDF and Human Gold",
+    "studio_ai": "actual Studio QA configuration, true single case input, Native/report export"
+  },
+  "protected": [
+    "original PR#11 and PR#12 unchanged",
+    "QA PR#3 and combined PR#4 unchanged",
+    "No merge/force push or extra paid Studio run",
+    "No PDF/Gold source modification"
+  ]
+}

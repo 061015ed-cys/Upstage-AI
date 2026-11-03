@@ -1,0 +1,22 @@
+LEADTIME GUARDIAN | SYNTHETIC TEST DOCUMENT
+DELIVERY NOTICE / 납기 변경 통보서
+Case ID / 케이스
+SYN-C001
+Document ID / 문서 ID
+NOTICE-DOC
+PO ID / 발주번호
+PO1
+Original delivery / 기존 입고일
+2026-11-03
+Revised delivery / 변경 입고일
+2026-11-08
+Product / 품목
+Receipt / 입고 건
+Affected quantity / 수량
+Unit / 단위
+A
+R1
+100
+EA
+Only the delivery date changes; the quantity remains unchanged. / 수량 변경 없이 납기만 변경합니다.
+SYNTHETIC / 합성 자료: fictional procurement test data. Inventory and customer orders are separate trusted JSON inputs.

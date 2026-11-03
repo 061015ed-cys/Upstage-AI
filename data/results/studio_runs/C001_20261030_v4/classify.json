@@ -1,0 +1,122 @@
+[
+  {
+    "type": "output_text",
+    "text": "purchase_order",
+    "additional_values": {
+      "step_run_id": "d897e677-e481-5661-8bff-b061341c9f39",
+      "occurrence_id": "d897e677-e481-5661-8bff-b061341c9f39",
+      "job_execution_id": "job_gPmEYKzuJdBA6BmKhVnujs",
+      "cache_hit": false,
+      "document_type": {
+        "_value": "purchase_order",
+        "confidence_score": 0.99,
+        "confidence": "high"
+      },
+      "page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "hierarchy": {
+        "leaf": "purchase_order",
+        "path": [
+          "purchase_order"
+        ],
+        "depth": 1
+      },
+      "source_files": [
+        {
+          "file_id": "file_Bs6tjfh4sxRzJmt4kozrnq",
+          "file_name": "SYN-C001_purchase_order.pdf",
+          "page_ranges": [
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "output_text",
+    "text": "delivery_notice",
+    "additional_values": {
+      "step_run_id": "d897e677-e481-5661-8bff-b061341c9f39",
+      "occurrence_id": "d897e677-e481-5661-8bff-b061341c9f39",
+      "job_execution_id": "job_gPmEYKzuJdBA6BmKhVnujs",
+      "cache_hit": false,
+      "document_type": {
+        "_value": "delivery_notice",
+        "confidence_score": 0.99,
+        "confidence": "high"
+      },
+      "page_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "hierarchy": {
+        "leaf": "delivery_notice",
+        "path": [
+          "delivery_notice"
+        ],
+        "depth": 1
+      },
+      "source_files": [
+        {
+          "file_id": "file_ffcfsKVGLEpgJxC5fYUfPw",
+          "file_name": "SYN-C001_delivery_notice.pdf",
+          "page_ranges": [
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "output_text",
+    "text": "quotation",
+    "additional_values": {
+      "step_run_id": "d897e677-e481-5661-8bff-b061341c9f39",
+      "occurrence_id": "d897e677-e481-5661-8bff-b061341c9f39",
+      "job_execution_id": "job_gPmEYKzuJdBA6BmKhVnujs",
+      "cache_hit": false,
+      "document_type": {
+        "_value": "quotation",
+        "confidence_score": 0.99,
+        "confidence": "high"
+      },
+      "page_ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "hierarchy": {
+        "leaf": "quotation",
+        "path": [
+          "quotation"
+        ],
+        "depth": 1
+      },
+      "source_files": [
+        {
+          "file_id": "file_67maXz23DwVzVwVeF6j7pk",
+          "file_name": "SYN-C001_quotation.pdf",
+          "page_ranges": [
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  }
+]

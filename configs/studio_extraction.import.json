@@ -1,0 +1,173 @@
+{
+  "type": "json_schema",
+  "json_schema": {
+    "name": "DocumentFacts",
+    "schema": {
+      "type": "object",
+      "required": [
+        "document_id",
+        "document_type",
+        "items",
+        "warnings"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The document's explicitly printed Document ID. Do not substitute PO ID or case ID."
+        },
+        "document_type": {
+          "type": "string",
+          "description": "One of purchase_order, delivery_notice, quotation, other, based on the document's purpose.",
+          "enum": [
+            "purchase_order",
+            "delivery_notice",
+            "quotation",
+            "other"
+          ]
+        },
+        "po_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The explicitly printed PO ID or Related PO reference. Null when absent."
+        },
+        "supplier_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Explicitly printed supplier identifier only; not a guessed company name. Null when absent."
+        },
+        "original_delivery": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "The original inbound delivery date, separate from revised or replacement quote arrival. YYYY-MM-DD or null."
+        },
+        "revised_delivery": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "The explicitly changed inbound date in a delivery notice only. YYYY-MM-DD or null."
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "product_id"
+            ],
+            "properties": {
+              "product_id": {
+                "type": "string"
+              },
+              "receipt_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "quantity": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "description": "All visible product rows. product_id, receipt_id (null unless printed), quantity, unit. For a quote, quantity is explicitly offered capacity, not PO quantity."
+        },
+        "quote": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "For quotation only: object containing quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Null for other document types. Never add these as new top-level extraction keys.",
+          "properties": {
+            "quote_id": {
+              "type": "string",
+              "description": "Explicit printed quote_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "supplier_id": {
+              "type": "string",
+              "description": "Explicit printed supplier_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "product_id": {
+              "type": "string",
+              "description": "Explicit printed product_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "capacity": {
+              "type": "integer",
+              "description": "Explicit printed capacity only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "arrival_date": {
+              "type": "string",
+              "description": "Explicit printed arrival_date only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "unit_price": {
+              "type": "string",
+              "description": "Explicit printed unit_price only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "shipping_cost": {
+              "type": "string",
+              "description": "Explicit printed shipping_cost only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            },
+            "currency": {
+              "type": "string",
+              "description": "Explicit printed currency only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+            }
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of missing, ambiguous or conflicting fact descriptions. Empty only when none are detected."
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source_page": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "source_field": {
+                "type": "string"
+              },
+              "source_value": {
+                "type": "string"
+              },
+              "confidence": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "description": "Array of source_page (1-based), source_field (field path), source_value (exact original text), confidence (null unless actually available). Do not create evidence strings that are not present in the source."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available."
+    }
+  }
+}

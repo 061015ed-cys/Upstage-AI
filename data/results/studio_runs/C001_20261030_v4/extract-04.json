@@ -1,0 +1,18 @@
+{
+  "document_id": "NOTICE-DOC",
+  "document_type": "delivery_notice",
+  "po_id": "PO1",
+  "supplier_id": "",
+  "original_delivery": "2026-11-03",
+  "revised_delivery": "2026-11-08",
+  "items": [
+    {
+      "product_id": "A",
+      "receipt_id": "R1",
+      "quantity": 100,
+      "unit": "EA"
+    }
+  ],
+  "quote": [],
+  "evidence": []
+}

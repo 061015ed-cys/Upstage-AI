@@ -1,0 +1,39 @@
+LeadTime Guardian — 8차 GitHub 검증 안정화 후 Studio 담당 GPT에 전달할 최소 추가 지시
+
+본 안내는 7차 STUDIO_SUPPORT_DELTA_SEVENTH의 변경 사항만 전달합니다. 기존 Studio 개발 지침을 재작성하거나 GitHub의 Python Safety V6/QA 코드를 다시 개발하지 마세요.
+
+[현재 B0 보존 원칙]
+- C001 Job: job_NCik8shwrgM93PDnNNYukT
+- Saved Config: cfg_X2xXakDtmDTHh2RoqVysvL v1
+- Source PDF names: SYN-C001_purchase_order.pdf, SYN-C001_delivery_notice.pdf, SYN-C001_quotation.pdf
+- 현재 확보 실측: 하나의 Job ID와 세 분기의 기록이 있는 B0 XLSX만 확인됨. 원본 Native와 PDF 바이트 업로드 식별자는 아직 없음.
+- XLSX SHA ad338d318f48c566dce3bf92e6b46c2cff49cd429dba90a79ea2941703ff82eb. 22개의 raw <v>49</v>는 공유 문자열 인덱스49를 가리키고 실제 값은 EMPTY_STRING. 실제 literal string/number 49는 각각 0개. '모델이 49를 생성했다'는 결론은 금지.
+
+[8차 GitHub의 정확한 변경점]
+1. NormalizeDocuments와 IndependentQA 실제 입력 비교는 JSON 타입을 구분합니다. Boolean false가 숫자 0으로 바뀌거나 반대로 바뀐 경우 무조건 동일 판정하지 않습니다.
+2. --stage-intake-manifest 검사에서 잘못된 원본 SHA, 운영 Job, C001 Case 또는 Normalize 문서 값 충돌이 발생하면 Python V6 계산 **전에** FAIL과 NOT_RUN으로 종료합니다. 단순 누락/미확보 Stage는 BLOCKED로 유지합니다.
+3. 동일 (Job ID, Step Run ID)가 다른 Step에서 중복되거나, 허용되지 않은 Extract 분기·Stage 타입, QA Input와 Report가 서로 다른 QA Sandbox Job에 속하면 FAIL합니다. 운영 Job과 QA Sandbox Job이 서로 다를 수 있다는 기존 원칙은 유지합니다.
+4. B0/E1 Normalize 원본 로컬 JSON을 비교할 때 파일 원본 SHA가 해당 비교 manifest의 NormalizeDocuments step_artifacts.original_sha256과 실제로 일치해야 비교합니다. 같은 파일명이나 두 PDF의 자기신고 SHA만으로 E1의 공정성/정확도를 인증하지 않습니다.
+5. Stage JSON 입력은 파일당 32 MiB, manifest 1 MiB로 제한하고 외부 폴더로 이어지는 상대 경로·심볼릭 링크 및 비정상 중첩 JSON은 실패 처리합니다. 실제 원본 JSON이 이보다 큰 경우 원본 바이트를 수정하지 말고 크기와 설명을 함께 알려주세요.
+
+[Studio에서 최소 수행할 일 — 신규 Job 자동 실행 금지]
+- B0 Config v1과 기존 NCik Job을 그대로 보존하고 현재 실행의 실제 Extract 발주서/통보서/견적서 원본 JSON 3개, MergeDocuments 원본, NormalizeDocuments 원본, IndependentQA 실제 Step INPUT와 Report 원본을 회수해 주세요.
+- 각 원본 파일에 Job ID, Step Run ID, Saved Config ID/Version, Case ID, 원본 SHA256, 3개 문서 document_id/type, PDF file_id와 filename, source upload receipt를 명시해 주세요. 실제로 확보하지 못한 Stage는 NOT_PROVIDED로 기록합니다.
+- 22개 빈 문자열 후보 필드가 Extract→Merge→Normalize→QA 입력에서 missing/null/empty 중 어디에 해당하는지 **실제 JSON 값**과 타입을 비교해 주세요. 원인 자체는 실제 연속된 Step 원본이 확인될 때까지 UNKNOWN입니다.
+- B0 v1 Extract null 설명과 type 문법의 실제 충돌 여부 및 Studio의 nullable 문법 지원은 saved configuration을 조회해서 확인하세요. 검증되지 않은 문법/자동 0·null 치환·가짜 receipt_id 삽입은 금지. Config 변경은 사본 E1 후보에서만, 변경 전후 Diff 보존 및 사용자 승인 필수.
+
+[GitHub 입력 명령 — 실제 파일이 전달된 뒤 Team1이 실행]
+python scripts/qa_stage_intake_check.py --manifest /evidence/stage_manifest.json
+python scripts/qa_combined_e2e_check.py --operational-native /evidence/op_native_original.json --trusted-base data/cases/SYN-C001/trusted_base_case.json --operational-job-id job_NCik8shwrgM93PDnNNYukT --case-id C001 --github-sha <TESTED_GITHUB_SHA> --stage-intake-manifest /evidence/stage_manifest.json
+python scripts/qa_b0_e1_compare_check.py --b0 /evidence/B0_manifest.json --e1 /evidence/E1_manifest.json --b0-normalize /evidence/B0_original.json --e1-normalize /evidence/E1_original.json
+
+[Studio 보고 형식]
+ACTUAL_SOURCE_LIST: 각 파일명, 원본 SHA, 출처, Job/Step/Config ID와 확보/미확보 상태
+MISSING_VALUE_TRACE: 22개 XLSX 필드별 Stage 원본 값과 JSON 타입, 첫 번째 관측된 변경 경계
+CONFIG_VALIDATION: B0 v1 저장 설정 및 지원 nullable 문법, 실측 설정 변경 전후 Diff(변경된 경우에만)
+QA_AND_PROVENANCE: 실제 IndependentQA Input/Report, report qa_status, checked_document_ids, PDF 원본 SHA/업로드 영수증, Team2 sidecar
+E1_READINESS: 실제 E1 Job 유무, 동일 PDF 원본 바이트 SHA, 변경 Config ID/Version, Gold 리뷰 유무
+FINAL: PASS/FAIL/BLOCKED 판단을 분리하고, 없는 원본을 추측하여 채우지 말아주세요.
+
+GitHub Draft PR #9: https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/9
+8차 코드는 전체 pytest와 QA/Ruff CI가 통과한 검증기이며 실제 Studio 원본/Gold 인증이나 최종 제출 승인은 수행하지 않았습니다.

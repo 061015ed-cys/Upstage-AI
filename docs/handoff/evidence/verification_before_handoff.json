@@ -1,0 +1,52 @@
+{
+  "as_of_kst": "2026-10-30",
+  "case_id": "SYN-C001",
+  "synthetic_pdfs_generated": 3,
+  "synthetic_pdfs_rendered_and_inspected": 3,
+  "pdf_hash_and_text_checks_passed": true,
+  "gold_human_reviewed": false,
+  "native_studio_workflow_inspected": false,
+  "native_studio_config_exported": false,
+  "studio_pdfs_uploaded": 0,
+  "studio_cases_executed": 0,
+  "actual_studio_prediction_files": 0,
+  "studio_accuracy": null,
+  "evidence_verified_against_pdf": false,
+  "local_tests": {
+    "python": "3.13.9",
+    "passed": 61,
+    "failed": 0,
+    "ruff": "passed"
+  },
+  "github_ci": {
+    "python": "3.11.17",
+    "passed": 61,
+    "failed": 0,
+    "ruff": "passed",
+    "url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent/actions/runs/41029327631",
+    "commit": "19df3a6468074f9e2938c416812b2a59ba2df58f",
+    "tree": "8beabb7bfc3bf2b0d2b87d4aa2b7070d70cb8f08",
+    "prior_attempt": "Ruff failure corrected; final run passed"
+  },
+  "offline_repository_fixture_calculation": {
+    "is_studio_result": false,
+    "baseline_shortage_quantity": 0,
+    "changed_shortage_quantity": 60,
+    "additional_shortage_quantity": 60,
+    "estimated_quote_cost_krw": "60500.00"
+  },
+  "pull_request": "https://github.com/dohun3540-crypto/leadtime-guardian-agent/pull/11",
+  "merged_to_main": false,
+  "authentication_blocker": "Supplied direct workflow URL returns Studio 404 in the connected in-app browser; account/permission vs workflow absence not determined.",
+  "external_purchase_or_email_action_taken": false,
+  "lms_submitted": false,
+  "workflow_url": "https://studio.upstage.ai/agents/agt_bXRXFSAqFmBayPjZF7VgRQ",
+  "latest_browser_response": "Studio 404",
+  "api_runner": {
+    "implemented": true,
+    "contract_tests_added": 13,
+    "live_requests_made": 0,
+    "api_key_available": false,
+    "sdk_available": false
+  }
+}

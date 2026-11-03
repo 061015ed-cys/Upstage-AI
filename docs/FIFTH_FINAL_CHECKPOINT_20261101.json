@@ -1,0 +1,115 @@
+{
+  "project": "LeadTime Guardian",
+  "turn": "5th GitHub Studio technical support",
+  "checkpoint_date": "2026-11-01 Asia/Seoul",
+  "repository": "dohun3540-crypto/leadtime-guardian-agent.copy",
+  "branch": "feat/qa-fifth-studio-ncik-validation-20261101",
+  "pr_number": 6,
+  "pr_url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/6",
+  "code_tested_sha": "a8b2096d665675daa3e63b5c2db7ae7acbdd3fd9",
+  "code_ci_run_id": 41295389475,
+  "code_ci_result": "SUCCESS",
+  "code_tests": {
+    "qa_pytest_pass": 353,
+    "whole_pytest_pass": 542,
+    "qa_is_subset_of_whole": true,
+    "qa_ruff": "PASS",
+    "whole_ruff": "PASS",
+    "archived_c001": "PASS_LOCAL",
+    "local_integration_gate": "BLOCKED"
+  },
+  "final_docs_head": "RECHECK_PR6_HEAD_AT_NEXT_SESSION",
+  "latest_docs_ci": "RECHECK_CI_AT_EXACT_FINAL_HEAD",
+  "previous_heads": {
+    "fourth_qa_pr5": "5ecf6de67e0a5313590e1316ad15700daaacd114",
+    "combined_pr4": "9d032d883c49df03657931ea88e97a0bd713043f",
+    "team2_pr12": "e9b9992b593a42d427ff1bbadeb9a9866ca593bd",
+    "original_pr11": "f196c694917f2d9e5f4ec228c752bd3f2a4eb882",
+    "wip_reused": "feat/qa-studio-github-support-ncik-20261101"
+  },
+  "new_b0": {
+    "provenance": "USER_REPORTED_STUDIO_AI_SUMMARY",
+    "case_id": "C001",
+    "job_id": "job_NCik8shwrgM93PDnNNYukT",
+    "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+    "config_version": 1,
+    "single_job": "SINGLE_JOB_REPORTED",
+    "input_pdf_filenames": [
+      "SYN-C001_purchase_order.pdf",
+      "SYN-C001_delivery_notice.pdf",
+      "SYN-C001_quotation.pdf"
+    ],
+    "actual_native_json": null,
+    "normalize_raw": null,
+    "independentqa_input": null,
+    "independentqa_report": null,
+    "original_pdf_sha256": null,
+    "pdf_upload_receipts": null,
+    "actual_studio_e2e": "BLOCKED",
+    "is_previous_three_job_invalid_b0": false
+  },
+  "issues": {
+    "null_schema": {
+      "status": "CONFIRMED_STATIC_DRAFT_CONFLICT",
+      "saved_runtime_support": "NOT_VERIFIED",
+      "module": "src/leadtime_guardian/qa/extract_null_contract.py",
+      "cli": "scripts/qa_extract_null_contract_check.py"
+    },
+    "excel_49": {
+      "status": "CAUSAL_ORIGIN_UNKNOWN",
+      "original_xlsx_available": false,
+      "reported_22_cells_not_reverified": true,
+      "cli": "scripts/qa_excel_49_audit.py"
+    },
+    "normalize_to_qa": {
+      "status": "ACTUAL_INPUT_NOT_VERIFIED",
+      "module": "src/leadtime_guardian/qa/input_delivery.py",
+      "cli": "scripts/qa_input_delivery_check.py"
+    },
+    "b0_e1": {
+      "status": "NOT_MEASURED",
+      "e1_actual_job": null,
+      "cli": "scripts/qa_b0_e1_compare_check.py",
+      "module": "src/leadtime_guardian/qa/experiment_compare.py"
+    }
+  },
+  "gates": {
+    "QA_CODE_GATE": "PASS_AT_CODE_SHA",
+    "TEAM2_ENGINE_GATE": "PASS_LOCAL",
+    "COMBINED_SOURCE_COMPATIBILITY_GATE": "PASS_PRIOR_BASELINE",
+    "COMBINED_CODE_CI_GATE": "PASS_AT_CODE_SHA",
+    "OFFLINE_E2E_GATE": "PASS_LOCAL",
+    "B0_SINGLE_JOB_GATE": "SINGLE_JOB_REPORTED",
+    "EXTRACT_SCHEMA_GATE": "FAIL_STATIC_CONTRACT",
+    "NORMALIZE_QA_INPUT_GATE": "NOT_VERIFIED",
+    "B0_E1_COMPARISON_GATE": "BLOCKED",
+    "STUDIO_DOCUMENT_GATE": "NOT_VERIFIED",
+    "STUDIO_PROVENANCE_GATE": "BLOCKED",
+    "PYTHON_SAFETY_GATE": "PASS_LOCAL",
+    "CROSS_AGENT_GATE": "BLOCKED",
+    "HUMAN_GOLD_GATE": "BLOCKED",
+    "ACTUAL_STUDIO_E2E_GATE": "BLOCKED",
+    "OVERALL_RELEASE_GATE": "BLOCKED"
+  },
+  "handoffs": {
+    "github_analysis": "docs/FIFTH_GITHUB_ANALYSIS_RESULT_20261101.md",
+    "studio_ai_prompt": "docs/STUDIO_FIX_REQUEST_FIFTH_20261101.txt",
+    "release_gates": "docs/FIFTH_RELEASE_GATES_20261101.md",
+    "this_checkpoint": "docs/FIFTH_FINAL_CHECKPOINT_20261101.json"
+  },
+  "protected": [
+    "No merge, force push, deletion of other branches",
+    "No edits to PR#4/#5 or original PR#11/#12",
+    "No edits to saved Studio configurations or PDFs/Gold",
+    "No paid Studio execution, purchase, submission or release"
+  ],
+  "next_steps": [
+    "Re-fetch latest PR#6 HEAD and CI before any follow-up work",
+    "Studio owner exports NCik raw Native/Normalize/QA Input/Report and 3 original PDFs receipts including SHA",
+    "Re-run qa_studio_batch_check.py then qa_combined_e2e_check.py with same-run original raw files",
+    "Request actual XLSX and Extract/Merge/Normalize outputs to locate first occurrence of 49",
+    "Confirm actual saved v1 schema nullable support before E1 changes",
+    "Only compare B0/E1 with same PDF SHA, live Config/Step and Human Gold accuracy evidence",
+    "Keep release BLOCKED until independent live proof, Team2 Python provenance, Human Gold and approval"
+  ]
+}

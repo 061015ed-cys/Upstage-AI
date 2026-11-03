@@ -1,0 +1,90 @@
+{
+  "project": "LeadTime Guardian",
+  "checkpoint_date": "2026-11-01 Asia/Seoul",
+  "owner": "Team 1 / Gu Dohun",
+  "source_provenance": {
+    "operational_repo": "dohun3540-crypto/leadtime-guardian-agent",
+    "pr11_sha": "f196c694917f2d9e5f4ec228c752bd3f2a4eb882",
+    "team2_pr12_sha": "e9b9992b593a42d427ff1bbadeb9a9866ca593bd",
+    "qa_repo": "dohun3540-crypto/leadtime-guardian-agent.copy",
+    "qa_pr3_sha": "f2aeb848eed0d72893073896898fcaa7154b52a1",
+    "combined_branch": "feat/qa-team2-v6-combined-20261101",
+    "combined_draft_pr": 4,
+    "team2_six_source_blobs_identical": true,
+    "combined_ci_tested_sha": "bdcdac48a39a73ee72f19936818648eae1813c90",
+    "combined_ci_run_id": 41291094905
+  },
+  "combined_tests": {
+    "independent_qa_passed": 315,
+    "full_python_passed": 504,
+    "ruff_qa": "PASS",
+    "ruff_repo": "PASS",
+    "archived_c001": "PASS",
+    "local_integration_code": "PASS",
+    "local_gate_overall": "BLOCKED",
+    "is_actual_studio_integration": false,
+    "combined_candidate_in_qa_copy": true,
+    "combined_candidate_in_operating_repo": false
+  },
+  "paths": {
+    "combined_source_diff": "docs/TEAM2_QA_SOURCE_DIFF_REPORT_20261101.md",
+    "combined_compatibility": "docs/COMBINED_CODE_COMPATIBILITY_REPORT_20261101.md",
+    "combined_e2e": "docs/COMBINED_E2E_REGRESSION_REPORT_20261101.md",
+    "combined_ci": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/actions/runs/41291094905",
+    "raw_intake_cli": "scripts/qa_combined_e2e_check.py",
+    "case_tests": "tests/test_qa_combined_v6_contract.py",
+    "cli_tests": "tests/test_qa_combined_e2e_cli.py",
+    "release_gates": "docs/CURRENT_RELEASE_GATES_20261101.md",
+    "studio_prompt": "docs/NEXT_STUDIO_AI_PROMPT_RAW_ADAPTER_20261101.txt",
+    "team2_handoff": "docs/TEAM2_INTERFACE_REQUEST_20261101.md",
+    "team3_handoff": "docs/TEAM3_GOLD_REQUEST_20261101.md"
+  },
+  "gates": {
+    "QA_CODE_GATE": "PASS",
+    "TEAM2_ENGINE_GATE": "PASS_LOCAL",
+    "COMBINED_SOURCE_COMPATIBILITY_GATE": "PASS",
+    "COMBINED_CODE_CI_GATE": "PASS_AT_bdcdac48",
+    "OFFLINE_E2E_GATE": "PASS_LOCAL",
+    "STUDIO_DOCUMENT_GATE": "NOT_VERIFIED",
+    "STUDIO_PROVENANCE_GATE": "BLOCKED",
+    "PYTHON_SAFETY_GATE": "PASS_LOCAL",
+    "CROSS_AGENT_GATE": "BLOCKED",
+    "HUMAN_GOLD_GATE": "BLOCKED",
+    "OVERALL_RELEASE_GATE": "BLOCKED",
+    "release_or_merge_authorized": false
+  },
+  "external_blockers": {
+    "studio_qa_copy": {
+      "agent_id": "agt_HdtUJPQPXir9rGKgPWSyZG",
+      "last_known_config": "cfg_X2xXakDtmDTHh2RoqVysvL",
+      "version": 1,
+      "historical_job": "job_9DmRWeQsSShHgWUugkELtk",
+      "actual_qa_native": null,
+      "actual_qa_report": null
+    },
+    "operating_studio": {
+      "agent_id": "agt_bXRXFSAgFmBayPjZF7VqRQ",
+      "draft_v5_config": "cfg_o645qH9hDUgVnkrjw7Vets",
+      "actual_saved_v5_job": null,
+      "actual_v5_native": null
+    },
+    "same_source_original_pdf_sha": false,
+    "human_reviewed_gold": false,
+    "excel49_causal_origin": "UNKNOWN"
+  },
+  "next_work": [
+    "Recheck Team2 PR12 current HEAD and re-pin six source blobs before any future code sync",
+    "Receive actual two Studio native/report sets and saved Config Job Step with PDF SHA",
+    "Use combined E2E CLI and separate original PDF receipt verifier; never infer cloud authenticity from files alone",
+    "Review source-page human Gold and actual C001/C013/C017/C008 measurements",
+    "Only after explicit authorization, stage QA-only code on final original-repo integration branch and re-run complete CI",
+    "Keep release BLOCKED until G9 approval"
+  ],
+  "invariants": [
+    "Original PR #11/#12 unchanged",
+    "QA PR #3 unchanged",
+    "No paid Studio job or external business action",
+    "No merge or main force push",
+    "QA tests do not imply actual live Studio success"
+  ]
+}

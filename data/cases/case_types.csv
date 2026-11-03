@@ -1,0 +1,21 @@
+case_id,failure_class,synthetic,studio_tested,human_label_reviewed
+SYN-C001,baseline,True,True,False
+SYN-C002,minor delay,True,False,False
+SYN-C003,late delivery,True,False,False
+SYN-C004,enough stock,True,False,False
+SYN-C005,equal ETA,True,False,False
+SYN-C006,early ETA,True,False,False
+SYN-C007,two orders,True,False,False
+SYN-C008,partial arrival,True,False,False
+SYN-C009,two products,True,False,False
+SYN-C010,late quote,True,False,False
+SYN-C011,limited quote,True,False,False
+SYN-C012,premium quote,True,False,False
+SYN-C013,mismatched PO,True,False,False
+SYN-C014,missing ETA,True,False,False
+SYN-C015,missing quantity,True,False,False
+SYN-C016,unknown product,True,False,False
+SYN-C017,Korean date,True,False,False
+SYN-C018,duplicate PO reference,True,False,False
+SYN-C019,supplier unavailable,True,False,False
+SYN-C020,contradictory wording,True,False,False

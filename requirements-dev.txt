@@ -1,0 +1,4 @@
+-e .
+pytest>=8,<10
+ruff>=0.6,<1
+jsonschema>=4.23,<5

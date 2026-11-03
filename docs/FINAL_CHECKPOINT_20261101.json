@@ -1,0 +1,91 @@
+{
+  "project": "LeadTime Guardian",
+  "date_kst": "2026-11-01",
+  "owner": "Team 1 / Independent QA and Integration",
+  "repositories": {
+    "operational": {
+      "repo": "dohun3540-crypto/leadtime-guardian-agent",
+      "pr11_head": "f196c694917f2d9e5f4ec228c752bd3f2a4eb882",
+      "pr12_head": "e9b9992b593a42d427ff1bbadeb9a9866ca593bd",
+      "combined_with_QA": false
+    },
+    "qa": {
+      "repo": "dohun3540-crypto/leadtime-guardian-agent.copy",
+      "pr_number": 3,
+      "branch": "feat/qa-sandbox-copy-validation-20261101",
+      "base_pr": 2,
+      "last_code_tested_head": "d9af009c6d41eca9252384883a656d856ed0c951",
+      "audit_documentation_checkpoint": "de28d6c3f0ea9477e5c6643ad010b10380b54926",
+      "final_head": "REQUERY_GITHUB_FOR_CURRENT_HEAD",
+      "draft": true
+    }
+  },
+  "github_actions": {
+    "code_test_run_id": 41287538498,
+    "url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/actions/runs/41287538498",
+    "conclusion": "success",
+    "independent_qa_pytest_passed": 304,
+    "full_python_pytest_passed": 384,
+    "ruff_qa": "PASS",
+    "ruff_full": "PASS",
+    "archive_replay": "PASS",
+    "local_integration": "PASS",
+    "overall_release": "BLOCKED",
+    "documentation_commit_ci": "REQUERY_LATEST_HEAD"
+  },
+  "studio": {
+    "operational": {
+      "agent": "agt_bXRXFSAgFmBayPjZF7VqRQ",
+      "draft_v5_config": "cfg_o645qH9hDUgVnkrjw7Vets",
+      "saved_config_authenticated": false
+    },
+    "qa": {
+      "agent": "agt_HdtUJPQPXir9rGKgPWSyZG",
+      "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+      "version": 1,
+      "old_job": "job_9DmRWeQsSShHgWUugkELtk",
+      "new_live_verified": false,
+      "raw_native_sha": null,
+      "raw_qa_report_sha": null,
+      "document_qa": "NOT_VERIFIED",
+      "python_qa": "NOT_VERIFIED"
+    }
+  },
+  "gates": {
+    "local": "PASS_AT_CODE_SHA",
+    "python_safety_combined": "NOT_VERIFIED",
+    "studio_document": "NOT_VERIFIED",
+    "cross_agent": "BLOCKED",
+    "offline_e2e": "PASS_LOCAL_SIMULATION_WITH_RELEASE_BLOCKED",
+    "actual_live_e2e": "BLOCKED",
+    "human_gold": "BLOCKED",
+    "release": "BLOCKED",
+    "release_or_merge_authorized": false
+  },
+  "issues": [
+    "QA-101",
+    "QA-102",
+    "QA-103",
+    "QA-104",
+    "QA-105",
+    "QA-106",
+    "QA-107",
+    "QA-108",
+    "QA-109",
+    "QA-110",
+    "QA-111",
+    "QA-112"
+  ],
+  "next_actions": [
+    "Studio AI: raw QA input/Normalize Native/IndependentQA original report, job/step/config, original file SHA",
+    "Team2: live operational Native, Python results, sidecar, source-PDF job receipts, schema diff",
+    "Team3: human-verified 20-case Gold with PDF page evidence and review hashes",
+    "Team1: same-source PDF raw hash binding, mapping and combined PR12+QA CI before human G9 approval"
+  ],
+  "notes": [
+    "Archived V4 operation and synthetic QA do not prove new live execution",
+    "Two repository CI successes are not a combined CI run",
+    "B0/E1/E2/E3/E4 comparison unverified",
+    "XLSX 49 actual origin UNKNOWN"
+  ]
+}

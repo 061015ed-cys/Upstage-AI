@@ -1,0 +1,109 @@
+{
+  "content": "{\"documents\":[{\"document_id\":\"PO-DOC\",\"document_type\":\"purchase_order\",\"po_id\":\"PO1\",\"supplier_id\":null,\"original_delivery\":\"2026-11-03\",\"revised_delivery\":null,\"items\":[{\"product_id\":\"A\",\"receipt_id\":\"R1\",\"quantity\":100,\"unit\":\"EA\"}],\"quote\":null,\"warnings\":[],\"evidence\":[]},{\"document_id\":\"NOTICE-DOC\",\"document_type\":\"delivery_notice\",\"po_id\":\"PO1\",\"supplier_id\":null,\"original_delivery\":\"2026-11-03\",\"revised_delivery\":\"2026-11-08\",\"items\":[{\"product_id\":\"A\",\"receipt_id\":\"R1\",\"quantity\":100,\"unit\":\"EA\"}],\"quote\":null,\"warnings\":[],\"evidence\":[]},{\"document_id\":\"QUOTE-DOC\",\"document_type\":\"quotation\",\"po_id\":\"PO1\",\"supplier_id\":\"S1\",\"original_delivery\":null,\"revised_delivery\":null,\"items\":[{\"product_id\":\"A\",\"receipt_id\":null,\"quantity\":60,\"unit\":\"EA\"}],\"quote\":{\"quote_id\":\"Q1\",\"supplier_id\":\"S1\",\"product_id\":\"A\",\"capacity\":60,\"arrival_date\":\"2026-11-04\",\"unit_price\":\"1000.00\",\"shipping_cost\":\"500\",\"currency\":\"KRW\"},\"warnings\":[],\"evidence\":[]}]}",
+  "metadata": {
+    "step_run_id": "63f6a860-7c86-5036-b32d-6eae38ca7677",
+    "occurrence_id": "63f6a860-7c86-5036-b32d-6eae38ca7677",
+    "job_execution_id": "job_gPmEYKzuJdBA6BmKhVnujs",
+    "cache_hit": false,
+    "merge": {
+      "step_name": "MergeDocuments",
+      "items": [
+        {
+          "document_type": "purchase_order",
+          "page_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "source_files": [
+            {
+              "file_id": "file_Bs6tjfh4sxRzJmt4kozrnq",
+              "file_name": "SYN-C001_purchase_order.pdf",
+              "page_ranges": [
+                [
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "document_type": "delivery_notice",
+          "page_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "source_files": [
+            {
+              "file_id": "file_ffcfsKVGLEpgJxC5fYUfPw",
+              "file_name": "SYN-C001_delivery_notice.pdf",
+              "page_ranges": [
+                [
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "document_type": "quotation",
+          "page_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "source_files": [
+            {
+              "file_id": "file_67maXz23DwVzVwVeF6j7pk",
+              "file_name": "SYN-C001_quotation.pdf",
+              "page_ranges": [
+                [
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "source_files": [
+      {
+        "file_id": "file_Bs6tjfh4sxRzJmt4kozrnq",
+        "file_name": "SYN-C001_purchase_order.pdf",
+        "page_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "file_id": "file_ffcfsKVGLEpgJxC5fYUfPw",
+        "file_name": "SYN-C001_delivery_notice.pdf",
+        "page_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "file_id": "file_67maXz23DwVzVwVeF6j7pk",
+        "file_name": "SYN-C001_quotation.pdf",
+        "page_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ]
+  }
+}

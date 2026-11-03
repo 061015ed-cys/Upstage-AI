@@ -1,0 +1,48 @@
+{
+  "checkpoint_date_kst": "2026-10-30",
+  "execution_mode": "live_studio_web",
+  "agent_id": "agt_bXRXFSAgFmBayPjZF7VqRQ",
+  "workflow_name": "LeadTime Guardian - B+C3 V1",
+  "config_id": "cfg_SZi6qfyZ6XFoNszpXQK5xQ",
+  "config_version": 4,
+  "workflow_url": "https://studio.upstage.ai/agents/agt_bXRXFSAgFmBayPjZF7VqRQ?configVer=4",
+  "job_id": "job_gPmEYKzuJdBA6BmKhVnujs",
+  "native_step_run_id": "63f6a860-7c86-5036-b32d-6eae38ca7677",
+  "studio_execution_completed": true,
+  "python_analysis_status": "OK",
+  "predictions_modified": false,
+  "source_acquisition": "Native UI downloads from authenticated connected cloud browser",
+  "source_pdfs": [
+    {
+      "path": "data/cases/SYN-C001/SYN-C001_delivery_notice.pdf",
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b"
+    },
+    {
+      "path": "data/cases/SYN-C001/SYN-C001_purchase_order.pdf",
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930"
+    },
+    {
+      "path": "data/cases/SYN-C001/SYN-C001_quotation.pdf",
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551"
+    }
+  ],
+  "baseline_shortage_quantity": 0,
+  "changed_shortage_quantity": 60,
+  "additional_shortage_quantity": 60,
+  "estimated_quote_cost_krw": "60500.00",
+  "evidence_verified_against_pdf": false,
+  "human_gold_reviewed": false,
+  "accuracy_measured": false,
+  "live_agents_api_requests": 0,
+  "local_validation": {
+    "python": "3.12.14",
+    "openai": "2.54.0",
+    "httpx": "0.28.1",
+    "pytest": "80 passed",
+    "ruff": "All checks passed!",
+    "sdk_http_mock_tests": 13,
+    "fake_client_tests": 13
+  },
+  "external_procurement_action_taken": false,
+  "remaining": "C013/C017 and all extension cases unexecuted; no live API key configured."
+}

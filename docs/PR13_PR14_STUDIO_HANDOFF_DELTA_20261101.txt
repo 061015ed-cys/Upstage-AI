@@ -1,0 +1,28 @@
+LeadTime Guardian — PR #13/#14 최종 선택적 통합 이후 Studio 인계 (2026-11-01)
+
+GitHub 통합 후보: https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/15
+원본 QA PR #13: d07771ebb28aaf34026fc6a28322e424b110ea18
+병렬 QA PR #14: 62c68e1a6d9630d027e7acc64989b27972ab5cbe
+
+[GitHub에서 확정된 내용]
+- Normalize→QA Input의 tuple/list·비문자열 JSON Key·Bool/Int 구분, JSON Wrapper, expected_case_id, 중복 Document ID 검사는 PR #13을 그대로 유지. Studio에서는 관련 기능 재작성 불필요.
+- Studio QA Adapter는 다음 소문자 severity만 읽기 전용으로 변환: info→INFO, warning→WARNING, error→ERROR. 반드시 STUDIO_ISSUE_SEVERITY_CASE_NORMALIZED 경고와 human review가 남음. 원본 JSON 바이트나 항목 값은 수정하지 않음.
+- qa_report에 workflow_version 키가 명시적으로 있고 값이 null이면 구조를 보존하고 STUDIO_WORKFLOW_VERSION_NOT_VERIFIED 경고 및 human review. 누락한 key는 구조 FAIL이며 유효하지 않은 버전 값은 자동 보정하지 않음.
+- Structurally adapted status PASS는 QA 결과 PASS가 아님. qa_status=NOT_VERIFIED와 python_qa_status=NOT_VERIFIED는 그대로 유지하며, workflow_version=null이 있는 낙관적 원본 PASS는 문서 PASS로 승격하지 않음.
+- Python Safety V6 계산 엔진, 기존 JSON Wrapper 계약 및 Cross-Agent의 원본 SHA/Job/Case/Doc/출처 검증은 변경 없음.
+- 수정 전 소문자 severity·null version 회귀 5개 실패를 재현. 수정 후 CI #41310125056에서 전체 Python 630 PASS / 독립 QA 441 PASS / Ruff PASS / local PASS; 전체 Release BLOCKED. 문서 포함 최종 HEAD CI는 별도로 확인 필요.
+
+[실제 Studio 확인이 필요한 유일한 새 계약]
+1. 새 실행을 생성하지 말고 원래 E1 IndependentQA raw Report 바이트와 원본 SHA/Step·Job·Saved Config·workflow_version 필드의 정확한 JSON 타입, issues[*].severity의 정확한 대소문자를 회수하세요.
+2. 해당 원본이 실제 E1 제공자 출력이 맞는지 식별자와 PDF source_file_id·Upload Receipt로 인증하세요. 기존 user-reported E1 shape만으로 실측이라고 기록하면 안 됩니다.
+3. 원본이 위 예상과 다르면 해당 필드의 JSON Path/타입/원문 일부·sha256을 최소 재현 증거로 제시하세요. Studio 설정을 자동 수정하거나 유료 Job을 다시 실행하지 마세요.
+4. 기존 B0 C001 job_NCik8shwrgM93PDnNNYukT / cfg_X2xXakDtmDTHh2RoqVysvL v1 보존. Extract 3개·Merge·Normalize·QA 실제 Input/Report, PDF 3개 SHA 및 운영/QA Upload Receipt, Team2 Live Sidecar, Team3 Human Gold 수신이 여전히 우선입니다.
+5. E1과 B0의 PDF 원본 SHA 및 Config Diff, Human-reviewed Gold가 없으면 개선률은 NOT_MEASURED. Actual Studio E2E·Overall Release는 BLOCKED.
+
+[Studio 최종 회신]
+- verified_raw_e1_report: [원본 파일명, 바이트 SHA256, job_id, step_run_id, workflow_version exact JSON value, issues severity exact case, provider receipt 여부]
+- b0_raw_chain: [Extract 3종, Merge, Normalize, QA Input/Report 원본 존재/누락 및 SHA]
+- actual_provider_binding: [original PDF SHA, operational/QA file ID/Upload Receipt, Team2 sidecar 연결]
+- stage_gate: PASS/FAIL/BLOCKED with evidence; never rely on mock/archived data as Live
+- unresolved: [Human-reviewed Gold, same PDF B0/E1, E1 real Job/Config, Studio live E2E]
+GitHub PR #15 상태와 스튜디오 원본 전달 성공을 혼동하지 마세요. 원본 저장/업로드, 기존 PR 병합 및 유료 실행은 승인 없이는 진행 금지.

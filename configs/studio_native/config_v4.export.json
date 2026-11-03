@@ -1,0 +1,1182 @@
+{
+  "kind": "studio.workflow-config-draft",
+  "schemaVersion": 4,
+  "exportedAt": "2026-10-30T09:41:28.963Z",
+  "exportedFrom": {
+    "workflowId": "agt_bXRXFSAgFmBayPjZF7VqRQ",
+    "workflowName": "LeadTime Guardian - B+C3 V1",
+    "configId": "cfg_SZi6qfyZ6XFoNszpXQK5xQ",
+    "configVer": 4
+  },
+  "workflowConfig": {
+    "workflow_name": "LeadTime Guardian - B+C3 V1",
+    "pipelineType": "instruct",
+    "documentParseConfiguration": {
+      "modelName": "document-parse",
+      "mode": "standard",
+      "ocrMode": "force",
+      "lang": "",
+      "chartRecognition": false,
+      "coordinates": true,
+      "mergeMultipageTables": false,
+      "outputFormats": [
+        "html",
+        "text"
+      ],
+      "base64Encoding": [
+        "figure"
+      ]
+    },
+    "documentClassifyConfiguration": {
+      "schema": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "document-classify",
+          "schema": {
+            "type": "string",
+            "oneOf": [
+              {
+                "const": "purchase_order",
+                "description": "Buyer-issued purchase order specifying PO, product, ordered quantity and original delivery schedule. A supplier delay notice or replacement price offer is not a purchase order."
+              },
+              {
+                "const": "delivery_notice",
+                "description": "Supplier notice explicitly changing delivery against an existing PO, with original and revised schedule when visible. Classify here even if it repeats purchase order quantities."
+              },
+              {
+                "const": "quotation",
+                "description": "Supplier offer for replacement supply with price, capacity and arrival date. A quote does not confirm an executed purchase."
+              },
+              {
+                "const": "other",
+                "description": "Any document outside the three definitions, including ambiguous or unrelated documents. Never force an unsupported class."
+              }
+            ]
+          }
+        }
+      },
+      "modelName": "",
+      "split": true,
+      "splitCriteria": [
+        {
+          "criterion": "file_boundary",
+          "description": ""
+        }
+      ],
+      "customName": "Classify-1"
+    },
+    "informationExtractConfiguration": {
+      "modelName": "",
+      "schemas": [
+        {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "Extract_purchase_order",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "document_id": {
+                  "type": "string",
+                  "description": "The document's explicitly printed Document ID. Do not substitute PO ID or case ID. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                },
+                "document_type": {
+                  "type": "string",
+                  "description": "One of purchase_order, delivery_notice, quotation, other, based on the document's purpose. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                },
+                "po_id": {
+                  "type": "string",
+                  "description": "The explicitly printed PO ID or Related PO reference. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                },
+                "supplier_id": {
+                  "type": "string",
+                  "description": "Explicitly printed supplier identifier only; not a guessed company name. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                },
+                "original_delivery": {
+                  "type": "string",
+                  "description": "The original inbound delivery date, separate from revised or replacement quote arrival. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order. Do not take the quotation arrival date for this field."
+                },
+                "revised_delivery": {
+                  "type": "string",
+                  "description": "The explicitly changed inbound date in a delivery notice only. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order. Do not take the quotation arrival date for this field."
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string",
+                        "description": "product id"
+                      },
+                      "receipt_id": {
+                        "type": "string",
+                        "description": "receipt id"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "description": "quantity"
+                      },
+                      "unit": {
+                        "type": "string",
+                        "description": "unit"
+                      }
+                    }
+                  },
+                  "description": "All visible product rows. product_id, receipt_id (null unless printed), quantity, unit. For a quote, quantity is explicitly offered capacity, not PO quantity. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                },
+                "quote": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "quote_id": {
+                        "type": "string",
+                        "description": "Explicit printed quote_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "supplier_id": {
+                        "type": "string",
+                        "description": "Explicit printed supplier_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "product_id": {
+                        "type": "string",
+                        "description": "Explicit printed product_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "capacity": {
+                        "type": "integer",
+                        "description": "Explicit printed capacity only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "arrival_date": {
+                        "type": "string",
+                        "description": "Explicit printed arrival_date only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "unit_price": {
+                        "type": "string",
+                        "description": "Explicit printed unit_price only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "shipping_cost": {
+                        "type": "string",
+                        "description": "Explicit printed shipping_cost only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "Explicit printed currency only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      }
+                    }
+                  },
+                  "description": "For quotation only: object containing quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Null for other document types. Never add these as new top-level extraction keys. A single explicit quotation is one row. No quotation means empty list. Final Instruct converts this row to the normalized quote object. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_page": {
+                        "type": "integer",
+                        "description": "source page"
+                      },
+                      "source_field": {
+                        "type": "string",
+                        "description": "source field"
+                      },
+                      "source_value": {
+                        "type": "string",
+                        "description": "source value"
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "description": "confidence"
+                      }
+                    }
+                  },
+                  "description": "Array of source_page (1-based), source_field (field path), source_value (exact original text), confidence (null unless actually available). Do not create evidence strings that are not present in the source. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles purchase_order."
+                }
+              }
+            }
+          },
+          "schemaLayout": {
+            "version": 1,
+            "columns": [
+              {
+                "name": "document_id",
+                "source": "root"
+              },
+              {
+                "name": "document_type",
+                "source": "root"
+              },
+              {
+                "name": "po_id",
+                "source": "root"
+              },
+              {
+                "name": "supplier_id",
+                "source": "root"
+              },
+              {
+                "name": "original_delivery",
+                "source": "root"
+              },
+              {
+                "name": "revised_delivery",
+                "source": "root"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "receipt_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quantity",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "unit",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quote_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "supplier_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "capacity",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "arrival_date",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "unit_price",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "shipping_cost",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "currency",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "source_page",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_field",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_value",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "confidence",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              }
+            ]
+          },
+          "mode": "standard",
+          "modelName": "",
+          "nodeMode": "extract",
+          "manyRows": true,
+          "manyRowsThreshold": 50,
+          "manyRowsMaxRowsPerBatch": 400,
+          "manyRowsMaxConcurrent": 5
+        },
+        {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "Extract_delivery_notice",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "document_id": {
+                  "type": "string",
+                  "description": "The document's explicitly printed Document ID. Do not substitute PO ID or case ID. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                },
+                "document_type": {
+                  "type": "string",
+                  "description": "One of purchase_order, delivery_notice, quotation, other, based on the document's purpose. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                },
+                "po_id": {
+                  "type": "string",
+                  "description": "The explicitly printed PO ID or Related PO reference. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                },
+                "supplier_id": {
+                  "type": "string",
+                  "description": "Explicitly printed supplier identifier only; not a guessed company name. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                },
+                "original_delivery": {
+                  "type": "string",
+                  "description": "The original inbound delivery date, separate from revised or replacement quote arrival. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice. Do not take the quotation arrival date for this field."
+                },
+                "revised_delivery": {
+                  "type": "string",
+                  "description": "The explicitly changed inbound date in a delivery notice only. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice. Do not take the quotation arrival date for this field."
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string",
+                        "description": "product id"
+                      },
+                      "receipt_id": {
+                        "type": "string",
+                        "description": "receipt id"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "description": "quantity"
+                      },
+                      "unit": {
+                        "type": "string",
+                        "description": "unit"
+                      }
+                    }
+                  },
+                  "description": "All visible product rows. product_id, receipt_id (null unless printed), quantity, unit. For a quote, quantity is explicitly offered capacity, not PO quantity. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                },
+                "quote": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "quote_id": {
+                        "type": "string",
+                        "description": "Explicit printed quote_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "supplier_id": {
+                        "type": "string",
+                        "description": "Explicit printed supplier_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "product_id": {
+                        "type": "string",
+                        "description": "Explicit printed product_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "capacity": {
+                        "type": "integer",
+                        "description": "Explicit printed capacity only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "arrival_date": {
+                        "type": "string",
+                        "description": "Explicit printed arrival_date only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "unit_price": {
+                        "type": "string",
+                        "description": "Explicit printed unit_price only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "shipping_cost": {
+                        "type": "string",
+                        "description": "Explicit printed shipping_cost only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "Explicit printed currency only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      }
+                    }
+                  },
+                  "description": "For quotation only: object containing quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Null for other document types. Never add these as new top-level extraction keys. A single explicit quotation is one row. No quotation means empty list. Final Instruct converts this row to the normalized quote object. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_page": {
+                        "type": "integer",
+                        "description": "source page"
+                      },
+                      "source_field": {
+                        "type": "string",
+                        "description": "source field"
+                      },
+                      "source_value": {
+                        "type": "string",
+                        "description": "source value"
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "description": "confidence"
+                      }
+                    }
+                  },
+                  "description": "Array of source_page (1-based), source_field (field path), source_value (exact original text), confidence (null unless actually available). Do not create evidence strings that are not present in the source. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles delivery_notice."
+                }
+              }
+            }
+          },
+          "schemaLayout": {
+            "version": 1,
+            "columns": [
+              {
+                "name": "document_id",
+                "source": "root"
+              },
+              {
+                "name": "document_type",
+                "source": "root"
+              },
+              {
+                "name": "po_id",
+                "source": "root"
+              },
+              {
+                "name": "supplier_id",
+                "source": "root"
+              },
+              {
+                "name": "original_delivery",
+                "source": "root"
+              },
+              {
+                "name": "revised_delivery",
+                "source": "root"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "receipt_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quantity",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "unit",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quote_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "supplier_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "capacity",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "arrival_date",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "unit_price",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "shipping_cost",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "currency",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "source_page",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_field",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_value",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "confidence",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              }
+            ]
+          },
+          "mode": "standard",
+          "modelName": "",
+          "nodeMode": "extract",
+          "manyRows": true,
+          "manyRowsThreshold": 50,
+          "manyRowsMaxRowsPerBatch": 400,
+          "manyRowsMaxConcurrent": 5
+        },
+        {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "Extract_quotation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "document_id": {
+                  "type": "string",
+                  "description": "The document's explicitly printed Document ID. Do not substitute PO ID or case ID. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                },
+                "document_type": {
+                  "type": "string",
+                  "description": "One of purchase_order, delivery_notice, quotation, other, based on the document's purpose. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                },
+                "po_id": {
+                  "type": "string",
+                  "description": "The explicitly printed PO ID or Related PO reference. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                },
+                "supplier_id": {
+                  "type": "string",
+                  "description": "Explicitly printed supplier identifier only; not a guessed company name. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                },
+                "original_delivery": {
+                  "type": "string",
+                  "description": "The original inbound delivery date, separate from revised or replacement quote arrival. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation. Do not take the quotation arrival date for this field."
+                },
+                "revised_delivery": {
+                  "type": "string",
+                  "description": "The explicitly changed inbound date in a delivery notice only. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation. Do not take the quotation arrival date for this field."
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string",
+                        "description": "product id"
+                      },
+                      "receipt_id": {
+                        "type": "string",
+                        "description": "receipt id"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "description": "quantity"
+                      },
+                      "unit": {
+                        "type": "string",
+                        "description": "unit"
+                      }
+                    }
+                  },
+                  "description": "All visible product rows. product_id, receipt_id (null unless printed), quantity, unit. For a quote, quantity is explicitly offered capacity, not PO quantity. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                },
+                "quote": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "quote_id": {
+                        "type": "string",
+                        "description": "Explicit printed quote_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "supplier_id": {
+                        "type": "string",
+                        "description": "Explicit printed supplier_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "product_id": {
+                        "type": "string",
+                        "description": "Explicit printed product_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "capacity": {
+                        "type": "integer",
+                        "description": "Explicit printed capacity only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "arrival_date": {
+                        "type": "string",
+                        "description": "Explicit printed arrival_date only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "unit_price": {
+                        "type": "string",
+                        "description": "Explicit printed unit_price only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "shipping_cost": {
+                        "type": "string",
+                        "description": "Explicit printed shipping_cost only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "Explicit printed currency only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      }
+                    }
+                  },
+                  "description": "For quotation only: object containing quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Null for other document types. Never add these as new top-level extraction keys. A single explicit quotation is one row. No quotation means empty list. Final Instruct converts this row to the normalized quote object. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_page": {
+                        "type": "integer",
+                        "description": "source page"
+                      },
+                      "source_field": {
+                        "type": "string",
+                        "description": "source field"
+                      },
+                      "source_value": {
+                        "type": "string",
+                        "description": "source value"
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "description": "confidence"
+                      }
+                    }
+                  },
+                  "description": "Array of source_page (1-based), source_field (field path), source_value (exact original text), confidence (null unless actually available). Do not create evidence strings that are not present in the source. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles quotation."
+                }
+              }
+            }
+          },
+          "schemaLayout": {
+            "version": 1,
+            "columns": [
+              {
+                "name": "document_id",
+                "source": "root"
+              },
+              {
+                "name": "document_type",
+                "source": "root"
+              },
+              {
+                "name": "po_id",
+                "source": "root"
+              },
+              {
+                "name": "supplier_id",
+                "source": "root"
+              },
+              {
+                "name": "original_delivery",
+                "source": "root"
+              },
+              {
+                "name": "revised_delivery",
+                "source": "root"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "receipt_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quantity",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "unit",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quote_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "supplier_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "capacity",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "arrival_date",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "unit_price",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "shipping_cost",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "currency",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "source_page",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_field",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_value",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "confidence",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              }
+            ]
+          },
+          "mode": "standard",
+          "modelName": "",
+          "nodeMode": "extract",
+          "manyRows": true,
+          "manyRowsThreshold": 50,
+          "manyRowsMaxRowsPerBatch": 400,
+          "manyRowsMaxConcurrent": 5
+        },
+        {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "Extract_other",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "document_id": {
+                  "type": "string",
+                  "description": "The document's explicitly printed Document ID. Do not substitute PO ID or case ID. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                },
+                "document_type": {
+                  "type": "string",
+                  "description": "One of purchase_order, delivery_notice, quotation, other, based on the document's purpose. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                },
+                "po_id": {
+                  "type": "string",
+                  "description": "The explicitly printed PO ID or Related PO reference. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                },
+                "supplier_id": {
+                  "type": "string",
+                  "description": "Explicitly printed supplier identifier only; not a guessed company name. Null when absent. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                },
+                "original_delivery": {
+                  "type": "string",
+                  "description": "The original inbound delivery date, separate from revised or replacement quote arrival. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other. Do not take the quotation arrival date for this field."
+                },
+                "revised_delivery": {
+                  "type": "string",
+                  "description": "The explicitly changed inbound date in a delivery notice only. YYYY-MM-DD or null. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other. Do not take the quotation arrival date for this field."
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product_id": {
+                        "type": "string",
+                        "description": "product id"
+                      },
+                      "receipt_id": {
+                        "type": "string",
+                        "description": "receipt id"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "description": "quantity"
+                      },
+                      "unit": {
+                        "type": "string",
+                        "description": "unit"
+                      }
+                    }
+                  },
+                  "description": "All visible product rows. product_id, receipt_id (null unless printed), quantity, unit. For a quote, quantity is explicitly offered capacity, not PO quantity. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                },
+                "quote": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "quote_id": {
+                        "type": "string",
+                        "description": "Explicit printed quote_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "supplier_id": {
+                        "type": "string",
+                        "description": "Explicit printed supplier_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "product_id": {
+                        "type": "string",
+                        "description": "Explicit printed product_id only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "capacity": {
+                        "type": "integer",
+                        "description": "Explicit printed capacity only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "arrival_date": {
+                        "type": "string",
+                        "description": "Explicit printed arrival_date only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "unit_price": {
+                        "type": "string",
+                        "description": "Explicit printed unit_price only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "shipping_cost": {
+                        "type": "string",
+                        "description": "Explicit printed shipping_cost only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "Explicit printed currency only. Null if absent. Dates YYYY-MM-DD; amounts decimal strings without currency symbols."
+                      }
+                    }
+                  },
+                  "description": "For quotation only: object containing quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Null for other document types. Never add these as new top-level extraction keys. A single explicit quotation is one row. No quotation means empty list. Final Instruct converts this row to the normalized quote object. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                },
+                "evidence": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_page": {
+                        "type": "integer",
+                        "description": "source page"
+                      },
+                      "source_field": {
+                        "type": "string",
+                        "description": "source field"
+                      },
+                      "source_value": {
+                        "type": "string",
+                        "description": "source value"
+                      },
+                      "confidence": {
+                        "type": "number",
+                        "description": "confidence"
+                      }
+                    }
+                  },
+                  "description": "Array of source_page (1-based), source_field (field path), source_value (exact original text), confidence (null unless actually available). Do not create evidence strings that are not present in the source. Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available. This branch handles other."
+                }
+              }
+            }
+          },
+          "schemaLayout": {
+            "version": 1,
+            "columns": [
+              {
+                "name": "document_id",
+                "source": "root"
+              },
+              {
+                "name": "document_type",
+                "source": "root"
+              },
+              {
+                "name": "po_id",
+                "source": "root"
+              },
+              {
+                "name": "supplier_id",
+                "source": "root"
+              },
+              {
+                "name": "original_delivery",
+                "source": "root"
+              },
+              {
+                "name": "revised_delivery",
+                "source": "root"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "receipt_id",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quantity",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "unit",
+                "source": "group_table",
+                "groupTableKey": "items"
+              },
+              {
+                "name": "quote_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "supplier_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "product_id",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "capacity",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "arrival_date",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "unit_price",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "shipping_cost",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "currency",
+                "source": "group_table",
+                "groupTableKey": "quote"
+              },
+              {
+                "name": "source_page",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_field",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "source_value",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              },
+              {
+                "name": "confidence",
+                "source": "group_table",
+                "groupTableKey": "evidence"
+              }
+            ]
+          },
+          "mode": "standard",
+          "modelName": "",
+          "nodeMode": "extract",
+          "manyRows": true,
+          "manyRowsThreshold": 50,
+          "manyRowsMaxRowsPerBatch": 400,
+          "manyRowsMaxConcurrent": 5
+        }
+      ],
+      "categorySchemaMapping": {
+        "purchase_order": "Extract_purchase_order",
+        "delivery_notice": "Extract_delivery_notice",
+        "quotation": "Extract_quotation",
+        "other": "Extract_other"
+      },
+      "confidenceThreshold": 0.9676
+    },
+    "instructConfiguration": {
+      "nodes": [
+        {
+          "name": "NormalizeDocuments",
+          "modelName": "",
+          "prompt": "Return only valid JSON with a documents array. Retain each source document once with document_id, document_type (purchase_order, delivery_notice, quotation, other), po_id, supplier_id, original_delivery, revised_delivery, items (product_id, receipt_id, quantity, unit), quote, warnings, evidence. Use only PDF facts from the extracted results. Keep quotation details nested under quote: quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Use null for absent information, ISO YYYY-MM-DD dates, integer quantities and decimal strings for prices. Do not calculate shortages or procurement costs. Do not invent inventory, customer orders, identifiers, dates, quantities, prices or evidence. Preserve every warning. Cross-document PO/product/date/quantity conflicts must add warnings, never change the facts. evidence entries: source_page, source_field, exact source_value, confidence null unless provided. Never mark source verification complete. Do not wrap JSON in Markdown fences. A missing irrelevant quote on PO/notice is null and does not need a warning. Missing irrelevant revised_delivery on PO/quotation is null. Warnings concern missing required business facts or actual ambiguity, not fields irrelevant to a document type. items.quantity on a quotation is offered capacity. Quotation arrival_date is not original_delivery. Do not warn that a supplier cannot meet the original PO date; the purpose of the notice is to change that date. Flag contradictory dates only when the same fact has incompatible values. Native Extract represents quote as a table: unwrap its single row into the final quote object; empty table becomes null. Retain missing field nulls. Source field absence that is irrelevant to this document type is not an error."
+        }
+      ],
+      "connectionMapping": {}
+    },
+    "pipelineEdges": [
+      {
+        "id": "e0",
+        "source": {
+          "nodeType": "parse"
+        },
+        "target": {
+          "nodeType": "classify",
+          "name": "Classify-1"
+        }
+      },
+      {
+        "id": "e1",
+        "source": {
+          "nodeType": "classify",
+          "name": "Classify-1"
+        },
+        "target": {
+          "nodeType": "extract",
+          "name": "Extract_purchase_order"
+        },
+        "condition": {
+          "conditionName": "purchase_order"
+        }
+      },
+      {
+        "id": "e2",
+        "source": {
+          "nodeType": "classify",
+          "name": "Classify-1"
+        },
+        "target": {
+          "nodeType": "extract",
+          "name": "Extract_delivery_notice"
+        },
+        "condition": {
+          "conditionName": "delivery_notice"
+        }
+      },
+      {
+        "id": "e3",
+        "source": {
+          "nodeType": "classify",
+          "name": "Classify-1"
+        },
+        "target": {
+          "nodeType": "extract",
+          "name": "Extract_quotation"
+        },
+        "condition": {
+          "conditionName": "quotation"
+        }
+      },
+      {
+        "id": "e4",
+        "source": {
+          "nodeType": "classify",
+          "name": "Classify-1"
+        },
+        "target": {
+          "nodeType": "extract",
+          "name": "Extract_other"
+        },
+        "condition": {
+          "conditionName": "other"
+        }
+      },
+      {
+        "id": "e5",
+        "source": {
+          "nodeType": "extract",
+          "name": "Extract_purchase_order"
+        },
+        "target": {
+          "nodeType": "merge",
+          "name": "MergeDocuments"
+        }
+      },
+      {
+        "id": "e6",
+        "source": {
+          "nodeType": "extract",
+          "name": "Extract_delivery_notice"
+        },
+        "target": {
+          "nodeType": "merge",
+          "name": "MergeDocuments"
+        }
+      },
+      {
+        "id": "e7",
+        "source": {
+          "nodeType": "extract",
+          "name": "Extract_quotation"
+        },
+        "target": {
+          "nodeType": "merge",
+          "name": "MergeDocuments"
+        }
+      },
+      {
+        "id": "e8",
+        "source": {
+          "nodeType": "extract",
+          "name": "Extract_other"
+        },
+        "target": {
+          "nodeType": "merge",
+          "name": "MergeDocuments"
+        }
+      },
+      {
+        "id": "e9",
+        "source": {
+          "nodeType": "merge",
+          "name": "MergeDocuments"
+        },
+        "target": {
+          "nodeType": "instruct",
+          "name": "NormalizeDocuments"
+        }
+      }
+    ]
+  }
+}

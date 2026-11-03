@@ -1,0 +1,72 @@
+{
+  "provenance": "generator source; NOT Studio predictions",
+  "human_reviewed": false,
+  "documents": [
+    {
+      "po_id": "PO1",
+      "supplier_id": null,
+      "original_delivery": "2026-11-03",
+      "revised_delivery": null,
+      "quote": null,
+      "warnings": [],
+      "evidence": [],
+      "document_id": "C004-PO",
+      "document_type": "purchase_order",
+      "items": [
+        {
+          "product_id": "A",
+          "receipt_id": "R1",
+          "quantity": 100,
+          "unit": "EA"
+        }
+      ]
+    },
+    {
+      "po_id": "PO1",
+      "supplier_id": null,
+      "original_delivery": "2026-11-03",
+      "revised_delivery": "2026-11-08",
+      "quote": null,
+      "warnings": [],
+      "evidence": [],
+      "document_id": "C004-NOTICE",
+      "document_type": "delivery_notice",
+      "items": [
+        {
+          "product_id": "A",
+          "receipt_id": "R1",
+          "quantity": 100,
+          "unit": "EA"
+        }
+      ]
+    },
+    {
+      "document_id": "C004-QUOTE",
+      "document_type": "quotation",
+      "po_id": "PO1",
+      "supplier_id": "S1",
+      "original_delivery": null,
+      "revised_delivery": null,
+      "items": [
+        {
+          "product_id": "A",
+          "receipt_id": null,
+          "quantity": 60,
+          "unit": "EA"
+        }
+      ],
+      "quote": {
+        "quote_id": "Q004",
+        "supplier_id": "S1",
+        "product_id": "A",
+        "capacity": 60,
+        "arrival_date": "2026-11-04",
+        "unit_price": "1000.00",
+        "shipping_cost": "500",
+        "currency": "KRW"
+      },
+      "warnings": [],
+      "evidence": []
+    }
+  ]
+}

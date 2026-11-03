@@ -1,0 +1,8 @@
+{
+  "provenance": "expected fixture; NOT Studio predictions",
+  "case_id": "SYN-C001",
+  "baseline_shortage_quantity": 0,
+  "changed_shortage_quantity": 60,
+  "additional_shortage_quantity": 60,
+  "estimated_quote_cost_krw": "60500.00"
+}

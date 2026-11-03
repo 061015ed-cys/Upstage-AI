@@ -1,0 +1,29 @@
+{
+  "document_id": "QUOTE-DOC",
+  "document_type": "quotation",
+  "po_id": "PO1",
+  "supplier_id": "S1",
+  "original_delivery": "",
+  "revised_delivery": "",
+  "items": [
+    {
+      "product_id": "A",
+      "receipt_id": "",
+      "quantity": 60,
+      "unit": "EA"
+    }
+  ],
+  "quote": [
+    {
+      "quote_id": "Q1",
+      "supplier_id": "S1",
+      "product_id": "A",
+      "capacity": 60,
+      "arrival_date": "2026-11-04",
+      "unit_price": "1000.00",
+      "shipping_cost": "500",
+      "currency": "KRW"
+    }
+  ],
+  "evidence": []
+}

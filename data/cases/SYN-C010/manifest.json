@@ -1,0 +1,27 @@
+{
+  "case_id": "SYN-C010",
+  "synthetic": true,
+  "label_status": "DRAFT",
+  "studio_executed": false,
+  "human_gold_reviewed": false,
+  "documents": [
+    {
+      "document_id": "C010-PO",
+      "document_type": "purchase_order",
+      "filename": "SYN-C010_purchase_order.pdf",
+      "sha256": "cace67590beaa158428de5b1de8de4bc47c3475c96e34f38ef01da7d00f4fb35"
+    },
+    {
+      "document_id": "C010-NOTICE",
+      "document_type": "delivery_notice",
+      "filename": "SYN-C010_delivery_notice.pdf",
+      "sha256": "7ba49bd4dd17d3a9a1b61c820f3e27f0c128dbc7eb10b8ebc1471be6eb984e31"
+    },
+    {
+      "document_id": "C010-QUOTE",
+      "document_type": "quotation",
+      "filename": "SYN-C010_quotation.pdf",
+      "sha256": "8fb3693dfc08c1a84eb94afe21ca45108cc34905cdb213a37cee6caf37111b1d"
+    }
+  ]
+}

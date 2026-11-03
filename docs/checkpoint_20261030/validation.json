@@ -1,0 +1,11 @@
+{
+  "validated_at_utc": "2026-10-30T09:50:05.859205+00:00",
+  "python": "3.12.14",
+  "pytest": "80 passed in 8.12s",
+  "ruff": "All checks passed!",
+  "sdk_http_mock": "13 passed",
+  "real_studio_web_runs": 1,
+  "real_agents_api_runs": 0,
+  "source_commit_before_changes": "0d6c31d154439b3a7d5a582d0d32787a04d933af",
+  "ci_status": "pending new GitHub commit"
+}

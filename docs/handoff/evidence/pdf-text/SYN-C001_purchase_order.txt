@@ -1,0 +1,20 @@
+LEADTIME GUARDIAN | SYNTHETIC TEST DOCUMENT
+PURCHASE ORDER / 발주서
+Case ID / 케이스
+SYN-C001
+Document ID / 문서 ID
+PO-DOC
+PO ID / 발주번호
+PO1
+Original delivery / 기존 입고일
+2026-11-03
+Product / 품목
+Receipt / 입고 건
+Quantity / 수량
+Unit / 단위
+A
+R1
+100
+EA
+This purchase order records the original inbound schedule. / 기존 입고 일정입니다.
+SYNTHETIC / 합성 자료: fictional procurement test data. Inventory and customer orders are separate trusted JSON inputs.

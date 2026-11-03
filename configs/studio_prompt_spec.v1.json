@@ -1,0 +1,39 @@
+{
+  "artifact_kind": "design_spec_NOT_native_Studio_export",
+  "prompt_version": "c001-v1",
+  "workflow_name": "LeadTime Guardian - B+C3 V1",
+  "native_configuration_verified": false,
+  "parse": {
+    "language": "auto",
+    "preserve_coordinates": true,
+    "preserve_page_numbers": true,
+    "note": "Verify actual options in Studio; preserve tables and visible dates/quantities."
+  },
+  "classify": {
+    "grouping": "One case SYN-C001 with 3 files. Enable split-then-classify at file boundaries when supported; classify-only treats the whole case as one document.",
+    "classes": {
+      "purchase_order": "Buyer-issued purchase order specifying PO, product, ordered quantity and original delivery schedule. A supplier delay notice or replacement price offer is not a purchase order.",
+      "delivery_notice": "Supplier notice explicitly changing delivery against an existing PO, with original and revised schedule when visible. Classify here even if it repeats purchase order quantities.",
+      "quotation": "Supplier offer for replacement supply with price, capacity and arrival date. A quote does not confirm an executed purchase.",
+      "other": "Any document outside the three definitions, including ambiguous or unrelated documents. Never force an unsupported class."
+    }
+  },
+  "extract": {
+    "shared_instruction": "Use only visible facts in this document. Missing values must be null; absent items may be empty with a warning. Never infer receipt_id, supplier_id, dates, quantities or prices from another document or from expected answers. Preserve all item rows. Normalize dates to YYYY-MM-DD, quantities to integers only when unambiguous, amounts to decimal strings without currency symbols. Do not calculate shortage or cost. Preserve source text/page evidence when available.",
+    "fields": {
+      "document_id": "The document's explicitly printed Document ID. Do not substitute PO ID or case ID.",
+      "document_type": "One of purchase_order, delivery_notice, quotation, other, based on the document's purpose.",
+      "po_id": "The explicitly printed PO ID or Related PO reference. Null when absent.",
+      "supplier_id": "Explicitly printed supplier identifier only; not a guessed company name. Null when absent.",
+      "original_delivery": "The original inbound delivery date, separate from revised or replacement quote arrival. YYYY-MM-DD or null.",
+      "revised_delivery": "The explicitly changed inbound date in a delivery notice only. YYYY-MM-DD or null.",
+      "items": "All visible product rows. product_id, receipt_id (null unless printed), quantity, unit. For a quote, quantity is explicitly offered capacity, not PO quantity.",
+      "quote": "For quotation only: object containing quote_id, supplier_id, product_id, capacity, arrival_date, unit_price, shipping_cost, currency. Null for other document types. Never add these as new top-level extraction keys.",
+      "warnings": "Array of missing, ambiguous or conflicting fact descriptions. Empty only when none are detected.",
+      "evidence": "Array of source_page (1-based), source_field (field path), source_value (exact original text), confidence (null unless actually available). Do not create evidence strings that are not present in the source."
+    }
+  },
+  "merge_match": "Merge split branches within the uploaded case only. Match PO and product; require exact receipt_id when multiple receipts exist. Retain every document and its provenance. Do not fill a missing field using a different document without recording that fact separately. If unavailable in Studio, leave the check to Python.",
+  "validate": "Flag mismatched PO/product, missing revised date, contradictory dates, invalid or negative quantity, duplicate documents, duplicate receipt notices, and ambiguous receipt mapping. A quotation for a different product or PO must be flagged. Errors or ambiguity mean NEEDS_REVIEW; never adjust a value to an expected answer.",
+  "instruct": "Return only a JSON object with documents: an array matching configs/schemas/document_extraction.schema.json. Include each source document once. Preserve warnings and source evidence. Do not calculate inventory shortage, additional shortage or procurement cost. Do not invent a customer order or inventory data. Python performs all arithmetic. Do not mark PDF verification complete merely because fields were extracted."
+}

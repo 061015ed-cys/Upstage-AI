@@ -1,0 +1,50 @@
+{
+  "schema_version": "leadtime-studio-batch-observation/v1",
+  "provenance_level": "USER_REPORTED_STUDIO_AI_SUMMARY",
+  "case_id": "C001",
+  "experiment_alias": "B0",
+  "job_observation_status": "SINGLE_JOB_REPORTED_NOT_NATIVE_VERIFIED",
+  "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+  "config_version": 1,
+  "batch_run_count": 1,
+  "jobs": [
+    {
+      "job_id": "job_NCik8shwrgM93PDnNNYukT",
+      "execution_status": "COMPLETED",
+      "filename": "SYN-C001_purchase_order.pdf",
+      "document_type": "purchase_order",
+      "config_id": "cfg_X2xXakDtmDTHh2RoqVysvL",
+      "config_version": 1,
+      "source_files": [
+        {
+          "filename": "SYN-C001_purchase_order.pdf",
+          "document_type": "purchase_order",
+          "file_id": null
+        },
+        {
+          "filename": "SYN-C001_delivery_notice.pdf",
+          "document_type": "delivery_notice",
+          "file_id": null
+        },
+        {
+          "filename": "SYN-C001_quotation.pdf",
+          "document_type": "quotation",
+          "file_id": null
+        }
+      ]
+    }
+  ],
+  "recovered_artifacts": {
+    "job_list_xlsx": "REPORTED_NOT_ATTACHED_TO_GITHUB_VALIDATOR",
+    "config_export": "REPORTED_NOT_VALIDATED_AS_SAVED_CONFIG",
+    "job_native_json": "NOT_PROVIDED",
+    "normalize_documents": "NOT_PROVIDED",
+    "independentqa_input": "NOT_PROVIDED",
+    "independentqa_report": "NOT_PROVIDED",
+    "pdf_sha256": "NOT_PROVIDED",
+    "pdf_upload_receipts": "NOT_PROVIDED",
+    "human_reviewed_gold": "NOT_PROVIDED"
+  },
+  "metrics_status": "NOT_MEASURED",
+  "notes": "Source files and single Job are user-reported; null file_id is deliberately missing evidence, never an actual provider upload ID. No Config draft is a live Native."
+}

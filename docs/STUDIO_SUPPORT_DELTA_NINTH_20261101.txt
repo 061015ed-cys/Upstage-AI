@@ -1,0 +1,44 @@
+LeadTime Guardian — 9차 Github → Studio 관리 GPT 최소 추가 지시 (8차 기존 지시 중복 금지)
+
+[현재 보존 대상]
+C001, B0 Job job_NCik8shwrgM93PDnNNYukT
+Saved Config cfg_X2xXakDtmDTHh2RoqVysvL Version 1
+PDF 이름 SYN-C001_purchase_order.pdf, SYN-C001_delivery_notice.pdf, SYN-C001_quotation.pdf
+현재 확보한 XLSX에는 single Job/Extract 3건이 표시되지만 실제 Normalize Native 3문서·IndependentQA 실제 INPUT와 Report는 미확인이다.
+원본 XLSX SHA ad338d318f48c566dce3bf92e6b46c2cff49cd429dba90a79ea2941703ff82eb. 22개 셀의 OOXML raw v49는 sharedStrings[49]을 가리키며 실제 값은 빈 문자열. Literal string/number 49는 0개. 49 LLM 환각 가설 재사용 금지.
+
+[9차 GitHub 새 변경]
+9차 Draft PR #10: https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/10
+NEW_LIVE_STUDIO 경로에서는 원본 Stage manifest, QA Native·Report, QA Sandbox Agent/Config, Team2 Sidecar, 운영·QA 업로드 영수증 및 PDF 원본 폴더가 모두 제공되지 않으면 Python V6 실행 전 BLOCKED / NOT_RUN으로 차단합니다.
+9차 별도 read-only Release Evidence Preflight는 원본 파일별 실제 로컬 바이트 SHA와 누락·손상·실행 식별자 충돌을 검증해 missing_inputs, invalid_inputs, next_required_action을 JSON 및 Markdown으로 작성합니다.
+이 기능은 Studio 실행을 새로 만드는 코드가 아니며, QA/Gold 정확도를 자동 승인하지 않습니다.
+
+[Studio 쪽에서 이번에 최소 수행할 일]
+1. 기존 B0 Saved Config v1과 NCik Job을 보존하고, 재실행 없이 해당 Job 실제 Extract 발주서/납기통보서/견적서 원본 JSON 3개, MergeDocuments 원본, NormalizeDocuments 원본을 회수합니다. 분기별 Job ID, Step Run ID, Config ID/Version, Case ID, Source File ID, 원본 SHA를 함께 제공하세요.
+2. IndependentQA 실제 Step INPUT 원본과 실제 QA Report 원본을 회수하고 Sandbox Job ID, Config ID/Version, Step ID, checked_document_ids 및 qa_status를 분리 기록하세요. QA Step COMPLETED와 QA PASS를 혼동하지 마세요.
+3. 3개 원본 PDF의 실제 바이트 SHA, 운영 Studio 원본 Upload Receipt, QA Sandbox Upload Receipt, PDF file_id/filename 연결을 제공합니다. PDF 이름이 같다고 원본 동일성을 추정하지 마세요.
+4. 22개 EMPTY_STRING 필드의 Extract→Merge→Normalize→QA Input JSON Path/타입/값을 단계별로 검증합니다. 누락은 NOT_PROVIDED, 최초 생성 단계는 원본 연속 증거 없으면 UNKNOWN.
+5. 실제 Saved B0 v1의 Extract nullable/type 지원이 Draft v4 static 계약과 동일한지 확인한 후에만 추후 수정안을 제안합니다. 승인 전 Config 변경 및 유료 E1 Job 실행 금지.
+6. Team2 Python 실행/sidecar와 Team3 Human-reviewed Gold에 필요한 원본은 각각 담당자에게 출처·SHA/페이지 기준으로 인계하세요.
+7. E1 실제 원본과 확실한 동일 PDF 바이트가 없다면 B0/E1 비교 수치 및 개선 판정 NOT_MEASURED를 유지합니다.
+
+[GitHub 담당자의 9차 인계 입력 계약]
+GitHub는 leadtime-release-evidence/v1의 release_evidence.json을 받습니다. case_id=C001, operational_job_id, config_id, config_version, sources 필드에 stage_manifest, operational_native, qa_native, qa_report, team2_provenance, operational_pdf_receipt, qa_pdf_receipt, human_gold, source_pdfs.{purchase_order,delivery_notice,quotation} 원본 **상대 경로**를 작성합니다.
+각 source의 실제 로컬 SHA와 선언 SHA를 비교할 수 있고 source 내용 자체를 Github에 올릴 필요는 없습니다.
+실제 원본이 없으면 sources 항목을 생략해도 됩니다. 분석기는 미확보 자료를 출력하고 BLOCKED 유지하며 가짜 source 파일을 생성하지 않습니다.
+검증 명령:
+python scripts/qa_release_evidence_check.py --manifest /private/evidence/release_evidence.json --json-report /private/results/missing_evidence.json --markdown-report /private/results/missing_evidence.md
+
+필요한 실제 원본이 수집된 후 별도 기존 Stage/Combined E2E CLI를 수행합니다. 9차 runbook 링크:
+https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/blob/feat/qa-ninth-release-readiness-20261101/docs/NINTH_RELEASE_VALIDATION_RUNBOOK_20261101.md
+
+[Studio 최종 회신]
+actual_existing_files: 원본 파일명·SHA·Job/Step/Config·Case·PDF file_id 및 수신 가능 여부
+missing_files: 미회수 항목/사유
+empty_string_trace: 22개 셀 원본 각 Step 값·타입 및 첫 관측 변환 경계
+qa_actual_input_report: 실제 문서 IDs, qa_status, QA Job/Config ID, 원본 SHA
+provenance: 실제 PDF 바이트/Upload Receipt/Team2 Sidecar, 검증 누락
+e1_status: 실제 E1 수행 여부, 원본 PDF SHA, Config Diff, Human Gold 여부
+gate: LIVE 증거의 PASS/FAIL/BLOCKED. 신규 실행/설정 변경 금지.
+
+GitHub 코드 CI가 PASS여도 Studio Live E2E와 Release는 BLOCKED이다. 사용자 승인 없는 Studio 유료 Job 실행, 기존 실행 삭제·수정, 기존 PR Merge 금지.

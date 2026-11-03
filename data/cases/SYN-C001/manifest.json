@@ -1,0 +1,30 @@
+{
+  "case_id": "SYN-C001",
+  "synthetic": true,
+  "source": "data/sample/portfolio_case.json",
+  "studio_executed": false,
+  "human_gold_reviewed": false,
+  "documents": [
+    {
+      "document_id": "PO-DOC",
+      "document_type": "purchase_order",
+      "filename": "SYN-C001_purchase_order.pdf",
+      "pages": 1,
+      "sha256": "9246b69363e3cec3dca7654b14bc7facdb0f762e8ae72c42594f38efabadc930"
+    },
+    {
+      "document_id": "NOTICE-DOC",
+      "document_type": "delivery_notice",
+      "filename": "SYN-C001_delivery_notice.pdf",
+      "pages": 1,
+      "sha256": "7a5f7b8f025a79a0751a6b6c41e21292fc62c1c02cdd071048e38a66e4bf7f2b"
+    },
+    {
+      "document_id": "QUOTE-DOC",
+      "document_type": "quotation",
+      "filename": "SYN-C001_quotation.pdf",
+      "pages": 1,
+      "sha256": "35c9deddbc06d0cb49c1e45cd859a95b97e2a9cde2ea5931d1f8ffe6dfc3c551"
+    }
+  ]
+}

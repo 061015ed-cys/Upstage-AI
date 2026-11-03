@@ -1,0 +1,77 @@
+{
+  "project": "LeadTime Guardian",
+  "date_kst": "2026-11-01",
+  "qa_repository": "dohun3540-crypto/leadtime-guardian-agent.copy",
+  "qa_pr11_freeze_sha": "585142e718b444cbbd3c2b5e42d68637450",
+  "qa_pr13_sha": "d07771ebb28aaf34026fc6a28322e424b110ea18",
+  "qa_pr14_sha": "62c68e1a6d9630d027e7acc64989b27972ab5cbe",
+  "parallel_branch_comparison": {
+    "status": "diverged",
+    "ahead_by": 6,
+    "behind_by": 6
+  },
+  "new_branch": "feat/qa-pr13-pr14-final-selective-freeze-20261101",
+  "new_draft_pr": 15,
+  "new_pr_url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/pull/15",
+  "verified_code_sha": "23a08d119185d4f2cff73c8d32169526b22bc932",
+  "verified_code_ci": {
+    "run_id": 41310125056,
+    "url": "https://github.com/dohun3540-crypto/leadtime-guardian-agent.copy/actions/runs/41310125056",
+    "conclusion": "SUCCESS",
+    "python_full_pass": 630,
+    "independent_qa_pass": 441,
+    "qa_tests_included_in_full": true,
+    "ruff_qa": "PASS",
+    "ruff_all": "PASS",
+    "archived_c001": "PASS_LOCAL",
+    "local_checks_passed": true,
+    "overall": "BLOCKED"
+  },
+  "red_ci_before_fix": {
+    "sha": "8dd0e02568f70f4ca11384c590a87d1fc4fd920c",
+    "run_id": 41310013297,
+    "failed_new_contract_tests": 5
+  },
+  "selected_changes": {
+    "retained_from_pr13": [
+      "tuple/list distinction",
+      "non-string JSON keys rejected",
+      "bool/int and int/float type fidelity",
+      "Strict JSON Wrapper",
+      "expected_case_id",
+      "duplicate document ID protection",
+      "QA provenance",
+      "Cross-Agent and Python V6 contracts"
+    ],
+    "adopted_from_pr14": [
+      "known lowercase severity -> uppercase warning and human review",
+      "explicit workflow_version:null accepted only for structural triage, original null retained and QA PASS cannot be promoted"
+    ],
+    "not_merged": [
+      "parallel PR14 input_delivery duplicate helper",
+      "parallel PR14 full original commit and repeated regression cases"
+    ]
+  },
+  "change_paths": [
+    "src/leadtime_guardian/qa/studio_qa_adapter.py",
+    "tests/test_qa_pr13_pr14_adapter_selective.py",
+    "docs/PR13_PR14_FINAL_SELECTIVE_INTEGRATION_20261101.md",
+    "docs/PR13_PR14_STUDIO_HANDOFF_DELTA_20261101.txt",
+    "docs/PR13_PR14_FINAL_FREEZE_CHECKPOINT_20261101.json"
+  ],
+  "operational_team2_engine_pr12_sha": "e9b9992b593a42d427ff1bbadeb9a9866ca593bd",
+  "final_commit_sha": "Read PR #15 latest head_sha after checkpoint; cannot embed its own final Git SHA.",
+  "final_ci": "Fetch GitHub Actions workflow run for PR #15 latest head_sha, verify SUCCESS and job logs, cite in final answer.",
+  "gates": {
+    "github_code_candidate": "PASS_LOCAL_CANDIDATE_AFTER_FINAL_HEAD_CI",
+    "pr14_studio_adapter_synthetic": "PASS_LOCAL",
+    "actual_e1_raw_contract": "NOT_VERIFIED",
+    "b0_native_chain": "NOT_PROVIDED",
+    "team2_live_sidecar": "NOT_PROVIDED",
+    "human_reviewed_gold": "NOT_PROVIDED",
+    "b0_e1_quality": "NOT_MEASURED",
+    "actual_studio_e2e": "BLOCKED",
+    "overall_release": "BLOCKED"
+  },
+  "next_action": "Check PR #15 final HEAD Actions and Team2 six original blobs; obtain authentic E1 QA original report plus B0 Extract3/Merge/Normalize/QA Input/Report, original PDF bytes & provider receipts, team2 sidecar, team3 Gold, then run release inventory->stage->combined and B0/E1 if actual sources exist. No automatic merge or paid Studio job."
+}
