@@ -1,0 +1,59 @@
+{
+  "status": "DRAFT_NOT_SUBMISSION_READY",
+  "source_repo": "061015ed-cys/Upstage-AI",
+  "source_main_sha": "575745bd8c6a8f00627197de6e6bb8530bcec6bb",
+  "created_kst": "2026-11-03",
+  "zip_created": false,
+  "upload_authorized": false,
+  "files": [
+    {
+      "relative_path": "README.md",
+      "bytes": 6151,
+      "sha256": "9b758073d53b80caafaa8fb5c1c16b704db92f652e67b219cd3350f1a9852204",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    },
+    {
+      "relative_path": "docs/SUBMISSION_CHECKLIST.md",
+      "bytes": 1140,
+      "sha256": "2da665dd663e4689c0d340daaa38171d8e0e4692143dc5795d6c991b53bcf495",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    },
+    {
+      "relative_path": "docs/team4/OFFICIAL_SUBMISSION_REQUIREMENTS.md",
+      "bytes": 2022,
+      "sha256": "ca8a240b37d60253bd08dbff3df8b02dd2c51a11684009280465d60f6db3d013",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    },
+    {
+      "relative_path": "docs/team4/SETUP_RUNBOOK.md",
+      "bytes": 3465,
+      "sha256": "2b0df949fb9c382cc55ff597c35d08b94256f57787aae1bf25d1c694234c031f",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    },
+    {
+      "relative_path": "docs/team4/DEMO_AND_PITCH.md",
+      "bytes": 4002,
+      "sha256": "19f760bc764b88ff597fd3a76ffe4bc72ce8df8bc0634c199824d1e8c6ffdb3a",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    },
+    {
+      "relative_path": "docs/team4/FINAL_HANDOFF.md",
+      "bytes": 6023,
+      "sha256": "ad36f62468930e61055e5236475f07b370cbe8a972b7fca47bb5e766952dacd3",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    },
+    {
+      "relative_path": "docs/team4/PRE_FLIGHT_CHECKLIST.md",
+      "bytes": 1410,
+      "sha256": "61c9ed4b11207cd07d5e78493185857fad7ac107721fe81e773dcc55fcec1696",
+      "evidence_tier": "DOCUMENT_DRAFT",
+      "share_approved": false
+    }
+  ]
+}
