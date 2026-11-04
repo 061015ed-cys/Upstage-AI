@@ -1,0 +1,25 @@
+{
+  "status": "BLOCKED",
+  "scope": "DATA_GATE_ONLY",
+  "repository": "061015ed-cys/Upstage-AI",
+  "reviewed_xlsx": "NOT_PROVIDED",
+  "approved_gold": "NOT_PROVIDED",
+  "studio_new_live_native": "NOT_PROVIDED",
+  "official_accuracy": "NOT_MEASURED",
+  "required_from_team1": [
+    "Original Native export bytes for one operational case",
+    "Agent, workflow, config, version, operational job, step and file IDs",
+    "Case/document IDs and source PDF SHA-256 bindings",
+    "Independent QA job and its input Native SHA-256 binding"
+  ],
+  "required_from_team2": [
+    "Normalized document contract and typed calculation result",
+    "Case ID and input/output SHA-256 bindings"
+  ],
+  "required_from_team3": [
+    "Original reviewed XLSX bytes and SHA-256",
+    "Actual reviewer record and separate team approval record",
+    "Frozen Human Gold bytes, version, SHA-256 and field evidence"
+  ],
+  "next_owner": "Gu Dohun: provide authentic Studio run bindings; Kim Minju: provide reviewed Gold evidence"
+}
