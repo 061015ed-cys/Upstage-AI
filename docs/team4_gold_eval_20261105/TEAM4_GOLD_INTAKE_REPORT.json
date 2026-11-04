@@ -1,0 +1,23 @@
+{
+  "repository": "061015ed-cys/Upstage-AI",
+  "base_commit_sha": "575745bd8c6a8f00627197de6e6bb8530bcec6bb",
+  "source_pr": "https://github.com/dohun3540-crypto/integration_finished_workforlast/pull/3",
+  "source_pr_head_sha": "80fb5814d6053fc592c627ea70ba30e1a2b6f451",
+  "intake_status": "BLOCKED",
+  "reviewed_xlsx": "NOT_PROVIDED",
+  "reviewed_xlsx_sha256": null,
+  "human_review_record": "NOT_PROVIDED",
+  "team_approval_record": "NOT_PROVIDED",
+  "frozen_gold": "NOT_PROVIDED",
+  "frozen_gold_sha256": null,
+  "studio_native_binding": "NOT_PROVIDED_FOR_NEW_LIVE_RUN",
+  "repository_pdf_inventory": {
+    "status": "PASS_LOCAL",
+    "documents": 60,
+    "passed": 60,
+    "failed": 0,
+    "blocked": 0,
+    "scope": "Source bytes, manifest and machine page checks only"
+  },
+  "next_owner": "Kim Minju: provide original XLSX bytes and actual human review/approval evidence"
+}

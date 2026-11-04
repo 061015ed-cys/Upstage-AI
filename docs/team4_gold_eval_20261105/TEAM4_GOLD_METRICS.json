@@ -1,0 +1,10 @@
+{
+  "status": "NOT_MEASURED",
+  "official_accuracy": null,
+  "numerator": null,
+  "denominator": null,
+  "reason": "No original reviewed XLSX, verified human/team approval, frozen Gold, or matching new Studio Native prediction was provided to this repository.",
+  "candidate_is_gold": false,
+  "archived_replay_is_new_live": false,
+  "release_authorized": false
+}
