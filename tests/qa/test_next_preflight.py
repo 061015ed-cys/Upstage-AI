@@ -53,6 +53,12 @@ def test_intake_rejects_draft_mixed_job_bad_xlsx_and_sidecar(tmp_path):
     assert "SIDECAR_NATIVE_SHA_MISMATCH" in report["failures"]
     assert "NATIVE_CONTRACT_FAILED" in report["failures"]
     assert "EXECUTION_IDENTITY_MISMATCH" in report["failures"]
+    review_csv = b"invalid-header\n"
+    (tmp_path / "review.csv").write_bytes(review_csv)
+    artifacts["human_review_record"] = {
+        "path": "review.csv", "sha256": hashlib.sha256(review_csv).hexdigest()}
+    dump(manifest, {"case_id": "C001", "job_id": "job_1", "artifacts": artifacts})
+    assert "HUMAN_REVIEW_CONTRACT_FAILED" in intake(manifest)["failures"]
 
 
 def test_submission_missing_sha_and_sensitive(tmp_path):

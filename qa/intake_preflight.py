@@ -12,6 +12,7 @@ from leadtime_guardian.qa.studio_contract import audit_native_envelope
 from qa.gold_metrics import bound_native, is_approved
 from qa.inventory import strict_json
 from qa.review_bridge import inspect_xlsx_review
+from qa.review_records import inspect_records, load_csv
 
 REQUIRED = ("reviewed_xlsx", "baseline_csv", "human_review_record",
             "team_approval_record", "frozen_gold", "studio_native",
@@ -86,7 +87,23 @@ def inspect(manifest_path: Path, trusted_manifest_path: Path | None = None) -> d
             gold = strict_json(raw["frozen_gold"])
             binding = strict_json(raw["native_binding"])
             sidecar = strict_json(raw["v6_sidecar"])
-            review = strict_json(raw["human_review_record"])
+            review_path = artifacts["human_review_record"]["path"]
+            if Path(review_path).suffix.lower() == ".csv":
+                if "baseline_csv" not in raw:
+                    result["blocking_reasons"].append("HUMAN_REVIEW_BASELINE_NOT_PROVIDED")
+                else:
+                    try:
+                        review_check = inspect_records(load_csv(raw["human_review_record"]),
+                                                       load_csv(raw["baseline_csv"]))
+                        result["human_review_status"] = review_check["record_check_status"]
+                        if result["human_review_status"] != "PASS":
+                            result["failures"].append("HUMAN_REVIEW_CONTRACT_FAILED")
+                    except (ValueError, TypeError, UnicodeError):
+                        result["human_review_status"] = "FAIL"
+                        result["failures"].append("HUMAN_REVIEW_CONTRACT_FAILED")
+                review = {"format": "csv"}
+            else:
+                review = strict_json(raw["human_review_record"])
             approval = strict_json(raw["team_approval_record"])
             native = strict_json(raw["studio_native"])
             execution = strict_json(raw["execution_record"])
