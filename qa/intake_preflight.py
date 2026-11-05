@@ -9,7 +9,7 @@ import zipfile
 from pathlib import Path
 
 from leadtime_guardian.qa.studio_contract import audit_native_envelope
-from qa.gold_metrics import bound_native, is_approved
+from qa.gold_metrics import approved_evidence, bound_native, is_approved
 from qa.inventory import strict_json
 from qa.review_bridge import inspect_xlsx_review
 from qa.review_records import inspect_records, load_csv
@@ -112,6 +112,8 @@ def inspect(manifest_path: Path, trusted_manifest_path: Path | None = None) -> d
                 raise ValueError("JSON evidence must be objects")
             if not is_approved(gold):
                 result["failures"].append("FROZEN_GOLD_NOT_APPROVED")
+            if approved_evidence(gold) is None:
+                result["failures"].append("APPROVED_FIELD_EVIDENCE_INVALID")
             if not bound_native(gold, binding):
                 result["failures"].append("NATIVE_BINDING_MISMATCH")
             if (not isinstance(gold.get("case_id"), str)

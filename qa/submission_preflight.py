@@ -75,12 +75,18 @@ def inspect(candidate: Path | None, manifest_path: Path) -> dict:
                 observed[name] = path.read_bytes()
         elif zipfile.is_zipfile(candidate):
             with zipfile.ZipFile(candidate) as archive:
-                infos = [x for x in archive.infolist() if not x.is_dir()]
-                if len(infos) > MAX_COUNT or sum(x.file_size for x in infos) > MAX_TOTAL:
+                all_infos = archive.infolist()
+                infos = [x for x in all_infos if not x.is_dir()]
+                if len(all_infos) > MAX_COUNT or sum(x.file_size for x in infos) > MAX_TOTAL:
                     raise ValueError("ZIP exceeds limits")
-                names = [x.filename for x in infos]
+                names = [x.filename.rstrip("/") for x in all_infos]
                 if len(names) != len(set(names)):
                     result["blockers"].append("DUPLICATE_ZIP_PATH")
+                for info in all_infos:
+                    name = info.filename.rstrip("/") if info.is_dir() else info.filename
+                    if (not _safe(name) or info.flag_bits & 1
+                            or (info.external_attr >> 16) & 0o170000 == 0o120000):
+                        result["blockers"].append("UNSAFE_ZIP_ENTRY")
                 if archive.testzip() is not None:
                     result["blockers"].append("ZIP_CRC_FAILURE")
                 for info in infos:
@@ -113,7 +119,8 @@ def inspect(candidate: Path | None, manifest_path: Path) -> dict:
                 result["blockers"].append("SENSITIVE_FILE_UNAPPROVED:" + name)
             if SECRET_BYTES.search(raw):
                 result["blockers"].append("SECRET_CONTENT_DETECTED:" + name)
-        if approved and not isinstance(manifest.get("public_approval_reference"), str):
+        reference = manifest.get("public_approval_reference")
+        if approved and (not isinstance(reference, str) or not reference.strip()):
             result["blockers"].append("PUBLIC_APPROVAL_REFERENCE_MISSING")
     except (OSError, ValueError, TypeError, KeyError, UnicodeError, zipfile.BadZipFile,
             RuntimeError) as exc:

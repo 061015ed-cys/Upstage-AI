@@ -49,6 +49,7 @@ def test_intake_rejects_draft_mixed_job_bad_xlsx_and_sidecar(tmp_path):
     assert "XLSX_REVIEW_CONTRACT_FAILED" in report["failures"] or any(
         x.startswith("INVALID_INPUT:") for x in report["failures"])
     assert "FROZEN_GOLD_NOT_APPROVED" in report["failures"]
+    assert "APPROVED_FIELD_EVIDENCE_INVALID" in report["failures"]
     assert "CASE_OR_JOB_MISMATCH" in report["failures"]
     assert "SIDECAR_NATIVE_SHA_MISMATCH" in report["failures"]
     assert "NATIVE_CONTRACT_FAILED" in report["failures"]
@@ -110,3 +111,35 @@ def test_submission_zip_duplicate_and_precheck_only(tmp_path):
     report = submission(archive, manifest)
     assert report["status"] == "PRECHECK_ONLY"
     assert report["submission_authorized"] is False
+
+
+def test_submission_rejects_unsafe_zip_directory(tmp_path):
+    archive = tmp_path / "candidate.zip"
+    with zipfile.ZipFile(archive, "w") as z:
+        z.writestr("../escape/", b"")
+        z.writestr("report.txt", b"safe")
+    manifest = tmp_path / "manifest.json"
+    dump(manifest, {"files": [{"path": "report.txt",
+                                "sha256": hashlib.sha256(b"safe").hexdigest(),
+                                "size_bytes": 4}],
+                    "required_evidence_references": ["report.txt"]})
+    report = submission(archive, manifest)
+    assert report["status"] == "FAIL"
+    assert "UNSAFE_ZIP_ENTRY" in report["blockers"]
+
+
+def test_submission_rejects_empty_public_approval_reference(tmp_path):
+    candidate = tmp_path / "package"
+    candidate.mkdir()
+    raw = b"{}"
+    (candidate / "raw_native.json").write_bytes(raw)
+    manifest = tmp_path / "manifest.json"
+    dump(manifest, {"files": [{"path": "raw_native.json",
+                                "sha256": hashlib.sha256(raw).hexdigest(),
+                                "size_bytes": len(raw)}],
+                    "required_evidence_references": ["raw_native.json"],
+                    "approved_sensitive_paths": ["raw_native.json"],
+                    "public_approval_reference": ""})
+    report = submission(candidate, manifest)
+    assert report["status"] == "FAIL"
+    assert "PUBLIC_APPROVAL_REFERENCE_MISSING" in report["blockers"]
