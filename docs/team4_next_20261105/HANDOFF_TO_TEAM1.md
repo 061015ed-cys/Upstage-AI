@@ -1,0 +1,9 @@
+# Team 1 handoff for Team 4 evidence gates
+
+Team 4 PR #2 HEAD `0f12a34f486ce336d9f00eab228f1947e2d348f4` is verified, with exact-HEAD Actions run `41856382889` successful. This new branch adds local intake and package preflights plus one fail-closed Gold correction. Task 3 PR #18 could not be read with current GitHub access, so its supplied HEAD `58d6767ec40a05e956067b5f23933382d0cebf41` is unverified. Team 1 should obtain read access before declaring the cross-repository contract reconciled.
+
+`data/results/studio_runs/C001_20261030_v4/extractions_native.zip` is available in Team 4 at SHA256 `8de8bc77aceeb2255a1e87c8367c49b3ad2e75ce763ee4f0a65b276352a5f0fa`; it is an archived export and does not satisfy a new live Native or same-job QA Request/Trace requirement. The repository's `extraction_gold.DRAFT.json` files are draft data only. They must not be requested again as if missing, nor promoted to Human Gold.
+
+Receive the minimum still missing originals through a private channel. Gu Dohun owns actual Studio Native raw, operating case/job/agent/config/version/step and file IDs, source PDF SHA and QA Request/Trace or an explicit unavailable statement. Yun Hyeonjun owns the V6 typed output and Sidecar bound to those same Native bytes. Kim Minju owns reviewed XLSX bytes, human review record, separate team approval and frozen Gold bytes/version/SHA. If any item is already verified in Task 3's private checkpoint, record its path and SHA instead of asking again. `REQUIRED_EVIDENCE.csv` names the current statuses and downstream commands.
+
+Run the commands in `REPRO_COMMANDS.md` after originals arrive. Intake PASS records local consistency plus a separate reviewer attestation, not Studio identity or official accuracy. Release remains BLOCKED until the Task 3 source contract, original evidence, official output specification, Python safety and independent QA gates are verified.

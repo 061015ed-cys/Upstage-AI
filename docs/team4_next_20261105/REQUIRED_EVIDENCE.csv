@@ -1,0 +1,10 @@
+owner,item,format,current_status,repository_evidence,next_command
+Team4,archived C001 Native export,ZIP,DONE_VERIFIED,data/results/studio_runs/C001_20261030_v4/extractions_native.zip SHA256 8de8bc77aceeb2255a1e87c8367c49b3ad2e75ce763ee4f0a65b276352a5f0fa,NOT_REQUIRED_FOR_NEW_LIVE
+Gu Dohun,new live Studio Native and source file IDs,raw JSON plus execution record with case/job/agent/config/version/step/file/SHA,WAITING_EXTERNAL,Team4 repo has archived export only,qa.intake_preflight and qa_stage_intake_check.py
+Gu Dohun,QA Request Body and Provider Trace or explicit availability statement,raw JSON plus SHA and QA job binding,WAITING_EXTERNAL,Task3 PR18 inaccessible,qa_combined_e2e_check.py
+Yun Hyeonjun,V6 typed output and provenance Sidecar,JSON plus Native SHA and case/job binding,WAITING_EXTERNAL,No matching new live Sidecar in Team4 repo,qa.intake_preflight and qa_combined_e2e_check.py
+Kim Minju,reviewed XLSX original and baseline,original XLSX/CSV plus byte SHA,WAITING_EXTERNAL,No reviewed XLSX in Team4 repo,qa.intake_preflight
+Kim Minju,human review and separate team approval,original JSON records plus SHA and reviewer/time,WAITING_EXTERNAL,No approval records in Team4 repo,qa.intake_preflight
+Kim Minju,frozen Human Gold,original JSON plus version and SHA and field citations,WAITING_EXTERNAL,Only DRAFT extraction Gold in Team4 repo,qa.gold_metrics after official output contract confirmation
+Team1,Task3 PR18 contract access,read-only repo permission and exact HEAD,ACTIONABLE_NOW,GitHub connector and public page returned 404,CONTRACT_MATRIX.csv reconciliation
+Team1,submission candidate and public permission,private folder/ZIP plus manifest and approval reference,WAITING_EXTERNAL,No designated final candidate,qa.submission_preflight

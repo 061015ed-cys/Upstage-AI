@@ -1,0 +1,22 @@
+{
+  "status": "BLOCKED",
+  "scope": "OFFLINE_EVIDENCE_INTAKE",
+  "source_authentication_status": "NOT_VERIFIED",
+  "official_metrics_eligible": false,
+  "release_authorized": false,
+  "sha256": {},
+  "blocking_reasons": [
+    "job_id:NOT_PROVIDED",
+    "reviewed_xlsx:NOT_PROVIDED",
+    "baseline_csv:NOT_PROVIDED",
+    "human_review_record:NOT_PROVIDED",
+    "team_approval_record:NOT_PROVIDED",
+    "frozen_gold:NOT_PROVIDED",
+    "studio_native:NOT_PROVIDED",
+    "native_binding:NOT_PROVIDED",
+    "execution_record:NOT_PROVIDED",
+    "v6_sidecar:NOT_PROVIDED",
+    "INDEPENDENT_TRUST_MANIFEST_NOT_PROVIDED"
+  ],
+  "failures": []
+}
