@@ -161,7 +161,8 @@ def metric(n, d):
 
 def evaluate(prediction, gold, native=None):
     """Official denominator requires frozen reviewed Gold AND bound native execution."""
-    result = {"case_id": gold.get("case_id"), "status": "BLOCKED",
+    result = {"case_id": gold.get("case_id") if isinstance(gold, dict) else None,
+              "status": "BLOCKED",
               "accuracy_status": "NOT_MEASURED", "official_metrics_eligible": False,
               "release_authorized": False, "metrics": {}, "field_results": [], "reason": ""}
     if not is_approved(gold):

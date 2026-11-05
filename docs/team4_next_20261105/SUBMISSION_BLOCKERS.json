@@ -1,0 +1,11 @@
+{
+  "status": "BLOCKED",
+  "scope": "PRECHECK_ONLY",
+  "final_submission_candidate": "NOT_PROVIDED",
+  "candidate_manifest": "NOT_PROVIDED",
+  "public_permission": "NOT_VERIFIED",
+  "release_authorized": false,
+  "submission_authorized": false,
+  "fixture_result": "PRECHECK_ONLY; synthetic test only",
+  "blockers": ["SUBMISSION_CANDIDATE_NOT_PROVIDED", "PUBLIC_PERMISSION_NOT_VERIFIED"]
+}

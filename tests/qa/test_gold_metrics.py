@@ -66,6 +66,13 @@ def test_unapproved_candidate_has_no_official_metrics():
     assert report["metrics"] == {}
 
 
+def test_null_gold_fails_closed_without_exception():
+    report = evaluate({}, None, None)
+    assert report["status"] == "BLOCKED"
+    assert report["accuracy_status"] == "NOT_MEASURED"
+    assert report["reason"] == "HUMAN_GOLD_NOT_APPROVED"
+
+
 def test_unverified_native_job_is_blocked():
     gold, binding, pred = sample()
     assert evaluate(pred, gold)["accuracy_status"] == "NOT_MEASURED"

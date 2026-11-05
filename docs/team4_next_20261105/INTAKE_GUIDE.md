@@ -1,0 +1,9 @@
+# Evidence intake preflight
+
+Run `python -m qa.intake_preflight --manifest docs/team4_next_20261105/intake_manifest.json` from the Team 4 checkout. Exit 2 is BLOCKED, 1 is FAIL, 0 is PASS for intake consistency only. The checked-in manifest is intentionally empty and must return BLOCKED. Keep real original files and the populated manifest in a private directory, outside this public repository.
+
+The manifest identifies `case_id`, `job_id`, optional `sheet`, and `artifacts`. Each artifact is `{"path":"relative/file","sha256":"64 lowercase hex"}`. Required keys: `reviewed_xlsx`, `baseline_csv`, `human_review_record`, `team_approval_record`, `frozen_gold`, `studio_native`, `native_binding`, and `v6_sidecar`. The review and approval records are JSON objects. Approval must say `APPROVE`, match the case and frozen Gold file SHA. Gold's approval record SHA must match the actual human review record bytes. V6 Sidecar `export_sha256` must match the Native bytes. Gold and Native binding must pass `qa.gold_metrics` checks.
+
+An independent reviewer may provide `--trusted-manifest PRIVATE_OUTSIDE_INTAKE/trust.json` after checking original provenance. It must be outside the intake folder and contain the exact `case_id`, `job_id`, complete `sha256` map printed by the preflight, and a nonempty `verified_by`. This records an external attestation; it is not a cryptographic signature or provider authentication. The tool never authorizes release or official accuracy. Use `scripts/qa_release_evidence_check.py` and the Stage/combined gates for separate Studio evidence review.
+
+Missing paths or trust manifest yield BLOCKED. Wrong SHA, malformed XLSX/JSON, unapproved draft, mixed case/job, bad Native binding, and Sidecar mismatch yield FAIL. The report records each observed SHA and reason without copying original bytes.
