@@ -8,13 +8,14 @@ import re
 import zipfile
 from pathlib import Path
 
+from leadtime_guardian.qa.studio_contract import audit_native_envelope
 from qa.gold_metrics import bound_native, is_approved
 from qa.inventory import strict_json
 from qa.review_bridge import inspect_xlsx_review
 
 REQUIRED = ("reviewed_xlsx", "baseline_csv", "human_review_record",
             "team_approval_record", "frozen_gold", "studio_native",
-            "native_binding", "v6_sidecar")
+            "native_binding", "execution_record", "v6_sidecar")
 SHA = re.compile(r"[0-9a-f]{64}\Z")
 
 
@@ -79,6 +80,7 @@ def inspect(manifest_path: Path, trusted_manifest_path: Path | None = None) -> d
                 result["xlsx_review_status"] = "FAIL"
                 result["failures"].append("XLSX_REVIEW_CONTRACT_FAILED")
         if all(name in raw for name in ("frozen_gold", "native_binding", "studio_native",
+                                       "execution_record",
                                        "human_review_record", "team_approval_record",
                                        "v6_sidecar")):
             gold = strict_json(raw["frozen_gold"])
@@ -87,8 +89,9 @@ def inspect(manifest_path: Path, trusted_manifest_path: Path | None = None) -> d
             review = strict_json(raw["human_review_record"])
             approval = strict_json(raw["team_approval_record"])
             native = strict_json(raw["studio_native"])
+            execution = strict_json(raw["execution_record"])
             if not all(isinstance(x, dict) for x in (gold, binding, sidecar, review,
-                                                     approval, native)):
+                                                     approval, native, execution)):
                 raise ValueError("JSON evidence must be objects")
             if not is_approved(gold):
                 result["failures"].append("FROZEN_GOLD_NOT_APPROVED")
@@ -100,12 +103,46 @@ def inspect(manifest_path: Path, trusted_manifest_path: Path | None = None) -> d
                 result["failures"].append("CASE_OR_JOB_MISMATCH")
             if sidecar.get("export_sha256") != result["sha256"]["studio_native"]:
                 result["failures"].append("SIDECAR_NATIVE_SHA_MISMATCH")
-            if gold.get("approval_provenance", {}).get("approval_record_sha256") != result["sha256"]["human_review_record"]:
+            review_ref = gold.get("approval_provenance")
+            if (not isinstance(review_ref, dict) or
+                    review_ref.get("approval_record_sha256") != result["sha256"]["human_review_record"]):
                 result["failures"].append("HUMAN_REVIEW_SHA_MISMATCH")
             if (approval.get("case_id") != case_id
                     or approval.get("gold_sha256") != result["sha256"]["frozen_gold"]
                     or approval.get("decision") != "APPROVE"):
                 result["failures"].append("TEAM_APPROVAL_MISMATCH")
+            step = execution.get("native_step_run_id")
+            native_check = audit_native_envelope(native, expected_job_id=job_id,
+                                                 expected_step_run_id=step)
+            result["native_contract_status"] = native_check["qa_status"]
+            if native_check["qa_status"] != "PASS":
+                result["failures"].append("NATIVE_CONTRACT_FAILED")
+            if (execution.get("job_id") != job_id
+                    or execution.get("config_id") != binding.get("config_id")
+                    or not isinstance(execution.get("agent_id"), str)
+                    or not execution["agent_id"].strip()
+                    or type(execution.get("config_version")) is not int
+                    or not isinstance(step, str) or not step.strip()
+                    or execution.get("studio_execution_completed") is not True):
+                result["failures"].append("EXECUTION_IDENTITY_MISMATCH")
+            metadata = native.get("metadata")
+            native_sources = metadata.get("source_files") if isinstance(metadata, dict) else None
+            bound_sources = binding.get("file_bindings")
+            if (not isinstance(native_sources, list) or not isinstance(bound_sources, list)
+                    or not native_sources or len(native_sources) != len(bound_sources)
+                    or {(x.get("file_id"), x.get("file_name")) for x in native_sources
+                        if isinstance(x, dict)} !=
+                       {(x.get("file_id"), x.get("filename")) for x in bound_sources
+                        if isinstance(x, dict)}):
+                result["failures"].append("NATIVE_FILE_BINDING_MISMATCH")
+            pdfs = execution.get("source_pdfs")
+            if (not isinstance(pdfs, list) or not isinstance(bound_sources, list)
+                    or len(pdfs) != len(bound_sources)
+                    or {(Path(x.get("path", "")).name, x.get("sha256")) for x in pdfs
+                        if isinstance(x, dict) and isinstance(x.get("path"), str)} !=
+                       {(x.get("filename"), x.get("sha256")) for x in bound_sources
+                        if isinstance(x, dict)}):
+                result["failures"].append("SOURCE_PDF_SHA_BINDING_MISMATCH")
         if trusted_manifest_path is None:
             result["blocking_reasons"].append("INDEPENDENT_TRUST_MANIFEST_NOT_PROVIDED")
         else:

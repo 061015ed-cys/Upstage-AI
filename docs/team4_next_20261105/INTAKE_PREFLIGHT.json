@@ -14,6 +14,7 @@
     "frozen_gold:NOT_PROVIDED",
     "studio_native:NOT_PROVIDED",
     "native_binding:NOT_PROVIDED",
+    "execution_record:NOT_PROVIDED",
     "v6_sidecar:NOT_PROVIDED",
     "INDEPENDENT_TRUST_MANIFEST_NOT_PROVIDED"
   ],

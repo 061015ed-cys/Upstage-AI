@@ -36,6 +36,7 @@ def test_intake_rejects_draft_mixed_job_bad_xlsx_and_sidecar(tmp_path):
                                    "approval_provenance": {}}).encode(),
         "studio_native": b"{}",
         "native_binding": json.dumps({"case_id": "OTHER", "job_id": "job_other"}).encode(),
+        "execution_record": b"{}",
         "v6_sidecar": json.dumps({"export_sha256": "0" * 64}).encode(),
     }
     for name, raw in payloads.items():
@@ -50,6 +51,8 @@ def test_intake_rejects_draft_mixed_job_bad_xlsx_and_sidecar(tmp_path):
     assert "FROZEN_GOLD_NOT_APPROVED" in report["failures"]
     assert "CASE_OR_JOB_MISMATCH" in report["failures"]
     assert "SIDECAR_NATIVE_SHA_MISMATCH" in report["failures"]
+    assert "NATIVE_CONTRACT_FAILED" in report["failures"]
+    assert "EXECUTION_IDENTITY_MISMATCH" in report["failures"]
 
 
 def test_submission_missing_sha_and_sensitive(tmp_path):
